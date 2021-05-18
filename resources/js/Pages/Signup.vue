@@ -48,7 +48,6 @@
         display: flex;
         justify-content: center;
         border-radius: 4px;
-        border: 1px solid #20c997;
         box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
         #logo {
           width: 400px;

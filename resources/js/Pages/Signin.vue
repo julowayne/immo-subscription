@@ -13,25 +13,25 @@
                   <label class="block" for="name">
                     NOM
                   </label>
-                  <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="name" type="text" placeholder="Nom">
+                  <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="name" type="text" placeholder="Jules">
                 </div>
                 <div class="mb-3">
                   <label class="block" for="firstname">
                     PRENOM
                   </label>
-                  <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="firstname" type="text" placeholder="Prénom">
+                  <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="firstname" type="text" placeholder="Thomas Desessarts">
                 </div>
                 <div class="mb-3">
                   <label class="block" for="email">
                     EMAIL
                   </label>
-                  <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="email" type="text" placeholder="Email">
+                  <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="email" type="text" placeholder="thomas.desessarts-jules@hotmail.com">
                 </div>
                 <div class="mb-3">
                   <label class="block" for="siret">
                     N° SIRET
                   </label>
-                  <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="siret" type="text" placeholder="Siret">
+                  <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="siret" type="text" placeholder="14567803938454">
                 </div>
                 <div class="mb-3">
                   <label class="block" for="password">
@@ -68,7 +68,6 @@
         display: flex;
         justify-content: center;
         border-radius: 4px;
-        border: 0.5px solid #20c997;
         box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
         #logo {
           width: 400px;

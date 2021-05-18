@@ -18262,6 +18262,27 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Subscribe.vue?vue&type=script&lang=js":
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Subscribe.vue?vue&type=script&lang=js ***!
+  \**********************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Layouts_Layout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Layouts/Layout.vue */ "./resources/js/Layouts/Layout.vue");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    Layout: _Layouts_Layout_vue__WEBPACK_IMPORTED_MODULE_0__.default
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=script&lang=js":
 /*!********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=script&lang=js ***!
@@ -18970,7 +18991,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
-    href: "/"
+    href: "/services"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_4];
@@ -18979,7 +19000,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
-    href: "/news"
+    href: "/actualités"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_5];
@@ -19668,7 +19689,80 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"signin flex grid-cols-2 text-center m-0\"><div id=\"content\"><div><form class=\"bg-white shadow-md\"><h1>Contact</h1><div class=\"mb-3\"><label class=\"block\" for=\"name\"> NOM </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"name\" type=\"text\" placeholder=\"Nom\"></div><div class=\"mb-3\"><label class=\"block\" for=\"firstname\"> PRENOM </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"firstname\" type=\"text\" placeholder=\"Prénom\"></div><div class=\"mb-3\"><label class=\"block\" for=\"email\"> EMAIL </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"email\" type=\"text\" placeholder=\"Email\"></div><div class=\"mb-3\"><label class=\"block\" for=\"objet\"> OBJET </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"objet\" type=\"text\" placeholder=\"Objet du message\"></div><div class=\"mb-3\"><label class=\"block\" for=\"password\"> MESSAGE </label><textarea class=\"w-full shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" name=\"message\" id=\"message\" cols=\"35\" rows=\"2\"></textarea></div><div class=\"flex items-center\" id=\"send\"><button class=\"shadow text-white font-bold rounded hover:shadow-xl transition-shadow duration-200 ease-in-out\" type=\"button\"> Envoyer </button></div></form></div></div></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "signin flex grid-cols-2 text-center m-0"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  id: "content"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("iframe", {
+  width: "400px",
+  style: {
+    "border": "0"
+  },
+  loading: "lazy",
+  allowfullscreen: "",
+  src: "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJg1hVUAlu5kcR7NlQ2Wbq5iU&key=AIzaSyDRkKQuLaaLbmCSl-gqmo0tqC8T0capNjs"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
+  "class": "bg-white shadow-md"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", null, "Contact"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "mb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "block",
+  "for": "name"
+}, " NOM "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  "class": "w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent",
+  id: "name",
+  type: "text",
+  placeholder: "Nom"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "mb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "block",
+  "for": "firstname"
+}, " PRENOM "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  "class": "w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent",
+  id: "firstname",
+  type: "text",
+  placeholder: "Prénom"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "mb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "block",
+  "for": "email"
+}, " EMAIL "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  "class": "w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent",
+  id: "email",
+  type: "text",
+  placeholder: "Email"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "mb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "block",
+  "for": "objet"
+}, " OBJET "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  "class": "w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent",
+  id: "objet",
+  type: "text",
+  placeholder: "Objet du message"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "mb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "block",
+  "for": "password"
+}, " MESSAGE "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
+  "class": "w-full shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent",
+  name: "message",
+  id: "message",
+  cols: "35",
+  rows: "2"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "flex items-center",
+  id: "send"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  "class": "shadow text-white font-bold rounded hover:shadow-xl transition-shadow duration-200 ease-in-out",
+  type: "button"
+}, " Envoyer ")])])])])], -1
+/* HOISTED */
+);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("layout");
@@ -19742,7 +19836,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"content flex text-center m-0 flex-col\"><div class=\"grid grid-cols-3 gap-4 my-4 m-0 px-20\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></div></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"content flex text-center m-0 flex-col\"><div class=\"grid grid-cols-3 gap-4 my-20 px-20\"><!-- foreach for cards --><a href=\"\" target=\"_blank\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><!-- endforeach for cards --><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("layout");
@@ -19766,7 +19860,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"signin flex grid-cols-2 text-center m-0\"><div id=\"content\"><div id=\"logo\"><img src=\"image/alfred-logo-teal-600.png\" alt=\"logo alfred\"></div><div><form class=\"bg-white shadow-md\"><h1>Bienvenue</h1><div class=\"mb-3\"><label class=\"block\" for=\"name\"> NOM </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"name\" type=\"text\" placeholder=\"Nom\"></div><div class=\"mb-3\"><label class=\"block\" for=\"firstname\"> PRENOM </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"firstname\" type=\"text\" placeholder=\"Prénom\"></div><div class=\"mb-3\"><label class=\"block\" for=\"email\"> EMAIL </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"email\" type=\"text\" placeholder=\"Email\"></div><div class=\"mb-3\"><label class=\"block\" for=\"siret\"> N° SIRET </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"siret\" type=\"text\" placeholder=\"Siret\"></div><div class=\"mb-3\"><label class=\"block\" for=\"password\"> Password </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"password\" type=\"password\" placeholder=\"***********\"></div><div class=\"flex items-center\" id=\"send\"><button class=\"shadow text-white font-bold rounded hover:shadow-xl transition-shadow duration-200 ease-in-out\" type=\"button\"> Créer mon compte </button></div></form></div></div></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"signin flex grid-cols-2 text-center m-0\"><div id=\"content\"><div id=\"logo\"><img src=\"image/alfred-logo-teal-600.png\" alt=\"logo alfred\"></div><div><form class=\"bg-white shadow-md\"><h1>Bienvenue</h1><div class=\"mb-3\"><label class=\"block\" for=\"name\"> NOM </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"name\" type=\"text\" placeholder=\"Jules\"></div><div class=\"mb-3\"><label class=\"block\" for=\"firstname\"> PRENOM </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"firstname\" type=\"text\" placeholder=\"Thomas Desessarts\"></div><div class=\"mb-3\"><label class=\"block\" for=\"email\"> EMAIL </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"email\" type=\"text\" placeholder=\"thomas.desessarts-jules@hotmail.com\"></div><div class=\"mb-3\"><label class=\"block\" for=\"siret\"> N° SIRET </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"siret\" type=\"text\" placeholder=\"14567803938454\"></div><div class=\"mb-3\"><label class=\"block\" for=\"password\"> Password </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"password\" type=\"password\" placeholder=\"***********\"></div><div class=\"flex items-center\" id=\"send\"><button class=\"shadow text-white font-bold rounded hover:shadow-xl transition-shadow duration-200 ease-in-out\" type=\"button\"> Créer mon compte </button></div></form></div></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("layout");
@@ -19800,6 +19894,30 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Subscribe.vue?vue&type=template&id=de476e1e":
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Subscribe.vue?vue&type=template&id=de476e1e ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"content flex text-center m-0 flex-col\"><div class=\"title mt-10 mb-3\"><h2>Choisissez la formule qui vous convient.</h2></div><div class=\"grid grid-cols-3 gap-4 my-20 px-10\"><div class=\"card rounded overflow-hidden shadow-lg my-2\"><div class=\"months\">Abonnement pour 1 mois</div><div class=\"px-8 py-3\"><div class=\"font-bold text-xl mb-2 text-left\"><span class=\"flex justify-around\"><img src=\"image/money-transfer-64.png\" alt=\"price logo\"><span>9.90€</span></span></div><hr><div class=\"font-bold text-xs mb-2 text-left\"><span class=\"flex justify-around\"><img src=\"image/log-in-64.png\" alt=\"price logo\"><span>Accès aux dossier<br> de vos clients</span></span></div></div><div class=\"flex items-center\" id=\"choose\"><button class=\"shadow text-white font-bold rounded hover:shadow-xl transition-shadow duration-200 ease-in-out\" type=\"button\"> Créer mon compte </button></div></div><div class=\"card rounded overflow-hidden shadow-lg my-2\"><div class=\"months\">Abonnement pour 3 mois</div><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><div class=\"card rounded overflow-hidden shadow-lg my-2\"><div class=\"months\">Abonnement pour 6 mois</div><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></div></div>", 1);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("layout");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_layout), _hoisted_1]);
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e":
 /*!************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e ***!
@@ -19814,7 +19932,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"content flex text-center m-0 flex-col\"><div id=\"title\" class=\"mt-5 mb-3\"><h2>Qui est Alfred ?</h2></div><div id=\"service\"><div> Alfred est un service qui propose aux agences immobilières de pouvoir<br> retrouver les dossiers des personnes souhaitant louer un bien qu&#39;ils proposent. </div></div><!-- Foreach for cards --><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><!-- endforeach for cards  --></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"content flex text-center m-0 flex-col\"><div class=\"title mt-5 mb-3\"><h2>Qui est Alfred ?</h2></div><div id=\"service\"><div> Alfred est un service qui propose aux agences immobilières de pouvoir<br> retrouver les dossiers des personnes souhaitant louer un bien qu&#39;ils proposent. </div></div><!-- Foreach for cards --><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><!-- endforeach for cards  --></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("layout");
@@ -20019,7 +20137,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n#map {\n  height: 400px;\n  width: 100%;\n}\n.signin {\n  display: flex;\n  height: 85vh;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n  border-radius: 4px;\n}\n.signin #content {\n  max-width: 800px;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  border-radius: 4px;\n  border: 0.5px solid #20c997;\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.signin #content #logo {\n  width: 400px;\n  background-color: #20c997;\n}\n.signin #content #logo img {\n  margin-top: 3.5em;\n  width: 100%;\n}\n.signin #content form {\n  width: 400px;\n  height: 100%;\n  text-align: left;\n  padding: 1rem 2rem;\n  background-color: white;\n}\n.signin #content form h1 {\n  margin-bottom: 1rem;\n  font-size: 2rem;\n  border-bottom: 1px solid #20c997;\n  padding: 1rem 0;\n  letter-spacing: 0.5px;\n  color: #20c997;\n}\n.signin #content form #send {\n  margin: 1.5rem 0 1rem;\n  text-align: right;\n}\n.signin #content form #send button {\n  width: 100%;\n  height: 2.5rem;\n  background-color: #20c997;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n#map {\n  height: 400px;\n  width: 100%;\n}\n.signin {\n  display: flex;\n  height: 85vh;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n  border-radius: 4px;\n}\n.signin #content {\n  max-width: 800px;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  border-radius: 4px;\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.signin #content #logo {\n  width: 400px;\n  background-color: #20c997;\n}\n.signin #content #logo img {\n  margin-top: 3.5em;\n  width: 100%;\n}\n.signin #content form {\n  width: 400px;\n  height: 100%;\n  text-align: left;\n  padding: 1rem 2rem;\n  background-color: white;\n}\n.signin #content form h1 {\n  margin-bottom: 1rem;\n  font-size: 2rem;\n  border-bottom: 1px solid #20c997;\n  padding: 1rem 0;\n  letter-spacing: 0.5px;\n  color: #20c997;\n}\n.signin #content form #send {\n  margin: 1.5rem 0 1rem;\n  text-align: right;\n}\n.signin #content form #send button {\n  width: 100%;\n  height: 2.5rem;\n  background-color: #20c997;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -20067,7 +20185,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.signin {\n  display: flex;\n  height: 85vh;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n  border-radius: 4px;\n}\n.signin #content {\n  max-width: 800px;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  border-radius: 4px;\n  border: 0.5px solid #20c997;\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.signin #content #logo {\n  width: 400px;\n  background-color: #20c997;\n}\n.signin #content #logo img {\n  margin-top: 3.5em;\n  width: 100%;\n}\n.signin #content form {\n  width: 400px;\n  height: 100%;\n  text-align: left;\n  padding: 1rem 2rem;\n  background-color: white;\n}\n.signin #content form h1 {\n  margin-bottom: 1rem;\n  font-size: 2rem;\n  border-bottom: 1px solid #20c997;\n  padding: 1rem 0;\n  letter-spacing: 0.5px;\n  color: #20c997;\n}\n.signin #content form #send {\n  margin: 1.5rem 0 1rem;\n  text-align: right;\n}\n.signin #content form #send button {\n  width: 100%;\n  height: 2.5rem;\n  background-color: #20c997;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.signin {\n  display: flex;\n  height: 85vh;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n  border-radius: 4px;\n}\n.signin #content {\n  max-width: 800px;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  border-radius: 4px;\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.signin #content #logo {\n  width: 400px;\n  background-color: #20c997;\n}\n.signin #content #logo img {\n  margin-top: 3.5em;\n  width: 100%;\n}\n.signin #content form {\n  width: 400px;\n  height: 100%;\n  text-align: left;\n  padding: 1rem 2rem;\n  background-color: white;\n}\n.signin #content form h1 {\n  margin-bottom: 1rem;\n  font-size: 2rem;\n  border-bottom: 1px solid #20c997;\n  padding: 1rem 0;\n  letter-spacing: 0.5px;\n  color: #20c997;\n}\n.signin #content form #send {\n  margin: 1.5rem 0 1rem;\n  text-align: right;\n}\n.signin #content form #send button {\n  width: 100%;\n  height: 2.5rem;\n  background-color: #20c997;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -20091,7 +20209,31 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.signup {\n  display: flex;\n  height: 70vh;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n}\n.signup #content {\n  max-width: 800px;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  border-radius: 4px;\n  border: 1px solid #20c997;\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.signup #content #logo {\n  width: 400px;\n  background-color: #20c997;\n}\n.signup #content #logo img {\n  width: 100%;\n}\n.signup #content form {\n  width: 400px;\n  height: 100%;\n  text-align: left;\n  padding: 1rem 2rem;\n  background-color: white;\n}\n.signup #content form h1 {\n  margin-bottom: 1rem;\n  font-size: 2rem;\n  border-bottom: 1px solid #20c997;\n  padding: 1rem 0;\n  letter-spacing: 0.5px;\n  color: #20c997;\n}\n.signup #content form #send {\n  margin: 1.5rem 0 1rem;\n  text-align: right;\n}\n.signup #content form #send button {\n  width: 100%;\n  height: 2.5rem;\n  background-color: #20c997;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.signup {\n  display: flex;\n  height: 70vh;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n}\n.signup #content {\n  max-width: 800px;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  border-radius: 4px;\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.signup #content #logo {\n  width: 400px;\n  background-color: #20c997;\n}\n.signup #content #logo img {\n  width: 100%;\n}\n.signup #content form {\n  width: 400px;\n  height: 100%;\n  text-align: left;\n  padding: 1rem 2rem;\n  background-color: white;\n}\n.signup #content form h1 {\n  margin-bottom: 1rem;\n  font-size: 2rem;\n  border-bottom: 1px solid #20c997;\n  padding: 1rem 0;\n  letter-spacing: 0.5px;\n  color: #20c997;\n}\n.signup #content form #send {\n  margin: 1.5rem 0 1rem;\n  text-align: right;\n}\n.signup #content form #send button {\n  width: 100%;\n  height: 2.5rem;\n  background-color: #20c997;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Subscribe.vue?vue&type=style&index=0&id=de476e1e&lang=scss":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Subscribe.vue?vue&type=style&index=0&id=de476e1e&lang=scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.content .card {\n  max-width: 30rem;\n  margin: auto;\n}\n.content .card hr {\n  background-color: #007bff;\n  border: 1px solid #007bff;\n  margin: 1em;\n}\n.content .card .months {\n  background-color: blue;\n  color: white;\n  padding: 1em 0.5em;\n  font-size: larger;\n  height: 10vh;\n}\n.content .card #choose {\n  margin: 1.5rem 0 1rem;\n  text-align: right;\n}\n.content .card #choose button {\n  width: 100%;\n  height: 2.5rem;\n  background-color: #20c997;\n}\n.content .title h2 {\n  font-size: 2rem;\n  font-style: italic;\n  font-weight: lighter;\n  color: grey;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -20115,7 +20257,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.content {\n  height: 90vh;\n}\n.content #title h2 {\n  font-size: 2rem;\n  font-style: italic;\n  font-weight: lighter;\n  color: grey;\n}\n.content #service div {\n  font-size: 1.5rem;\n}\n.content .card {\n  max-width: 15rem;\n  margin: auto;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.content {\n  height: 90vh;\n}\n.content .title h2 {\n  font-size: 2rem;\n  font-style: italic;\n  font-weight: lighter;\n  color: grey;\n}\n.content #service div {\n  font-size: 1.5rem;\n}\n.content .card {\n  max-width: 15rem;\n  margin: auto;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41767,6 +41909,35 @@ _Signup_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__file 
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Subscribe.vue":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/Subscribe.vue ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Subscribe_vue_vue_type_template_id_de476e1e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Subscribe.vue?vue&type=template&id=de476e1e */ "./resources/js/Pages/Subscribe.vue?vue&type=template&id=de476e1e");
+/* harmony import */ var _Subscribe_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Subscribe.vue?vue&type=script&lang=js */ "./resources/js/Pages/Subscribe.vue?vue&type=script&lang=js");
+/* harmony import */ var _Subscribe_vue_vue_type_style_index_0_id_de476e1e_lang_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Subscribe.vue?vue&type=style&index=0&id=de476e1e&lang=scss */ "./resources/js/Pages/Subscribe.vue?vue&type=style&index=0&id=de476e1e&lang=scss");
+
+
+
+
+;
+_Subscribe_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _Subscribe_vue_vue_type_template_id_de476e1e__WEBPACK_IMPORTED_MODULE_0__.render
+/* hot reload */
+if (false) {}
+
+_Subscribe_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__file = "resources/js/Pages/Subscribe.vue"
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Subscribe_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Welcome.vue":
 /*!****************************************!*\
   !*** ./resources/js/Pages/Welcome.vue ***!
@@ -42144,6 +42315,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Signup_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__.default)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Signup_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Signup.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Signup.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Subscribe.vue?vue&type=script&lang=js":
+/*!******************************************************************!*\
+  !*** ./resources/js/Pages/Subscribe.vue?vue&type=script&lang=js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Subscribe_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__.default)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Subscribe_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Subscribe.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Subscribe.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -42548,6 +42735,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Subscribe.vue?vue&type=template&id=de476e1e":
+/*!************************************************************************!*\
+  !*** ./resources/js/Pages/Subscribe.vue?vue&type=template&id=de476e1e ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Subscribe_vue_vue_type_template_id_de476e1e__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Subscribe_vue_vue_type_template_id_de476e1e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Subscribe.vue?vue&type=template&id=de476e1e */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Subscribe.vue?vue&type=template&id=de476e1e");
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e":
 /*!**********************************************************************!*\
   !*** ./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e ***!
@@ -42644,6 +42847,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Signup_vue_vue_type_style_index_0_id_4c0ebc01_lang_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Signup_vue_vue_type_style_index_0_id_4c0ebc01_lang_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
 /* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Signup_vue_vue_type_style_index_0_id_4c0ebc01_lang_scss__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Signup_vue_vue_type_style_index_0_id_4c0ebc01_lang_scss__WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Subscribe.vue?vue&type=style&index=0&id=de476e1e&lang=scss":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/Pages/Subscribe.vue?vue&type=style&index=0&id=de476e1e&lang=scss ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Subscribe_vue_vue_type_style_index_0_id_de476e1e_lang_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-style-loader/index.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Subscribe.vue?vue&type=style&index=0&id=de476e1e&lang=scss */ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Subscribe.vue?vue&type=style&index=0&id=de476e1e&lang=scss");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Subscribe_vue_vue_type_style_index_0_id_de476e1e_lang_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Subscribe_vue_vue_type_style_index_0_id_de476e1e_lang_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Subscribe_vue_vue_type_style_index_0_id_de476e1e_lang_scss__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Subscribe_vue_vue_type_style_index_0_id_de476e1e_lang_scss__WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
 /* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
 
 
@@ -42766,6 +42986,27 @@ if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__(/*! !../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
 var update = add("48dcc43c", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Subscribe.vue?vue&type=style&index=0&id=de476e1e&lang=scss":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Subscribe.vue?vue&type=style&index=0&id=de476e1e&lang=scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Subscribe.vue?vue&type=style&index=0&id=de476e1e&lang=scss */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Subscribe.vue?vue&type=style&index=0&id=de476e1e&lang=scss");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.id, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! !../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("10e58ae7", content, false, {});
 // Hot Module Replacement
 if(false) {}
 
@@ -43299,6 +43540,8 @@ var map = {
 	"./Signin.vue": "./resources/js/Pages/Signin.vue",
 	"./Signup": "./resources/js/Pages/Signup.vue",
 	"./Signup.vue": "./resources/js/Pages/Signup.vue",
+	"./Subscribe": "./resources/js/Pages/Subscribe.vue",
+	"./Subscribe.vue": "./resources/js/Pages/Subscribe.vue",
 	"./Welcome": "./resources/js/Pages/Welcome.vue",
 	"./Welcome.vue": "./resources/js/Pages/Welcome.vue"
 };

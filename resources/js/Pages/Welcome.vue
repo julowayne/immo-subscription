@@ -2,7 +2,7 @@
     <div>
         <layout/>
         <div class="content flex text-center m-0 flex-col">
-            <div id="title" class="mt-5 mb-3">
+            <div class="title mt-5 mb-3">
                 <h2>Qui est Alfred ?</h2>
             </div>
             <div id="service">
@@ -36,7 +36,7 @@
     }
     .content {
         height: 90vh;
-        #title {
+        .title {
             h2 {
                 font-size: 2rem;
                 font-style: italic;

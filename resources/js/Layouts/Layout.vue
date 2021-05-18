@@ -22,12 +22,12 @@
       </inertia-link>
       <div id="categories">
         <span>        
-          <inertia-link href="/">
+          <inertia-link href="/services">
             Services
           </inertia-link>
         </span>
         <span>        
-          <inertia-link href="/news">
+          <inertia-link href="/actualités">
             Actualités
           </inertia-link>
         </span>

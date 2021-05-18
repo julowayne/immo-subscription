@@ -3,6 +3,7 @@
         <layout/>
         <div class="signin flex grid-cols-2 text-center m-0">
           <div id="content">
+            <iframe width="400px" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJg1hVUAlu5kcR7NlQ2Wbq5iU&key=AIzaSyDRkKQuLaaLbmCSl-gqmo0tqC8T0capNjs"></iframe>
             <div>
               <form class="bg-white shadow-md">
                 <h1>Contact</h1>
@@ -69,7 +70,6 @@
         display: flex;
         justify-content: center;
         border-radius: 4px;
-        border: 0.5px solid #20c997;
         box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
         #logo {
           width: 400px;

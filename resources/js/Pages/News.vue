@@ -2,85 +2,99 @@
     <div>
         <layout/>
         <div class="content flex text-center m-0 flex-col">
-          <div class="grid grid-cols-3 gap-4 my-4 m-0 px-20">
-            <div class="news rounded overflow-hidden shadow-lg my-2">
-                <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
-                <div class="px-4 py-2">
-                    <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
-                    <p class="text-grey-darker text-base text-left">
-                        Comment vont évoluer les prix de l'immobilier en 2021 en France ?
-                    </p>
+          <div class="grid grid-cols-3 gap-4 my-20 px-20">
+              <!-- foreach for cards -->
+            <a href="" target="_blank">
+                <div class="news rounded overflow-hidden shadow-lg my-2">
+                    <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
+                    <div class="px-4 py-2">
+                        <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
+                        <p class="text-grey-darker text-base text-left">
+                            Comment vont évoluer les prix de l'immobilier en 2021 en France ?
+                        </p>
+                    </div>
+                    <div class="px-4 py-2 text-left">
+                        <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
+                        <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
+                    </div>
                 </div>
-                <div class="px-4 py-2 text-left">
-                    <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
-                    <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
+            </a>
+            <!-- endforeach for cards -->
+            <a href="">
+                <div class="news rounded overflow-hidden shadow-lg my-2">
+                    <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
+                    <div class="px-4 py-2">
+                        <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
+                        <p class="text-grey-darker text-base text-left">
+                            Comment vont évoluer les prix de l'immobilier en 2021 en France ?
+                        </p>
+                    </div>
+                    <div class="px-4 py-2 text-left">
+                        <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
+                        <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
+                    </div>
                 </div>
-            </div>
-            <div class="news rounded overflow-hidden shadow-lg my-2">
-                <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
-                <div class="px-4 py-2">
-                    <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
-                    <p class="text-grey-darker text-base text-left">
-                        Comment vont évoluer les prix de l'immobilier en 2021 en France ?
-                    </p>
+            </a>
+            <a href="">
+                <div class="news rounded overflow-hidden shadow-lg my-2">
+                    <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
+                    <div class="px-4 py-2">
+                        <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
+                        <p class="text-grey-darker text-base text-left">
+                            Comment vont évoluer les prix de l'immobilier en 2021 en France ?
+                        </p>
+                    </div>
+                    <div class="px-4 py-2 text-left">
+                        <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
+                        <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
+                    </div>
                 </div>
-                <div class="px-4 py-2 text-left">
-                    <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
-                    <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
+            </a>
+            <a href="">
+                <div class="news rounded overflow-hidden shadow-lg my-2">
+                    <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
+                    <div class="px-4 py-2">
+                        <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
+                        <p class="text-grey-darker text-base text-left">
+                            Comment vont évoluer les prix de l'immobilier en 2021 en France ?
+                        </p>
+                    </div>
+                    <div class="px-4 py-2 text-left">
+                        <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
+                        <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
+                    </div>
                 </div>
-            </div>
-              <div class="news rounded overflow-hidden shadow-lg my-2">
-                <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
-                <div class="px-4 py-2">
-                    <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
-                    <p class="text-grey-darker text-base text-left">
-                        Comment vont évoluer les prix de l'immobilier en 2021 en France ?
-                    </p>
+            </a>
+            <a href="">
+                <div class="news rounded overflow-hidden shadow-lg my-2">
+                    <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
+                    <div class="px-4 py-2">
+                        <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
+                        <p class="text-grey-darker text-base text-left">
+                            Comment vont évoluer les prix de l'immobilier en 2021 en France ?
+                        </p>
+                    </div>
+                    <div class="px-4 py-2 text-left">
+                        <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
+                        <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
+                    </div>
                 </div>
-                <div class="px-4 py-2 text-left">
-                    <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
-                    <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
+            </a>
+            <a href="">
+                <div class="news rounded overflow-hidden shadow-lg my-2">
+                    <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
+                    <div class="px-4 py-2">
+                        <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
+                        <p class="text-grey-darker text-base text-left">
+                            Comment vont évoluer les prix de l'immobilier en 2021 en France ?
+                        </p>
+                    </div>
+                    <div class="px-4 py-2 text-left">
+                        <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
+                        <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
+                    </div>
                 </div>
-            </div>
-            <div class="news rounded overflow-hidden shadow-lg my-2">
-                <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
-                <div class="px-4 py-2">
-                    <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
-                    <p class="text-grey-darker text-base text-left">
-                        Comment vont évoluer les prix de l'immobilier en 2021 en France ?
-                    </p>
-                </div>
-                <div class="px-4 py-2 text-left">
-                    <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
-                    <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
-                </div>
-            </div>
-            <div class="news rounded overflow-hidden shadow-lg my-2">
-                <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
-                <div class="px-4 py-2">
-                    <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
-                    <p class="text-grey-darker text-base text-left">
-                        Comment vont évoluer les prix de l'immobilier en 2021 en France ?
-                    </p>
-                </div>
-                <div class="px-4 py-2 text-left">
-                    <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
-                    <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
-                </div>
-            </div>
-            <div class="news rounded overflow-hidden shadow-lg my-2">
-              <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
-              <div class="px-4 py-2">
-                  <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
-                  <p class="text-grey-darker text-base text-left">
-                      Comment vont évoluer les prix de l'immobilier en 2021 en France ?
-                  </p>
-              </div>
-              <div class="px-4 py-2 text-left">
-                  <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
-                  <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
-              </div>
-            </div>
+            </a>
           </div>
         </div>
     </div>
