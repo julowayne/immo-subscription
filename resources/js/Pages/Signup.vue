@@ -22,7 +22,7 @@
                   <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="password" type="password" placeholder="***********">
                 </div>
                 <div class="flex items-center" id="send">
-                  <button class="shadow text-white font-bold rounded hover:shadow-xl transition-shadow duration-200 ease-in-out" type="button">
+                  <button class="bg-blue-500 hover:bg-blue-700 shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out" type="button">
                     Connexion
                   </button>
                 </div>
@@ -76,7 +76,6 @@
             button {
               width: 100%;
               height: 2.5rem;
-              background-color: #20c997;
             }
           }
         }

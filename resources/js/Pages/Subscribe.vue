@@ -5,54 +5,74 @@
           <div class="title mt-10 mb-3">
             <h2>Choisissez la formule qui vous convient.</h2>
           </div>
-          <div class="grid grid-cols-3 gap-4 my-20 px-10">
+          <div class="grid grid-cols-3 my-20 px-32">
             <div class="card rounded overflow-hidden shadow-lg my-2">
-                <div class="months">Abonnement pour 1 mois</div>
-                <div class="px-8 py-3">
+                <div class="months shadow-sm font-bold">Abonnement pour 6 mois</div>
+                <div class="px-6 pt-8 pb-2">
                     <div class="font-bold text-xl mb-2 text-left">
-                      <span class="flex justify-around">
+                      <span class="flex justify-around items-center">
                         <img src="image/money-transfer-64.png" alt="price logo">
-                        <span>9.90€</span>
+                        <span class="text-4xl">9.90 €</span>
                       </span>
                     </div>
                     <hr>
                    <div class="font-bold text-xs mb-2 text-left">
-                      <span class="flex justify-around">
+                      <span class="flex justify-around items-center">
                         <img src="image/log-in-64.png" alt="price logo">
-                        <span>Accès aux dossier<br> de vos clients</span>
+                        <span class="font-bold text-base">Accès aux dossier<br> de vos clients</span>
                       </span>
                     </div>
                 </div>
                 <div class="flex items-center" id="choose">
-                  <button class="shadow text-white font-bold rounded hover:shadow-xl transition-shadow duration-200 ease-in-out" type="button">
-                    Créer mon compte
+                  <button class="bg-blue-500 hover:bg-blue-700 shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out" type="button">
+                    Choisir
                   </button>
                 </div>
             </div>
             <div class="card rounded overflow-hidden shadow-lg my-2">
-                <div class="months">Abonnement pour 3 mois</div>
-                <div class="px-4 py-2">
-                    <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
-                    <p class="text-grey-darker text-base text-left">
-                        Comment vont évoluer les prix de l'immobilier en 2021 en France ?
-                    </p>
+                <div class="months shadow-sm font-bold">Abonnement pour 6 mois</div>
+                <div class="px-6 pt-8 pb-2">
+                    <div class="font-bold text-xl mb-2 text-left">
+                      <span class="flex justify-around items-center">
+                        <img src="image/money-transfer-64.png" alt="price logo">
+                        <span class="text-4xl">9.90 €</span>
+                      </span>
+                    </div>
+                    <hr>
+                   <div class="font-bold text-xs mb-2 text-left">
+                      <span class="flex justify-around items-center">
+                        <img src="image/log-in-64.png" alt="price logo">
+                        <span class="font-bold text-base">Accès aux dossier<br> de vos clients</span>
+                      </span>
+                    </div>
                 </div>
-                <div class="px-4 py-2 text-left">
-                    <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
-                    <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
+                <div class="flex items-center" id="choose">
+                  <button class="bg-blue-500 hover:bg-blue-700 shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out" type="button">
+                    Choisir
+                  </button>
                 </div>
             </div>
             <div class="card rounded overflow-hidden shadow-lg my-2">
-                <div class="months">Abonnement pour 6 mois</div>
-                <div class="px-4 py-2">
-                    <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
-                    <p class="text-grey-darker text-base text-left">
-                        Comment vont évoluer les prix de l'immobilier en 2021 en France ?
-                    </p>
+                <div class="months shadow-sm font-bold">Abonnement pour 6 mois</div>
+                <div class="px-6 pt-8 pb-2">
+                    <div class="font-bold text-xl mb-2 text-left">
+                      <span class="flex justify-around items-center">
+                        <img src="image/money-transfer-64.png" alt="price logo">
+                        <span class="text-4xl">9.90 €</span>
+                      </span>
+                    </div>
+                    <hr>
+                   <div class="font-bold text-xs mb-2 text-left">
+                      <span class="flex justify-around items-center">
+                        <img src="image/log-in-64.png" alt="price logo">
+                        <span class="font-bold text-base">Accès aux dossier<br> de vos clients</span>
+                      </span>
+                    </div>
                 </div>
-                <div class="px-4 py-2 text-left">
-                    <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
-                    <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
+                <div class="flex items-center" id="choose">
+                  <button class="bg-blue-500 hover:bg-blue-700 shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out" type="button">
+                    Choisir
+                  </button>
                 </div>
             </div>
           </div>
@@ -76,17 +96,15 @@
       .months {
         background-color: blue;
         color: white;
-        padding: 1em 0.5em;
+        padding: 1em 1.5em;
         font-size: larger;
-        height: 10vh;
       }
       #choose {
-        margin: 1.5rem 0 1rem;
+        margin: 1.5rem 1rem;
         text-align: right;
         button {
           width: 100%;
           height: 2.5rem;
-          background-color: #20c997;
         }
       }
     }
