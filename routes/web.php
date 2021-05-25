@@ -26,9 +26,11 @@ Route::get('/', function () {
 
 Route::inertia('/signin', 'Signin');
 Route::inertia('/signup', 'Signup');
-Route::inertia('/actualités', 'News');
+Route::inertia('/actualites', 'News');
+Route::inertia('/actualites/1', 'SingleNews');
 Route::inertia('/contact', 'Contact');
 Route::inertia('/services', 'Subscribe');
+Route::inertia('/profile', 'Profile');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

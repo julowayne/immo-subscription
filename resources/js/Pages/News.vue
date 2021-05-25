@@ -2,9 +2,9 @@
     <div>
         <layout/>
         <div class="content flex text-center m-0 flex-col">
-          <div class="grid grid-cols-3 gap-4 my-20 px-20">
+          <div class="grid grid-cols-3 gap-4 my-10 px-20">
               <!-- foreach for cards -->
-            <a href="" target="_blank">
+            <inertia-link href="/actualites/1">
                 <div class="news rounded overflow-hidden shadow-lg my-2">
                     <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
                     <div class="px-4 py-2">
@@ -18,7 +18,7 @@
                         <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
                     </div>
                 </div>
-            </a>
+            </inertia-link>
             <!-- endforeach for cards -->
             <a href="">
                 <div class="news rounded overflow-hidden shadow-lg my-2">
@@ -105,7 +105,7 @@
     background-color: #e9ecef;
   }
   .news {
-    max-width: 25rem;
+    max-width: 22rem;
     margin: auto;
   }
 </style>

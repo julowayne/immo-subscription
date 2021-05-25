@@ -27,7 +27,7 @@
           </inertia-link>
         </span>
         <span>        
-          <inertia-link href="/actualités">
+          <inertia-link href="/actualites">
             Actualités
           </inertia-link>
         </span>
@@ -41,7 +41,9 @@
         <input type="text" placeholder="Rechercher ...">
       </div>
       <div id="account">
-        <img src="image/utilisateur.png" alt="account logo">
+        <inertia-link href="/profile">
+          <img src="image/utilisateur.png" alt="account logo">
+        </inertia-link>
         <div>
           <inertia-link href="/signin">
             Inscription
