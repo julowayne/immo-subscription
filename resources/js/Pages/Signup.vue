@@ -1,36 +1,36 @@
 <template>
-    <div>
-        <layout/>
-        <div class="signup flex grid-cols-2 text-center m-0">
-          <div id="content">
-            <div id="logo">
-              <img src="image/alfred-logo-teal-600.png" alt="logo alfred" />
-            </div>
-            <div>
-              <form class="bg-white shadow-md">
-                <h1>Indentifiez-vous</h1>
-                <div class="mb-3">
-                  <label class="block" for="email">
-                    EMAIL
-                  </label>
-                  <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="email" type="text" placeholder="Email">
-                </div>
-                <div class="mb-3">
-                  <label class="block" for="password">
-                    Password
-                  </label>
-                  <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="password" type="password" placeholder="***********">
-                </div>
-                <div class="flex items-center" id="send">
-                  <button class="bg-blue-500 hover:bg-blue-700 shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out" type="button">
-                    Connexion
-                  </button>
-                </div>
-              </form>
-            </div>
+  <div>
+      <layout/>
+      <div class="signup flex grid-cols-2 text-center m-0">
+        <div id="content">
+          <div id="logo">
+            <img src="image/alfred-logo-teal-600.png" alt="logo alfred" />
+          </div>
+          <div>
+            <form class="bg-white shadow-md">
+              <h1>Indentifiez-vous</h1>
+              <div class="mb-3">
+                <label class="block" for="email">
+                  EMAIL
+                </label>
+                <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="email" type="text" placeholder="Email">
+              </div>
+              <div class="mb-3">
+                <label class="block" for="password">
+                  Password
+                </label>
+                <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="password" type="password" placeholder="***********">
+              </div>
+              <div class="flex items-center" id="send">
+                <button class="bg-blue-500 hover:bg-blue-700 shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out" type="button">
+                  Connexion
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-    </div>
+      </div>
+  </div>
 </template>
 <style lang="scss">
     body {

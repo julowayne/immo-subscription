@@ -31,6 +31,9 @@ Route::inertia('/actualites/1', 'SingleNews');
 Route::inertia('/contact', 'Contact');
 Route::inertia('/services', 'Subscribe');
 Route::inertia('/profile', 'Profile');
+Route::inertia('/admin/newsdashboard', 'Admin/NewsDashboard');
+Route::inertia('/admin/userdashboard', 'Admin/UserDashboard');
+Route::inertia('/admin/subscribedashboard', 'Admin/SubscribeDashboard');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

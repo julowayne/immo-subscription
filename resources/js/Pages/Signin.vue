@@ -75,7 +75,7 @@
           img {
             margin-top: 3.5em;
             width: 100%;
-        }
+          }
         }
         form {
           width: 400px;
