@@ -1,7 +1,7 @@
 <template>
     <div>
         <layout/>
-        <div class="content flex text-center m-0 flex-col">
+        <div class="content flex text-center m-2 flex-col">
           <div class="grid grid-cols-3 gap-4 my-10 px-20">
               <!-- foreach for cards -->
             <inertia-link href="/actualites/1">

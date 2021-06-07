@@ -2,7 +2,7 @@
     <div>
         <layout/>
         <div class="signin flex grid-cols-2 text-center m-0">
-          <div id="content">
+          <div id="signinContent">
             <div id="logo">
               <img src="image/alfred-logo-teal-600.png" alt="logo alfred" />
             </div>
@@ -62,7 +62,7 @@
       justify-content: center;
       align-items: center;
       border-radius: 4px;
-      #content {
+      #signinContent {
         max-width: 800px;
         overflow: hidden;
         display: flex;

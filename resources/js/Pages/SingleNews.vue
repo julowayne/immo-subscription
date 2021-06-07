@@ -1,25 +1,20 @@
 <template>
     <div>
         <layout/>
-        <div class="content flex text-center m-0 flex-col">
-          <div class="grid grid-cols-3 gap-4 my-10 px-20">
-              <!-- foreach for cards -->
-            <inertia-link href="/actualites/1">
-                <div class="news rounded overflow-hidden shadow-lg my-2">
-                    <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
-                    <div class="px-4 py-2">
-                        <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
-                        <p class="text-grey-darker text-base text-left">
-                            Comment vont évoluer les prix de l'immobilier en 2021 en France ?
-                        </p>
-                    </div>
-                    <div class="px-4 py-2 text-left">
-                        <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
-                        <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
-                    </div>
+        <div class="content flex text-center justify-center m-0 flex-col">
+          <div class="my-10 px-20">
+            <div class="font-bold text-2xl mb-2 text-center">L'immobilier en 2021</div>
+            <div class="news rounded overflow-hidden shadow-lg my-2 p-5">
+                <div class="px-4 py-2">
+                    <p class="text-grey-darker text-base text-left">
+                        Comment vont évoluer les prix de l’immobilier en 2021 en France dans ce contexte de crise économique mondiale dont on n’est pas encore sorti ? Si beaucoup d’experts prédisent une baisse des prix immobiliers en 2021, nous allons voir qu’il y a différents éléments qui vont venir soutenir le marché et limiter les impacts d’une hausse de chômage, des baisses de revenus et d’une crise de confiance en l’avenir. Difficile de faire des prévisions de tendance tant les facteurs qui peuvent influencer les prix à la hausse ou à la baisse sont multiples. Faisons néanmoins le point sur ce qui déterminera l’évolution des prix de l’immobilier en 2021.
+                    </p>
                 </div>
-            </inertia-link>
-            <!-- endforeach for cards -->
+                <div class="px-4 py-2 text-left">
+                    <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
+                    <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker font-bold">Jules TD</span>
+                </div>
+            </div>
           </div>
         </div>
     </div>
@@ -30,8 +25,9 @@
     background-color: #e9ecef;
   }
   .news {
-    max-width: 22rem;
+    max-width: 40rem;
     margin: auto;
+    background-color: white;
   }
 </style>
 

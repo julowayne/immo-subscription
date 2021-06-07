@@ -18,7 +18,7 @@
     </div> -->
     <div class="nav">
       <inertia-link href="/">
-        <img src="image/alfred-logo-teal-nav.png" alt="alfred logo">
+        <img src="/image/alfred-logo-teal-nav.png" alt="alfred logo">
       </inertia-link>
       <div id="categories">
         <span>        
@@ -40,15 +40,15 @@
       <div id="search">
         <input type="text" placeholder="Rechercher ...">
       </div>
-      <div id="account">
+      <div id="userAccount">
         <inertia-link href="/profile">
-          <img src="image/utilisateur.png" alt="account logo">
+          <img src="/image/utilisateur.png" alt="account logo">
         </inertia-link>
         <div>
-          <inertia-link href="/signin">
+          <inertia-link href="/register">
             Inscription
           </inertia-link>
-          <inertia-link href="/signup">
+          <inertia-link href="/login">
             Connexion
           </inertia-link>
         </div>
@@ -56,19 +56,6 @@
     </div>
 </template>
 
-<script>
-
-    export default {
-        //     props: {
-        //     auth: Object,
-        //     canLogin: Boolean,
-        //     canRegister: Boolean,
-        //     errors: Object,
-        //     laravelVersion: String,
-        //     phpVersion: String,
-        // }
-    }
-</script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -78,7 +65,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  max-height: 80px;
+  height: 10vh;
   padding: 0.75rem;
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
   img {
@@ -114,7 +101,7 @@
       }
     }
   }
-  #account {
+  #userAccount {
     div {
       font-size: 15px;
       font-weight: 500;

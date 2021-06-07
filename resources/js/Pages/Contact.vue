@@ -2,7 +2,7 @@
     <div>
         <layout/>
         <div class="signin flex grid-cols-2 text-center m-0">
-          <div id="content">
+          <div id="contactContent">
             <iframe width="400px" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJg1hVUAlu5kcR7NlQ2Wbq5iU&key=AIzaSyDRkKQuLaaLbmCSl-gqmo0tqC8T0capNjs"></iframe>
             <div>
               <form class="bg-white shadow-md">
@@ -64,7 +64,7 @@
       justify-content: center;
       align-items: center;
       border-radius: 4px;
-      #content {
+      #contactContent {
         max-width: 800px;
         overflow: hidden;
         display: flex;
