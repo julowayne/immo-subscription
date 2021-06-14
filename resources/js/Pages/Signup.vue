@@ -3,7 +3,7 @@
       <layout/>
       <div class="signup flex grid-cols-2 text-center m-0">
         <div id="content">
-          <div id="logo">
+          <div id="logo" >
             <img src="image/alfred-logo-teal-600.png" alt="logo alfred" />
           </div>
           <div>

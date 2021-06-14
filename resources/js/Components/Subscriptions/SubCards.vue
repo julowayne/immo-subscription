@@ -4,7 +4,7 @@
     Choisir
 </button>
 </div>
-<div class="grid grid-cols-3 my-20 px-32">
+<div class="xl:grid xl:grid-cols-3 xl:my-20 xl:px-32 lg:grid lg:grid-cols-3 lg:my-10 lg:px-20 sm:grid sm:grid-cols-1 sm:my-10 sm:gap-6 sm:px-20">
   <div v-for="sub in subscriptions" :key="sub">
     <div class="card rounded overflow-hidden shadow-lg my-2">
         <div class="months shadow-sm font-bold">Abonnement pour {{sub.months}} mois</div>
@@ -16,21 +16,17 @@
               </span>
             </div>
             <hr>
-          <div class="font-bold text-xs mb-2 text-left">
+          <div class="font-bold text-xs text-left">
               <span class="flex justify-around items-center">
                 <img src="image/log-in-64.png" alt="price logo">
                 <span class="font-bold text-base">Accès aux dossier<br> de vos clients</span>
               </span>
             </div>
         </div>
-        <!-- <div class="flex items-center" id="choose">
-          <button class="bg-blue-500 hover:bg-blue-700 focus:outline-none shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out" type="button" @click="chooseSub()">
-            Choisir
-          </button>
-        </div> -->
     </div>
   </div>
 </div>
+<!-- modal -->
 <div v-if="showSubModal" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
   <div class="relative w-1/2 my-6 mx-auto max-w-3xl">
     <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
@@ -121,7 +117,7 @@
   .card {
     max-width: 20rem;
     margin: auto;
-    min-height: 45vh;
+    min-height: 40vh;
     hr {
       background-color: #007bff;
       border: 1px solid #007bff;

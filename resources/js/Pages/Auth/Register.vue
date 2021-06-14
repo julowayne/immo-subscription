@@ -2,9 +2,9 @@
     <layout/>
     <breeze-validation-errors class="mb-4" />
     <div>
-        <div class="signin flex grid-cols-2 text-center m-0">
+        <div class="signin flex grid-cols-2 text-center m-0 md:px-10">
           <div id="signinContent">
-            <div id="logo">
+            <div id="logo" class="hidden md:block">
               <img src="image/alfred-logo-teal-600.png" alt="logo alfred" />
             </div>
             <div>

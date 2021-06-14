@@ -18987,7 +18987,7 @@ var _hoisted_1 = {
   "class": "justify-center"
 };
 var _hoisted_2 = {
-  "class": "grid grid-cols-3 my-20 px-32"
+  "class": "xl:grid xl:grid-cols-3 xl:my-20 xl:px-32 lg:grid lg:grid-cols-3 lg:my-10 lg:px-20 sm:grid sm:grid-cols-1 sm:my-10 sm:gap-6 sm:px-20"
 };
 var _hoisted_3 = {
   "class": "card rounded overflow-hidden shadow-lg my-2"
@@ -19021,7 +19021,7 @@ var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 );
 
 var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "font-bold text-xs mb-2 text-left"
+  "class": "font-bold text-xs text-left"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "flex justify-around items-center"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
@@ -19095,10 +19095,10 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(sub.price) + " €", 1
     /* TEXT */
-    )])]), _hoisted_10, _hoisted_11]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"flex items-center\" id=\"choose\">\r\n          <button class=\"bg-blue-500 hover:bg-blue-700 focus:outline-none shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out\" type=\"button\" @click=\"chooseSub()\">\r\n            Choisir\r\n          </button>\r\n        </div> ")])]);
+    )])]), _hoisted_10, _hoisted_11])])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))]), $data.showSubModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" modal "), $data.showSubModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     "class": "p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none",
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return $options.chooseSub();
@@ -19807,14 +19807,15 @@ var _hoisted_1 = {
   "class": "mb-4 font-medium text-sm text-green-600"
 };
 var _hoisted_2 = {
-  "class": "signup flex grid-cols-2 text-center m-0"
+  "class": "signup flex grid-cols-2 text-center m-0 md:px-10"
 };
 var _hoisted_3 = {
   id: "content"
 };
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  id: "logo"
+  id: "logo",
+  "class": "hidden md:block"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   src: "image/alfred-logo-teal-600.png",
   alt: "logo alfred"
@@ -19880,14 +19881,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "signin flex grid-cols-2 text-center m-0"
+  "class": "signin flex grid-cols-2 text-center m-0 md:px-10"
 };
 var _hoisted_2 = {
   id: "signinContent"
 };
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  id: "logo"
+  id: "logo",
+  "class": "hidden md:block"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   src: "image/alfred-logo-teal-600.png",
   alt: "logo alfred"
@@ -20281,10 +20283,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "signin flex grid-cols-2 text-center m-0"
+  "class": "contact flex grid-cols-2 text-center m-0 md:px-10"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   id: "contactContent"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("iframe", {
+  "class": "hidden md:block",
   width: "400px",
   style: {
     "border": "0"
@@ -20884,7 +20887,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".card[data-v-8dad4bb2] {\n  max-width: 20rem;\n  margin: auto;\n  min-height: 45vh;\n}\n.card hr[data-v-8dad4bb2] {\n  background-color: #007bff;\n  border: 1px solid #007bff;\n  margin: 1em;\n}\n.card .months[data-v-8dad4bb2] {\n  background-color: blue;\n  color: white;\n  padding: 1em 1.5em;\n  font-size: larger;\n}\n.card #choose[data-v-8dad4bb2] {\n  margin: 1.5rem 1rem;\n  text-align: right;\n}\n.card #choose button[data-v-8dad4bb2] {\n  width: 100%;\n  height: 2.5rem;\n}\ninput[type=\"radio\"] + label span[data-v-8dad4bb2] {\n  transition: background .2s,\r transform .2s;\n}\ninput[type=\"radio\"] + label span[data-v-8dad4bb2]:hover,\ninput[type=\"radio\"] + label:hover span[data-v-8dad4bb2] {\n  transform: scale(1.2);\n}\ninput[type=\"radio\"]:checked + label span[data-v-8dad4bb2] {\n  background-color: #3490DC;\n  box-shadow: 0px 0px 0px 2px white inset;\n}\ninput[type=\"radio\"]:checked + label[data-v-8dad4bb2] {\n  color: #3490DC;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".card[data-v-8dad4bb2] {\n  max-width: 20rem;\n  margin: auto;\n  min-height: 40vh;\n}\n.card hr[data-v-8dad4bb2] {\n  background-color: #007bff;\n  border: 1px solid #007bff;\n  margin: 1em;\n}\n.card .months[data-v-8dad4bb2] {\n  background-color: blue;\n  color: white;\n  padding: 1em 1.5em;\n  font-size: larger;\n}\n.card #choose[data-v-8dad4bb2] {\n  margin: 1.5rem 1rem;\n  text-align: right;\n}\n.card #choose button[data-v-8dad4bb2] {\n  width: 100%;\n  height: 2.5rem;\n}\ninput[type=\"radio\"] + label span[data-v-8dad4bb2] {\n  transition: background .2s,\r transform .2s;\n}\ninput[type=\"radio\"] + label span[data-v-8dad4bb2]:hover,\ninput[type=\"radio\"] + label:hover span[data-v-8dad4bb2] {\n  transform: scale(1.2);\n}\ninput[type=\"radio\"]:checked + label span[data-v-8dad4bb2] {\n  background-color: #3490DC;\n  box-shadow: 0px 0px 0px 2px white inset;\n}\ninput[type=\"radio\"]:checked + label[data-v-8dad4bb2] {\n  color: #3490DC;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21053,7 +21056,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n#map {\n  height: 400px;\n  width: 100%;\n}\n.signin {\n  display: flex;\n  height: 85vh;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n  border-radius: 4px;\n}\n.signin #contactContent {\n  max-width: 800px;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  border-radius: 4px;\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.signin #contactContent #logo {\n  width: 400px;\n  background-color: #20c997;\n}\n.signin #contactContent #logo img {\n  margin-top: 3.5em;\n  width: 100%;\n}\n.signin #contactContent form {\n  width: 400px;\n  height: 100%;\n  text-align: left;\n  padding: 1rem 2rem;\n  background-color: white;\n}\n.signin #contactContent form h1 {\n  margin-bottom: 1rem;\n  font-size: 2rem;\n  border-bottom: 1px solid #20c997;\n  padding: 1rem 0;\n  letter-spacing: 0.5px;\n  color: #20c997;\n}\n.signin #contactContent form #send {\n  margin: 1.5rem 0 1rem;\n  text-align: right;\n}\n.signin #contactContent form #send button {\n  width: 100%;\n  height: 2.5rem;\n  background-color: #20c997;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n#map {\n  height: 400px;\n  width: 100%;\n}\n.contact {\n  display: flex;\n  height: 85vh;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n  border-radius: 4px;\n}\n.contact #contactContent {\n  max-width: 800px;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  border-radius: 4px;\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.contact #contactContent #logo {\n  width: 400px;\n  background-color: #20c997;\n}\n.contact #contactContent #logo img {\n  margin-top: 3.5em;\n  width: 100%;\n}\n.contact #contactContent form {\n  width: 400px;\n  height: 100%;\n  text-align: left;\n  padding: 1rem 2rem;\n  background-color: white;\n}\n.contact #contactContent form h1 {\n  margin-bottom: 1rem;\n  font-size: 2rem;\n  border-bottom: 1px solid #20c997;\n  padding: 1rem 0;\n  letter-spacing: 0.5px;\n  color: #20c997;\n}\n.contact #contactContent form #send {\n  margin: 1.5rem 0 1rem;\n  text-align: right;\n}\n.contact #contactContent form #send button {\n  width: 100%;\n  height: 2.5rem;\n  background-color: #20c997;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
