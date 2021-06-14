@@ -2,7 +2,7 @@
     <div>
         <layout/>
         <div class="content flex text-center m-2 flex-col">
-          <div class="grid grid-cols-3 gap-4 my-10 px-20">
+          <div class="xl:grid xl:grid-cols-3 xl:gap-6 xl:my-10 xl:px-20 md:grid md:grid-cols-2 md:gap-4 md:my-10 md:px-20 sm:grid sm:grid-cols-2 sm:gap-4 sm:my-10 sm:px-20">
               <!-- foreach for cards -->
             <inertia-link href="/actualites/1">
                 <div class="news rounded overflow-hidden shadow-lg my-2">
