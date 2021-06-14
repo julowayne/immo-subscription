@@ -46,29 +46,29 @@ import Layout from '../Layouts/Layout.vue'
     background-color: #e9ecef;
   }
   .content {
-    // .card {
-    //   max-width: 20rem;
-    //   margin: auto;
-    //   hr {
-    //     background-color: #007bff;
-    //     border: 1px solid #007bff;
-    //     margin: 1em;
-    //   }
-    //   .months {
-    //     background-color: blue;
-    //     color: white;
-    //     padding: 1em 1.5em;
-    //     font-size: larger;
-    //   }
-    //   #choose {
-    //     margin: 1.5rem 1rem;
-    //     text-align: right;
-    //     button {
-    //       width: 100%;
-    //       height: 2.5rem;
-    //     }
-    //   }
-    // }
+    .card {
+      max-width: 20rem;
+      margin: auto;
+      hr {
+        background-color: #007bff;
+        border: 1px solid #007bff;
+        margin: 1em;
+      }
+      .months {
+        background-color: blue;
+        color: white;
+        padding: 1em 1.5em;
+        font-size: larger;
+      }
+      #choose {
+        margin: 1.5rem 1rem;
+        text-align: right;
+        button {
+          width: 100%;
+          height: 2.5rem;
+        }
+      }
+    }
     .title {
       h2 {
         font-size: 2rem;

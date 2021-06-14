@@ -1,7 +1,7 @@
 <template>
     <div>
         <layout/>
-        <div class="content flex text-center justify-center m-0 flex-col">
+        <div class="newsContent flex text-center justify-center m-0 flex-col">
           <div class="my-10 px-20">
             <div class="font-bold text-2xl mb-2 text-center">L'immobilier en 2021</div>
             <div class="news rounded overflow-hidden shadow-lg my-2 p-5">
@@ -24,10 +24,14 @@
   body {
     background-color: #e9ecef;
   }
-  .news {
-    max-width: 40rem;
-    margin: auto;
-    background-color: white;
+  .newsContent {
+    margin-top: 2rem;
+    max-height: 50vh;
+    .news {
+      max-width: 40rem;
+      margin: auto;
+      background-color: white;
+    }
   }
 </style>
 

@@ -26,10 +26,10 @@
                 </label>
                 <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="password" type="password" placeholder="***********">
               </div>
-              <div class="flex items-center" id="send">
-                <button class="bg-blue-500 hover:bg-blue-700 shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out" type="button">
+              <div class="flex items-center" id="login">
+                <breeze-button class="bg-blue-500 hover:bg-blue-700 shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out" type="button">
                   Connexion
-                </button>
+                </breeze-button>
               </div>
             </form>
           </div>
@@ -155,12 +155,13 @@
             letter-spacing: 0.5px;
             color: #20c997;
           }
-          #send {
+          #login {
             margin: 1.5rem 0 1rem;
             text-align: right;
             button {
               width: 100%;
               height: 2.5rem;
+              display: block;
             }
           }
         }

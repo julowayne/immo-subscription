@@ -17759,12 +17759,20 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      showSubModal: false
+      showSubModal: false,
+      name: ''
     };
   },
   methods: {
     chooseSub: function chooseSub() {
       this.showSubModal = !this.showSubModal;
+    },
+    submitCheckout: function submitCheckout() {
+      this.$inertia.post('/services', {
+        name: this.name,
+        // email: this.email,
+        _token: this.$page.props.csrf_token
+      });
     }
   }
 });
@@ -18127,15 +18135,16 @@ __webpack_require__.r(__webpack_exports__);
     auth: Object,
     errors: Object
   },
+  // don't forget to change validation
   data: function data() {
     return {
       form: this.$inertia.form({
-        lastName: '',
-        firstName: '',
+        // lastName: '',
+        // firstName: '',
+        name: '',
         email: '',
-        password: '',
-        siret: '',
-        terms: false
+        password: '' // siret: '',
+
       })
     };
   },
@@ -18975,40 +18984,43 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-8dad4bb2");
 
 var _hoisted_1 = {
-  "class": "grid grid-cols-3 my-20 px-32"
+  "class": "justify-center"
 };
 var _hoisted_2 = {
-  "class": "card rounded overflow-hidden shadow-lg my-2"
+  "class": "grid grid-cols-3 my-20 px-32"
 };
 var _hoisted_3 = {
-  "class": "months shadow-sm font-bold"
+  "class": "card rounded overflow-hidden shadow-lg my-2"
 };
 var _hoisted_4 = {
-  "class": "px-6 pt-8 pb-2"
+  "class": "months shadow-sm font-bold"
 };
 var _hoisted_5 = {
-  "class": "font-bold text-xl mb-2 text-left"
+  "class": "px-6 pt-8 pb-2"
 };
 var _hoisted_6 = {
+  "class": "font-bold text-xl mb-2 text-left"
+};
+var _hoisted_7 = {
   "class": "flex justify-around items-center"
 };
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   src: "image/money-transfer-64.png",
   alt: "price logo"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_8 = {
+var _hoisted_9 = {
   "class": "text-4xl"
 };
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("hr", null, null, -1
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("hr", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "font-bold text-xs mb-2 text-left"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "flex justify-around items-center"
@@ -19021,203 +19033,97 @@ var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_11 = {
-  "class": "flex items-center",
-  id: "choose"
-};
 var _hoisted_12 = {
-  key: 0
+  key: 0,
+  "class": "overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
 };
 var _hoisted_13 = {
-  key: 0,
-  "class": "overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+  "class": "relative w-1/2 my-6 mx-auto max-w-3xl"
 };
 var _hoisted_14 = {
-  "class": "relative w-auto my-6 mx-auto max-w-3xl"
+  "class": "border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
 };
 var _hoisted_15 = {
-  "class": "border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
-};
-var _hoisted_16 = {
   "class": "flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t"
 };
-var _hoisted_17 = {
-  "class": "text-3xl font-semibold"
-};
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", {
+  "class": "text-3xl font-semibold"
+}, " Choisir mon abonnement ", -1
+/* HOISTED */
+);
+
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none"
 }, " × ", -1
 /* HOISTED */
 );
 
-var _hoisted_19 = {
+var _hoisted_18 = {
   "class": "relative p-6 flex-auto"
 };
-var _hoisted_20 = {
+
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
   "class": "my-4 text-blueGray-500 text-lg leading-relaxed"
-};
-var _hoisted_21 = {
-  "class": "flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b"
-};
-var _hoisted_22 = {
-  key: 1
-};
-var _hoisted_23 = {
-  key: 0,
-  "class": "overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
-};
-var _hoisted_24 = {
-  "class": "relative w-auto my-6 mx-auto max-w-3xl"
-};
+}, " N'oubliez pas: vous pouvez annuler/changer votre abonnement a tout moment ", -1
+/* HOISTED */
+);
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex items-center justify-center mr-4 mb-4\" data-v-8dad4bb2><input id=\"radio1\" type=\"radio\" name=\"plan\" class=\"hidden\" data-v-8dad4bb2><label for=\"radio1\" class=\"flex items-center cursor-pointer text-xl font-bold\" data-v-8dad4bb2><span class=\"w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink\" data-v-8dad4bb2></span> 1 mois ( 9.90€)</label></div><div class=\"flex items-center justify-center mr-4 mb-4\" data-v-8dad4bb2><input id=\"radio2\" type=\"radio\" name=\"plan\" class=\"hidden\" data-v-8dad4bb2><label for=\"radio2\" class=\"flex items-center cursor-pointer text-xl font-bold\" data-v-8dad4bb2><span class=\"w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink\" data-v-8dad4bb2></span> 3 mois (27.90€)</label></div><div class=\"flex items-center justify-center mr-4 mb-4\" data-v-8dad4bb2><input id=\"radio3\" type=\"radio\" name=\"plan\" class=\"hidden\" data-v-8dad4bb2><label for=\"radio3\" class=\"flex items-center cursor-pointer text-xl font-bold\" data-v-8dad4bb2><span class=\"w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink\" data-v-8dad4bb2></span> 6 mois (49.90€)</label></div><div class=\"mb-3\" data-v-8dad4bb2><label for=\"name\" class=\"block\" data-v-8dad4bb2>Nom</label><input class=\"h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"name\" type=\"text\" data-v-8dad4bb2></div><div data-v-8dad4bb2><button type=\"submit\" class=\" w-3/4 bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150\" data-v-8dad4bb2>Payer</button></div>", 5);
+
 var _hoisted_25 = {
-  "class": "border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+  "class": "flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b"
 };
 var _hoisted_26 = {
-  "class": "flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t"
-};
-var _hoisted_27 = {
-  "class": "text-3xl font-semibold"
-};
-
-var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
-  "class": "bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none"
-}, " × ", -1
-/* HOISTED */
-);
-
-var _hoisted_29 = {
-  "class": "relative p-6 flex-auto"
-};
-var _hoisted_30 = {
-  "class": "my-4 text-blueGray-500 text-lg leading-relaxed"
-};
-var _hoisted_31 = {
-  "class": "flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b"
-};
-var _hoisted_32 = {
-  key: 2
-};
-var _hoisted_33 = {
-  key: 0,
-  "class": "overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
-};
-var _hoisted_34 = {
-  "class": "relative w-auto my-6 mx-auto max-w-3xl"
-};
-var _hoisted_35 = {
-  "class": "border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
-};
-var _hoisted_36 = {
-  "class": "flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t"
-};
-var _hoisted_37 = {
-  "class": "text-3xl font-semibold"
-};
-
-var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
-  "class": "bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none"
-}, " × ", -1
-/* HOISTED */
-);
-
-var _hoisted_39 = {
-  "class": "relative p-6 flex-auto"
-};
-var _hoisted_40 = {
-  "class": "my-4 text-blueGray-500 text-lg leading-relaxed"
-};
-var _hoisted_41 = {
-  "class": "flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b"
-};
-var _hoisted_42 = {
-  key: 3,
+  key: 1,
   "class": "opacity-25 fixed inset-0 z-40 bg-black"
 };
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
 
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.subscriptions, function (sub) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    "class": "w-1/4 bg-blue-500 hover:bg-blue-700 bg-transparent border shadow border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
+    type: "button",
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return $options.chooseSub();
+    })
+  }, " Choisir ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.subscriptions, function (sub) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
       key: sub
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, "Abonnement pour " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(sub.months) + " mois", 1
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, "Abonnement pour " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(sub.months) + " mois", 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(sub.price) + " €", 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(sub.price) + " €", 1
     /* TEXT */
-    )])]), _hoisted_9, _hoisted_10]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-      "class": "bg-blue-500 hover:bg-blue-700 focus:outline-none shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out",
-      type: "button",
-      onClick: _cache[1] || (_cache[1] = function ($event) {
-        return $options.chooseSub();
-      })
-    }, " Choisir ")])])]);
+    )])]), _hoisted_10, _hoisted_11]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"flex items-center\" id=\"choose\">\r\n          <button class=\"bg-blue-500 hover:bg-blue-700 focus:outline-none shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out\" type=\"button\" @click=\"chooseSub()\">\r\n            Choisir\r\n          </button>\r\n        </div> ")])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))]), $props.subscriptions.indexOf() !== 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_12, [$data.showSubModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.subscriptions[0].price), 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  ))]), $data.showSubModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     "class": "p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none",
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return $options.chooseSub();
     })
-  }, [_hoisted_18])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.subscriptions[0].informations), 1
-  /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-    "class": "bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
-    type: "button",
-    onClick: _cache[3] || (_cache[3] = function ($event) {
-      return $options.chooseSub();
-    })
-  }, " Annuler "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  }, [_hoisted_17])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_18, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
+    action: "",
+    method: "post",
+    onSubmit: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return $options.submitCheckout && $options.submitCheckout.apply($options, arguments);
+    }, ["prevent"]))
+  }, [_hoisted_20], 32
+  /* HYDRATE_EVENTS */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     "class": "bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
     type: "button",
     onClick: _cache[4] || (_cache[4] = function ($event) {
       return $options.chooseSub();
     })
-  }, " Valider ")])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : $props.subscriptions.indexOf() === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_22, [$data.showSubModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", _hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.subscriptions[1].price) + " € ", 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-    "class": "p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none",
+  }, " Annuler "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    "class": "bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
+    type: "button",
     onClick: _cache[5] || (_cache[5] = function ($event) {
       return $options.chooseSub();
     })
-  }, [_hoisted_28])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.subscriptions[1].informations), 1
-  /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-    "class": "bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
-    type: "button",
-    onClick: _cache[6] || (_cache[6] = function ($event) {
-      return $options.chooseSub();
-    })
-  }, " Annuler "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-    "class": "bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
-    type: "button",
-    onClick: _cache[7] || (_cache[7] = function ($event) {
-      return $options.chooseSub();
-    })
-  }, " Valider ")])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_32, [$data.showSubModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.subscriptions[2].price) + " € ", 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-    "class": "p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none",
-    onClick: _cache[8] || (_cache[8] = function ($event) {
-      return $options.chooseSub();
-    })
-  }, [_hoisted_38])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.subscriptions[2].informations), 1
-  /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-    "class": "bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
-    type: "button",
-    onClick: _cache[9] || (_cache[9] = function ($event) {
-      return $options.chooseSub();
-    })
-  }, " Annuler "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-    "class": "bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
-    type: "button",
-    onClick: _cache[10] || (_cache[10] = function ($event) {
-      return $options.chooseSub();
-    })
-  }, " Valider ")])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])), $data.showSubModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_42)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64
+  }, " Valider ")])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.showSubModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_26)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64
   /* STABLE_FRAGMENT */
   );
 });
@@ -19916,12 +19822,21 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 /* HOISTED */
 );
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h1>Indentifiez-vous</h1><div class=\"mb-3\"><label class=\"block\" for=\"email\"> EMAIL </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"email\" type=\"text\" placeholder=\"Email\"></div><div class=\"mb-3\"><label class=\"block\" for=\"password\"> Password </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"password\" type=\"password\" placeholder=\"***********\"></div><div class=\"flex items-center\" id=\"send\"><button class=\"bg-blue-500 hover:bg-blue-700 shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out\" type=\"button\"> Connexion </button></div>", 4);
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h1>Indentifiez-vous</h1><div class=\"mb-3\"><label class=\"block\" for=\"email\"> EMAIL </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"email\" type=\"text\" placeholder=\"Email\"></div><div class=\"mb-3\"><label class=\"block\" for=\"password\"> Password </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"password\" type=\"password\" placeholder=\"***********\"></div>", 3);
+
+var _hoisted_8 = {
+  "class": "flex items-center",
+  id: "login"
+};
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Connexion ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("layout");
 
   var _component_breeze_validation_errors = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("breeze-validation-errors");
+
+  var _component_breeze_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("breeze-button");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_layout), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_validation_errors, {
     "class": "mb-4"
@@ -19932,7 +19847,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.submit && $options.submit.apply($options, arguments);
     }, ["prevent"]))
-  }, [_hoisted_5], 32
+  }, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_button, {
+    "class": "bg-blue-500 hover:bg-blue-700 shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out",
+    type: "button"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_9];
+    }),
+    _: 1
+    /* STABLE */
+
+  })])], 32
   /* HYDRATE_EVENTS */
   )])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <form @submit.prevent=\"submit\">\n        <div>\n            <breeze-label for=\"email\" value=\"Email\" />\n            <breeze-input id=\"email\" type=\"email\" class=\"mt-1 block w-full\" v-model=\"form.email\" required autofocus autocomplete=\"username\" />\n        </div>\n\n        <div class=\"mt-4\">\n            <breeze-label for=\"password\" value=\"Password\" />\n            <breeze-input id=\"password\" type=\"password\" class=\"mt-1 block w-full\" v-model=\"form.password\" required autocomplete=\"current-password\" />\n        </div>\n\n        <div class=\"block mt-4\">\n            <label class=\"flex items-center\">\n                <breeze-checkbox name=\"remember\" v-model:checked=\"form.remember\" />\n                <span class=\"ml-2 text-sm text-gray-600\">Remember me</span>\n            </label>\n        </div>\n\n        <div class=\"flex items-center justify-end mt-4\">\n            <inertia-link v-if=\"canResetPassword\" :href=\"route('password.request')\" class=\"underline text-sm text-gray-600 hover:text-gray-900\">\n                Forgot your password?\n            </inertia-link>\n\n            <breeze-button class=\"ml-4\" :class=\"{ 'opacity-25': form.processing }\" :disabled=\"form.processing\">\n                Log in\n            </breeze-button>\n        </div>\n    </form> ")], 64
   /* STABLE_FRAGMENT */
@@ -19978,110 +19903,133 @@ var _hoisted_5 = {
   "class": "mb-3"
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
-  "class": "block",
-  "for": "name"
-}, " NOM ", -1
-/* HOISTED */
-);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" NOM ");
 
 var _hoisted_7 = {
   "class": "mb-3"
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
-  "class": "block",
-  "for": "firstname"
-}, " PRENOM ", -1
-/* HOISTED */
-);
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" PRENOM ");
 
 var _hoisted_9 = {
   "class": "mb-3"
 };
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
-  "class": "block",
-  "for": "email"
-}, " EMAIL ", -1
-/* HOISTED */
-);
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" EMAIL ");
 
 var _hoisted_11 = {
   "class": "mb-3"
 };
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
-  "class": "block",
-  "for": "siret"
-}, " N° SIRET ", -1
-/* HOISTED */
-);
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" N° SIRET ");
 
 var _hoisted_13 = {
   "class": "mb-3"
 };
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
-  "class": "block",
-  "for": "password"
-}, " Password ", -1
-/* HOISTED */
-);
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Password ");
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_15 = {
   "class": "flex items-center",
   id: "send"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-  "class": "bg-blue-500 hover:bg-blue-700 shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out",
-  type: "button"
-}, " Créer mon compte ")], -1
-/* HOISTED */
-);
+};
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Créer mon compte ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("layout");
 
   var _component_breeze_validation_errors = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("breeze-validation-errors");
 
+  var _component_breeze_label = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("breeze-label");
+
+  var _component_breeze_input = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("breeze-input");
+
+  var _component_breeze_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("breeze-button");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_layout), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_validation_errors, {
     "class": "mb-4"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
     "class": "bg-white shadow-md",
+    method: "POST",
     onSubmit: _cache[6] || (_cache[6] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.submit && $options.submit.apply($options, arguments);
     }, ["prevent"]))
-  }, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  }, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_label, {
+    "class": "block",
+    "for": "name"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_6];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_input, {
+    modelValue: $data.form.name,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-      return _ctx.lastName = $event;
+      return $data.form.name = $event;
     }),
     "class": "w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent",
     id: "name",
     type: "text",
     placeholder: "Jules"
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.lastName]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  }, null, 8
+  /* PROPS */
+  , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_label, {
+    "class": "block",
+    "for": "firstname"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_8];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_input, {
+    modelValue: $data.form.firstName,
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-      return _ctx.firstName = $event;
+      return $data.form.firstName = $event;
     }),
     "class": "w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent",
     id: "firstname",
     type: "text",
     placeholder: "Thomas Desessarts"
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.firstName]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  }, null, 8
+  /* PROPS */
+  , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_label, {
+    "class": "block",
+    "for": "email"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_10];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_input, {
+    modelValue: $data.form.email,
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
-      return _ctx.email = $event;
+      return $data.form.email = $event;
     }),
     "class": "w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent",
     id: "email",
     type: "text",
     placeholder: "thomas.desessarts-jules@hotmail.com"
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.email]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  }, null, 8
+  /* PROPS */
+  , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_label, {
+    "class": "block",
+    "for": "siret"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_12];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_input, {
+    modelValue: _ctx.siret,
     "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
       return _ctx.siret = $event;
     }),
@@ -20089,19 +20037,40 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "siret",
     type: "text",
     placeholder: "14567803938454"
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.siret]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  }, null, 8
+  /* PROPS */
+  , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_label, {
+    "class": "block",
+    "for": "password"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_14];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_input, {
+    modelValue: $data.form.password,
     "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
-      return _ctx.password = $event;
+      return $data.form.password = $event;
     }),
     "class": "w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent",
     id: "password",
     type: "password",
     placeholder: "***********"
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.password]])]), _hoisted_15], 32
+  }, null, 8
+  /* PROPS */
+  , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_button, {
+    "class": "w-full bg-blue-500 hover:bg-blue-700 shadow text-white font-bold hover:shadow-lg transition-shadow duration-200 ease-in-out",
+    type: "submit"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_16];
+    }),
+    _: 1
+    /* STABLE */
+
+  })])], 32
   /* HYDRATE_EVENTS */
   )])])])])], 64
   /* STABLE_FRAGMENT */
@@ -20590,7 +20559,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"signup flex grid-cols-2 text-center m-0\"><div id=\"content\"><div id=\"logo\"><img src=\"image/alfred-logo-teal-600.png\" alt=\"logo alfred\"></div><div><form class=\"bg-white shadow-md\"><h1>Indentifiez-vous</h1><div class=\"mb-3\"><label class=\"block\" for=\"email\"> EMAIL </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"email\" type=\"text\" placeholder=\"Email\"></div><div class=\"mb-3\"><label class=\"block\" for=\"password\"> Password </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"password\" type=\"password\" placeholder=\"***********\"></div><div class=\"flex items-center\" id=\"send\"><button class=\"bg-blue-500 hover:bg-blue-700 shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out\" type=\"button\"> Connexion </button></div></form></div></div></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"signup flex grid-cols-2 text-center m-0\"><div id=\"content\"><div id=\"logo\"><img src=\"image/alfred-logo-teal-600.png\" alt=\"logo alfred\"></div><div><form class=\"bg-white shadow-md\"><h1>Indentifiez-vous</h1><div class=\"mb-3\"><label class=\"block\" for=\"email\"> Email </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"email\" type=\"text\" placeholder=\"Email\"></div><div class=\"mb-3\"><label class=\"block\" for=\"password\"> Password </label><input class=\"w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"password\" type=\"password\" placeholder=\"***********\"></div><div class=\"flex items-center\" id=\"sendConnect\"><button class=\"bg-blue-500 hover:bg-blue-700 shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out\" type=\"button\"> Connexion </button></div></form></div></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("layout");
@@ -20614,7 +20583,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"content flex text-center justify-center m-0 flex-col\"><div class=\"my-10 px-20\"><div class=\"font-bold text-2xl mb-2 text-center\">L&#39;immobilier en 2021</div><div class=\"news rounded overflow-hidden shadow-lg my-2 p-5\"><div class=\"px-4 py-2\"><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l’immobilier en 2021 en France dans ce contexte de crise économique mondiale dont on n’est pas encore sorti ? Si beaucoup d’experts prédisent une baisse des prix immobiliers en 2021, nous allons voir qu’il y a différents éléments qui vont venir soutenir le marché et limiter les impacts d’une hausse de chômage, des baisses de revenus et d’une crise de confiance en l’avenir. Difficile de faire des prévisions de tendance tant les facteurs qui peuvent influencer les prix à la hausse ou à la baisse sont multiples. Faisons néanmoins le point sur ce qui déterminera l’évolution des prix de l’immobilier en 2021. </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker font-bold\">Jules TD</span></div></div></div></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"newsContent flex text-center justify-center m-0 flex-col\"><div class=\"my-10 px-20\"><div class=\"font-bold text-2xl mb-2 text-center\">L&#39;immobilier en 2021</div><div class=\"news rounded overflow-hidden shadow-lg my-2 p-5\"><div class=\"px-4 py-2\"><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l’immobilier en 2021 en France dans ce contexte de crise économique mondiale dont on n’est pas encore sorti ? Si beaucoup d’experts prédisent une baisse des prix immobiliers en 2021, nous allons voir qu’il y a différents éléments qui vont venir soutenir le marché et limiter les impacts d’une hausse de chômage, des baisses de revenus et d’une crise de confiance en l’avenir. Difficile de faire des prévisions de tendance tant les facteurs qui peuvent influencer les prix à la hausse ou à la baisse sont multiples. Faisons néanmoins le point sur ce qui déterminera l’évolution des prix de l’immobilier en 2021. </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker font-bold\">Jules TD</span></div></div></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("layout");
@@ -20674,13 +20643,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _hoisted_1 = {
+  "class": "content flex text-center m-0 flex-col"
+};
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"content flex text-center m-0 flex-col\"><div class=\"title mt-5 mb-3\"><h2>Qui est Alfred ?</h2></div><div id=\"service\"><div> Alfred est un service qui propose aux agences immobilières de pouvoir<br> retrouver les dossiers des personnes souhaitant louer un bien qu&#39;ils proposent. </div></div><!-- Foreach for cards --><div id=\"welcomeNews\" class=\"flex mt-8\"><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><!-- endforeach for cards  --><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "title mt-5 mb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", null, "Qui est Alfred ?")], -1
+/* HOISTED */
+);
+
+var _hoisted_3 = {
+  id: "service"
+};
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Alfred est un service qui propose aux agences immobilières de pouvoir"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" retrouver les dossiers des personnes souhaitant louer un bien qu'ils proposent. ")], -1
+/* HOISTED */
+);
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  type: "submit",
+  "class": " w-1/3 mt-3 bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+}, " Découvrir les offres ", -1
+/* HOISTED */
+);
+
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div id=\"welcomeNews\" class=\"flex mt-8 justify-between\"><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><!-- endforeach for cards  --><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("layout");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_layout), _hoisted_1]);
+  var _component_inertia_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("inertia-link");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_layout), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
+    href: "/services"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_5];
+    }),
+    _: 1
+    /* STABLE */
+
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Foreach for cards "), _hoisted_6])]);
 }
 
 /***/ }),
@@ -20879,7 +20883,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".card[data-v-8dad4bb2] {\n  max-width: 20rem;\n  margin: auto;\n}\n.card hr[data-v-8dad4bb2] {\n  background-color: #007bff;\n  border: 1px solid #007bff;\n  margin: 1em;\n}\n.card .months[data-v-8dad4bb2] {\n  background-color: blue;\n  color: white;\n  padding: 1em 1.5em;\n  font-size: larger;\n}\n.card #choose[data-v-8dad4bb2] {\n  margin: 1.5rem 1rem;\n  text-align: right;\n}\n.card #choose button[data-v-8dad4bb2] {\n  width: 100%;\n  height: 2.5rem;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".card[data-v-8dad4bb2] {\n  max-width: 20rem;\n  margin: auto;\n  min-height: 45vh;\n}\n.card hr[data-v-8dad4bb2] {\n  background-color: #007bff;\n  border: 1px solid #007bff;\n  margin: 1em;\n}\n.card .months[data-v-8dad4bb2] {\n  background-color: blue;\n  color: white;\n  padding: 1em 1.5em;\n  font-size: larger;\n}\n.card #choose[data-v-8dad4bb2] {\n  margin: 1.5rem 1rem;\n  text-align: right;\n}\n.card #choose button[data-v-8dad4bb2] {\n  width: 100%;\n  height: 2.5rem;\n}\ninput[type=\"radio\"] + label span[data-v-8dad4bb2] {\n  transition: background .2s,\r transform .2s;\n}\ninput[type=\"radio\"] + label span[data-v-8dad4bb2]:hover,\ninput[type=\"radio\"] + label:hover span[data-v-8dad4bb2] {\n  transform: scale(1.2);\n}\ninput[type=\"radio\"]:checked + label span[data-v-8dad4bb2] {\n  background-color: #3490DC;\n  box-shadow: 0px 0px 0px 2px white inset;\n}\ninput[type=\"radio\"]:checked + label[data-v-8dad4bb2] {\n  color: #3490DC;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21000,7 +21004,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.signup {\n  display: flex;\n  height: 70vh;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n}\n.signup #content {\n  max-width: 800px;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  border-radius: 4px;\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.signup #content #logo {\n  width: 400px;\n  background-color: #20c997;\n}\n.signup #content #logo img {\n  width: 100%;\n}\n.signup #content form {\n  width: 400px;\n  height: 100%;\n  text-align: left;\n  padding: 1rem 2rem;\n  background-color: white;\n}\n.signup #content form h1 {\n  margin-bottom: 1rem;\n  font-size: 2rem;\n  border-bottom: 1px solid #20c997;\n  padding: 1rem 0;\n  letter-spacing: 0.5px;\n  color: #20c997;\n}\n.signup #content form #send {\n  margin: 1.5rem 0 1rem;\n  text-align: right;\n}\n.signup #content form #send button {\n  width: 100%;\n  height: 2.5rem;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.signup {\n  display: flex;\n  height: 70vh;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n}\n.signup #content {\n  max-width: 800px;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  border-radius: 4px;\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.signup #content #logo {\n  width: 400px;\n  background-color: #20c997;\n}\n.signup #content #logo img {\n  width: 100%;\n}\n.signup #content form {\n  width: 400px;\n  height: 100%;\n  text-align: left;\n  padding: 1rem 2rem;\n  background-color: white;\n}\n.signup #content form h1 {\n  margin-bottom: 1rem;\n  font-size: 2rem;\n  border-bottom: 1px solid #20c997;\n  padding: 1rem 0;\n  letter-spacing: 0.5px;\n  color: #20c997;\n}\n.signup #content form #login {\n  margin: 1.5rem 0 1rem;\n  text-align: right;\n}\n.signup #content form #login button {\n  width: 100%;\n  height: 2.5rem;\n  display: block;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21024,7 +21028,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.signin {\n  display: flex;\n  height: 85vh;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n  border-radius: 4px;\n}\n.signin #signinContent {\n  max-width: 800px;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  border-radius: 4px;\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.signin #signinContent #logo {\n  width: 400px;\n  background-color: #20c997;\n}\n.signin #signinContent #logo img {\n  margin-top: 3.5em;\n  width: 100%;\n}\n.signin #signinContent form {\n  width: 400px;\n  height: 100%;\n  text-align: left;\n  padding: 1rem 2rem;\n  background-color: white;\n}\n.signin #signinContent form h1 {\n  margin-bottom: 1rem;\n  font-size: 2rem;\n  border-bottom: 1px solid #20c997;\n  padding: 1rem 0;\n  letter-spacing: 0.5px;\n  color: #20c997;\n}\n.signin #signinContent form #send {\n  margin: 1.5rem 0 1rem;\n  text-align: right;\n}\n.signin #signinContent form #send button {\n  width: 100%;\n  height: 2.5rem;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.signin {\n  display: flex;\n  height: 85vh;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n  border-radius: 4px;\n}\n.signin #signinContent {\n  max-width: 800px;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  border-radius: 4px;\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.signin #signinContent #logo {\n  width: 400px;\n  background-color: #20c997;\n}\n.signin #signinContent #logo img {\n  margin-top: 3.5em;\n  width: 100%;\n}\n.signin #signinContent form {\n  width: 400px;\n  height: 100%;\n  text-align: left;\n  padding: 1rem 2rem;\n  background-color: white;\n}\n.signin #signinContent form h1 {\n  margin-bottom: 1rem;\n  font-size: 2rem;\n  border-bottom: 1px solid #20c997;\n  padding: 1rem 0;\n  letter-spacing: 0.5px;\n  color: #20c997;\n}\n.signin #signinContent form #send {\n  margin: 1.5rem 0 1rem;\n}\n.signin #signinContent form #send button {\n  width: 100%;\n  height: 2.5rem;\n  display: block;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21144,7 +21148,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.signup {\n  display: flex;\n  height: 70vh;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n}\n.signup #content {\n  max-width: 800px;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  border-radius: 4px;\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.signup #content #logo {\n  width: 400px;\n  background-color: #20c997;\n}\n.signup #content #logo img {\n  width: 100%;\n}\n.signup #content form {\n  width: 400px;\n  height: 100%;\n  text-align: left;\n  padding: 1rem 2rem;\n  background-color: white;\n}\n.signup #content form h1 {\n  margin-bottom: 1rem;\n  font-size: 2rem;\n  border-bottom: 1px solid #20c997;\n  padding: 1rem 0;\n  letter-spacing: 0.5px;\n  color: #20c997;\n}\n.signup #content form #send {\n  margin: 1.5rem 0 1rem;\n  text-align: right;\n}\n.signup #content form #send button {\n  width: 100%;\n  height: 2.5rem;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.signup {\n  display: flex;\n  height: 70vh;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n}\n.signup #content {\n  max-width: 800px;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  border-radius: 4px;\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.signup #content #logo {\n  width: 400px;\n  background-color: #20c997;\n}\n.signup #content #logo img {\n  width: 100%;\n}\n.signup #content form {\n  width: 400px;\n  height: 100%;\n  text-align: left;\n  padding: 1rem 2rem;\n  background-color: white;\n}\n.signup #content form h1 {\n  margin-bottom: 1rem;\n  font-size: 2rem;\n  border-bottom: 1px solid #20c997;\n  padding: 1rem 0;\n  letter-spacing: 0.5px;\n  color: #20c997;\n}\n.signup #content form #sendConnect {\n  margin: 1.5rem 0 1rem;\n  text-align: right;\n}\n.signup #content form #sendConnect button {\n  width: 100%;\n  height: 2.5rem;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21168,7 +21172,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.news {\n  max-width: 40rem;\n  margin: auto;\n  background-color: white;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.newsContent {\n  margin-top: 2rem;\n  max-height: 50vh;\n}\n.newsContent .news {\n  max-width: 40rem;\n  margin: auto;\n  background-color: white;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21192,7 +21196,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.content .title h2 {\n  font-size: 2rem;\n  font-style: italic;\n  font-weight: lighter;\n  color: grey;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.content .card {\n  max-width: 20rem;\n  margin: auto;\n}\n.content .card hr {\n  background-color: #007bff;\n  border: 1px solid #007bff;\n  margin: 1em;\n}\n.content .card .months {\n  background-color: blue;\n  color: white;\n  padding: 1em 1.5em;\n  font-size: larger;\n}\n.content .card #choose {\n  margin: 1.5rem 1rem;\n  text-align: right;\n}\n.content .card #choose button {\n  width: 100%;\n  height: 2.5rem;\n}\n.content .title h2 {\n  font-size: 2rem;\n  font-style: italic;\n  font-weight: lighter;\n  color: grey;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -10,9 +10,16 @@
                     Alfred est un service qui propose aux agences immobilières de pouvoir<br>
                     retrouver les dossiers des personnes souhaitant louer un bien qu'ils proposent.
                 </div>
+                <div>
+                    <inertia-link href="/services">
+                        <button type="submit" class=" w-1/3 mt-3 bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+                            Découvrir les offres
+                        </button>
+                    </inertia-link>
+                </div>
             </div>
             <!-- Foreach for cards -->
-            <div id="welcomeNews" class="flex mt-8">
+            <div id="welcomeNews" class="flex mt-8 justify-between">
                 <div class="card rounded overflow-hidden shadow-lg my-2">
                     <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
                     <div class="px-4 py-2">

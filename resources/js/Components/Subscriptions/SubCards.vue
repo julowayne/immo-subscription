@@ -1,4 +1,9 @@
 <template>
+<div class="justify-center">
+  <button class="w-1/4 bg-blue-500 hover:bg-blue-700 bg-transparent border shadow border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="chooseSub()">
+    Choisir
+</button>
+</div>
 <div class="grid grid-cols-3 my-20 px-32">
   <div v-for="sub in subscriptions" :key="sub">
     <div class="card rounded overflow-hidden shadow-lg my-2">
@@ -18,103 +23,66 @@
               </span>
             </div>
         </div>
-        <div class="flex items-center" id="choose">
+        <!-- <div class="flex items-center" id="choose">
           <button class="bg-blue-500 hover:bg-blue-700 focus:outline-none shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out" type="button" @click="chooseSub()">
             Choisir
           </button>
-        </div>
+        </div> -->
     </div>
   </div>
 </div>
-<div v-if="subscriptions.indexOf() !== 0">
-  <div v-if="showSubModal" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
-    <div class="relative w-auto my-6 mx-auto max-w-3xl">
-      <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-        <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-          <h3 class="text-3xl font-semibold">
-            {{ subscriptions[0].price }}
-          </h3>
-          <button class="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none" @click="chooseSub()">
-            <span class="bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
-              ×
-            </span>
-          </button>
-        </div>
-        <div class="relative p-6 flex-auto">
-          <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
-            {{ subscriptions[0].informations }}
-          </p>
-        </div>
-        <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-          <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="chooseSub()">
-            Annuler
-          </button>
-          <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="chooseSub()">
-            Valider
-          </button>
-        </div>
+<div v-if="showSubModal" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+  <div class="relative w-1/2 my-6 mx-auto max-w-3xl">
+    <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+      <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+        <h3 class="text-3xl font-semibold">
+          Choisir mon abonnement
+        </h3>
+        <button class="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none" @click="chooseSub()">
+          <span class="bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
+            ×
+          </span>
+        </button>
       </div>
-    </div>
-  </div>
-</div>
-<div v-else-if="subscriptions.indexOf() === 1">
-  <div v-if="showSubModal" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
-    <div class="relative w-auto my-6 mx-auto max-w-3xl">
-      <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-        <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-          <h3 class="text-3xl font-semibold">
-            {{ subscriptions[1].price }} €
-          </h3>
-          <button class="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none" @click="chooseSub()">
-            <span class="bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
-              ×
-            </span>
-          </button>
+      <div class="relative p-6 flex-auto">
+        <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
+          N'oubliez pas: vous pouvez annuler/changer votre abonnement a tout moment
+        </p>
+        <form action="" method="post" @submit.prevent="submitCheckout">
+        <div class="flex items-center justify-center mr-4 mb-4">
+          <input id="radio1" type="radio" name="plan" class="hidden" />
+          <label for="radio1" class="flex items-center cursor-pointer text-xl font-bold">
+          <span class="w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink"></span>
+          1 mois ( 9.90€)</label>
         </div>
-        <div class="relative p-6 flex-auto">
-          <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
-            {{ subscriptions[1].informations }}
-          </p>
+        <div class="flex items-center justify-center mr-4 mb-4">
+          <input id="radio2" type="radio" name="plan" class="hidden" />
+          <label for="radio2" class="flex items-center cursor-pointer text-xl font-bold">
+          <span class="w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink"></span>
+          3 mois (27.90€)</label>
         </div>
-        <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-          <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="chooseSub()">
-            Annuler
-          </button>
-          <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="chooseSub()">
-            Valider
-          </button>
-        </div>
+        <div class="flex items-center justify-center mr-4 mb-4">
+          <input id="radio3" type="radio" name="plan" class="hidden" />
+          <label for="radio3" class="flex items-center cursor-pointer text-xl font-bold">
+          <span class="w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink"></span>
+          6 mois (49.90€)</label>
       </div>
-    </div>
-  </div>
-</div>
-<div v-else>
-  <div v-if="showSubModal" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
-    <div class="relative w-auto my-6 mx-auto max-w-3xl">
-      <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-        <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-          <h3 class="text-3xl font-semibold">
-            {{ subscriptions[2].price }} €
-          </h3>
-          <button class="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none" @click="chooseSub()">
-            <span class="bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
-              ×
-            </span>
-          </button>
+      <div class="mb-3">
+        <label for="name" class="block">Nom</label>
+        <input class="h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="name" type="text">
+      </div>
+        <div>
+          <button type="submit" class=" w-3/4 bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Payer</button>
         </div>
-        <div class="relative p-6 flex-auto">
-          <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
-            {{ subscriptions[2].informations }}
-          </p>
-        </div>
-        <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-          <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="chooseSub()">
-            Annuler
-          </button>
-          <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="chooseSub()">
-            Valider
-          </button>
-        </div>
+        </form>
+      </div>
+      <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+        <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="chooseSub()">
+          Annuler
+        </button>
+        <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="chooseSub()">
+          Valider
+        </button>
       </div>
     </div>
   </div>
@@ -130,12 +98,20 @@
     },
     data(){
       return {
-        showSubModal: false
+        showSubModal: false,
+        name: ''
       }
     },
     methods: {
       chooseSub(){
         this.showSubModal = !this.showSubModal;
+      },
+      submitCheckout(){
+        this.$inertia.post('/services', {
+          name: this.name,
+          // email: this.email,
+          _token: this.$page.props.csrf_token,
+        })
       }
     }
   }
@@ -145,6 +121,7 @@
   .card {
     max-width: 20rem;
     margin: auto;
+    min-height: 45vh;
     hr {
       background-color: #007bff;
       border: 1px solid #007bff;
@@ -164,5 +141,23 @@
         height: 2.5rem;
       }
     }
+  }
+  input[type="radio"] + label span {
+    transition: background .2s,
+      transform .2s;
+  }
+
+  input[type="radio"] + label span:hover,
+  input[type="radio"] + label:hover span{
+    transform: scale(1.2);
+  } 
+
+  input[type="radio"]:checked + label span {
+    background-color: #3490DC; //bg-blue
+    box-shadow: 0px 0px 0px 2px white inset;
+  }
+
+  input[type="radio"]:checked + label{
+    color: #3490DC; //text-blue
   }
 </style>
