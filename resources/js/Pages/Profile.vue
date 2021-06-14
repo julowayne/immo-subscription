@@ -1,12 +1,12 @@
 <template>
     <div>
         <layout/>
-        <div class="signin flex grid-cols-2 text-center m-0">
+        <div class="profile p-5 sm:px-10">
           <div id="profilContent">
-            <div id="title">Bonjour Jules, retrouvez ici vos informations</div>
-            <div id="account">
+            <div id="title" class="sm:text-center">Bonjour Jules, retrouvez ici vos informations</div>
+            <div id="account" class="lg:flex lg:flex-row sm:flex sm:flex-col">
               <formule :buttons="buttons" />
-              <div>
+              <div class="sm:mx-14">
                 <form class="bg-white">
                   <div class="mb-3">
                     <label class="block" for="name">
@@ -32,7 +32,7 @@
                     </label>
                     <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="siret" type="text" placeholder="14567803938454">
                   </div>
-                  <span class="mb-3 flex">
+                  <span class="mt-4 flex">
                     Télécharger ma dernière facture <img src="/image/telecharger.png" alt="">
                   </span>
                   <!-- <div class="mb-3">
@@ -73,10 +73,8 @@ import Formule from '../Components/Profile/Formule.vue'
 body {
     background-color: #e9ecef;
 }
-.signin {
+.profile {
   display: flex;
-  height: 85vh;
-  width: 100%;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
@@ -85,13 +83,15 @@ body {
     border-radius: 4px;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
     background-color: white;
-    padding: 3em;
+    padding: 2em;
+    // overflow: hidden;
     text-align: left;
     #title {
       letter-spacing: 0.5px;
       color: #007BFF;
       margin-bottom: 2rem;
       font-size: x-large;
+      text-align: start;
     }
     #account {
       display: flex;

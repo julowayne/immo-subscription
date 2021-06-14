@@ -1,5 +1,5 @@
 <template>
-<div id="formule">
+<div id="formule" class="lg:w-1/3 text-center sm:flex sm:justify-center sm:pb-4">
   <div class="card rounded overflow-hidden shadow-lg my-2">
     <div class="months shadow-sm font-bold">Abonnement pour 6 mois</div>
     <div class="px-6 pt-8 pb-2">
@@ -36,7 +36,7 @@
       </div>
   </div>
 </div>
-
+<!-- modal -->
 <div v-if="showCancel" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
   <div class="relative w-auto my-6 mx-auto max-w-3xl">
     <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
@@ -123,7 +123,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #formule {
   .card {
     max-width: 30rem;
