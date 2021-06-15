@@ -24,13 +24,10 @@
         <input type="text" placeholder="Rechercher ...">
       </div>
       <div id="userAccount">
-        <inertia-link v-if="user" href="/profile">
-          <img src="/image/utilisateur.png" alt="account logo">
-        </inertia-link>
-        <inertia-link v-else href="/register">
-          <img src="/image/utilisateur.png" alt="account logo">
-        </inertia-link>
         <div v-if="user">
+          <inertia-link href="/profile">
+            <img src="/image/utilisateur.png" alt="account logo">
+          </inertia-link>
           <inertia-link href="/profile">
             {{ user.firstname }}
           </inertia-link>
@@ -39,6 +36,9 @@
           </inertia-link>
         </div>
         <div v-else>
+          <inertia-link href="/register">
+            <img src="/image/utilisateur.png" alt="account logo">
+          </inertia-link>
           <inertia-link href="/register">
             Inscription
           </inertia-link>
