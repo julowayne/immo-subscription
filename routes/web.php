@@ -34,7 +34,7 @@ Route::inertia('/actualites', 'News');
 Route::inertia('/actualites/1', 'SingleNews');
 
 Route::inertia('/contact', 'Contact');
-Route::post('/contact', [ContactController::class, 'contact']);
+Route::post('/contact', [ContactController::class, 'sendmail']);
 
 Route::inertia('/services', 'Subscribe');
 Route::post('/services', [CheckoutController::class, 'store']);
