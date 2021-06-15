@@ -3,7 +3,7 @@
     <layout/>
     <div class="profile p-5 sm:px-10">
       <div id="profilContent">
-        <div id="title" class="sm:text-center">Bonjour {{ user.firstname }}, retrouvez ici vos informations</div>
+        <div v-if="user" id="title" class="sm:text-center">Bonjour {{ user.firstname }}, retrouvez ici vos informations</div>
         <div id="account" class="lg:flex lg:flex-row sm:flex sm:flex-col">
           <formule :buttons="buttons" />
           <div class="sm:mx-14">

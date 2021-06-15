@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -33,7 +34,7 @@ Route::inertia('/actualites', 'News');
 Route::inertia('/actualites/1', 'SingleNews');
 
 Route::inertia('/contact', 'Contact');
-// Route::post('/contact', 'Contact');
+Route::post('/contact', [ContactController::class, 'contact']);
 
 Route::inertia('/services', 'Subscribe');
 Route::post('/services', [CheckoutController::class, 'store']);

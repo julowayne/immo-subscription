@@ -73,15 +73,15 @@
     },
 // don't forget to change validation
     data() {
-        return {
-            form: this.$inertia.form({
-                lastName: '',
-                firstName: '',
-                email: '',
-                password: '',
-                siret: '',
-            })
-        }
+      return {
+        form: this.$inertia.form({
+            lastName: '',
+            firstName: '',
+            email: '',
+            password: '',
+            siret: '',
+        })
+      }
     },
 
     methods: {
