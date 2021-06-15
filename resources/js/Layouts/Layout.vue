@@ -24,7 +24,10 @@
         <input type="text" placeholder="Rechercher ...">
       </div>
       <div id="userAccount">
-        <inertia-link href="/profile">
+        <inertia-link v-if="user" href="/profile">
+          <img src="/image/utilisateur.png" alt="account logo">
+        </inertia-link>
+        <inertia-link v-else href="/register">
           <img src="/image/utilisateur.png" alt="account logo">
         </inertia-link>
         <div v-if="user">
