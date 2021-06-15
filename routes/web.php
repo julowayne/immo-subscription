@@ -38,7 +38,7 @@ Route::inertia('/contact', 'Contact');
 Route::inertia('/services', 'Subscribe');
 Route::post('/services', [CheckoutController::class, 'store']);
 
-Route::get('/profile', [ProfileController::class, 'index']);
+Route::inertia('/profile', 'Profile');
 
 Route::post('/profile', [ProfileController::class, 'update']);
 Route::inertia('/checkout', 'Checkout');

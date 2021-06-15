@@ -10,10 +10,6 @@ use Inertia\Inertia;
 
 class ProfileController extends Controller
 {
-    public function index(){
-        $user = User::where('id', Auth::id())->first();
-        return Inertia::render('Profile', $user);
-    }
 
     public function update(Request $request){
         $user = User::where('id', Auth::id())->first();
