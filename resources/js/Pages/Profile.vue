@@ -7,37 +7,57 @@
             <div id="account" class="lg:flex lg:flex-row sm:flex sm:flex-col">
               <formule :buttons="buttons" />
               <div class="sm:mx-14">
-                <form class="bg-white">
+                <form class="bg-white" method="POST">
                   <div class="mb-3">
                     <label class="block" for="name">
-                      NOM
+                      Nom
                     </label>
-                    <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="name" type="text" placeholder="Jules">
+                    <input v-model="form.firstName" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="name" type="text" placeholder="Jules">
                   </div>
                   <div class="mb-3">
                     <label class="block" for="firstname">
-                      PRENOM
+                      Prénom
                     </label>
-                    <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="firstname" type="text" placeholder="Thomas Desessarts">
+                    <input v-model="form.lastName" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="firstname" type="text" placeholder="Thomas Desessarts">
                   </div>
                   <div class="mb-3">
                     <label class="block" for="email">
-                      EMAIL
+                      Email
                     </label>
-                    <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="email" type="text" placeholder="thomas.desessarts-jules@hotmail.com">
+                    <input v-model="form.email" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="email" type="text" placeholder="thomas.desessarts-jules@hotmail.com">
+                  </div>
+                  <div class="mb-3">
+                    <label class="block" for="password">
+                      Mot de passe
+                    </label>
+                    <input v-model="form.password" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="password" type="password" placeholder="thomas.desessarts-jules@hotmail.com">
                   </div>
                   <div class="mb-3">
                     <label class="block" for="siret">
                       N° SIRET
                     </label>
-                    <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="siret" type="text" placeholder="14567803938454">
+                    <input v-model="form.siret" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="siret" type="text" placeholder="14567803938454">
                   </div>
-                  <span class="mt-4 flex">
-                    Télécharger ma dernière facture <img src="/image/telecharger.png" alt="">
-                  </span>
-                  <!-- <div class="mb-3">
-                    Entrer un code promo: <span><input type="text" class="ml-1 w-1/2 h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-blue-300 focus:border-transparent"></span>
-                  </div> -->
+                  <div class="mb-3">
+                    <label class="block" for="siret">
+                      Photo de profil
+                    </label>
+                    <div class="flex items-center bg-grey-lighter">
+                      <label class="flex flex-row items-center px-2 py-3 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue hover:text-white">
+                          <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                              <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+                          </svg>
+                          <span class="mt-2 ml-2 text-base leading-normal" v-if="!form.avatar">Choisir un fichier</span>
+                          <span class="mt-2 ml-2 text-base leading-normal" v-else> {{ form.avatar.name }}</span>
+                          <input type='file' class="hidden" @input="form.avatar = $event.target.files[0]" />
+                      </label>
+                      <!-- <span v-if="!form.avatar">Aucun fichier choisi</span>
+                      <span v-else> {{ form.avatar.name }}</span> -->
+                    </div>
+                  </div>
+                  <breeze-button type="submit" class="w-full p-2 text-center cursor-pointer bg-blue-500 hover:bg-blue-700 focus:outline-none shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out">
+                    enregistrer les modifications
+                  </breeze-button>
                 </form>
               </div>
             </div>
@@ -64,6 +84,14 @@ import Formule from '../Components/Profile/Formule.vue'
           title: 'Annuler / Suspendre',
           content: 'Vous désirez annuler ou changer votre formule'
         }],
+        form: {
+          firstName: '',
+          lastName: '',
+          password: '',
+          email: '',
+          siret: '',
+          avatar: '',
+        }
       }
     },
   }
@@ -83,13 +111,13 @@ body {
     border-radius: 4px;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
     background-color: white;
-    padding: 2em;
+    padding: 1em;
     // overflow: hidden;
     text-align: left;
     #title {
       letter-spacing: 0.5px;
       color: #007BFF;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       font-size: x-large;
       text-align: start;
     }

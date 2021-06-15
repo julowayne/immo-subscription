@@ -39,6 +39,7 @@ Route::inertia('/services', 'Subscribe');
 Route::post('/services', [CheckoutController::class, 'store']);
 
 Route::inertia('/profile', 'Profile');
+Route::inertia('/checkout', 'Checkout');
 
 Route::inertia('/admin/newsdashboard', 'Admin/NewsDashboard');
 Route::inertia('/admin/userdashboard', 'Admin/UserDashboard');

@@ -67,18 +67,17 @@
         <label for="name" class="block">Nom</label>
         <input class="h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="name" type="text">
       </div>
-        <div>
-          <button type="submit" class=" w-3/4 bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Payer</button>
-        </div>
-        </form>
+      </form>
       </div>
       <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
         <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="chooseSub()">
           Annuler
         </button>
-        <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="chooseSub()">
-          Valider
-        </button>
+        <inertia-link href="/checkout">
+          <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+            Payer
+          </button>
+        </inertia-link>
       </div>
     </div>
   </div>
@@ -95,7 +94,23 @@
     data(){
       return {
         showSubModal: false,
-        name: ''
+        name: '',
+        card: {
+          cvc: '',
+          number: '',
+          expiry: ''
+        },
+        //elements
+        cardNumber: '',
+        cardExpiry: '',
+        cardCvc: '',
+        stripe: null,
+        // errors
+        stripeError: '',
+        cardCvcError: '',
+        cardExpiryError: '',
+        cardNumberError: '',
+        loading: false,
       }
     },
     methods: {
@@ -109,7 +124,7 @@
           _token: this.$page.props.csrf_token,
         })
       }
-    }
+  }
   }
 </script>
 
