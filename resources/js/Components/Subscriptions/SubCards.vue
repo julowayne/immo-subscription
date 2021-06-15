@@ -100,12 +100,10 @@
           number: '',
           expiry: ''
         },
-        //elements
         cardNumber: '',
         cardExpiry: '',
         cardCvc: '',
         stripe: null,
-        // errors
         stripeError: '',
         cardCvcError: '',
         cardExpiryError: '',

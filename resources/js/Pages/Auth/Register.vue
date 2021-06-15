@@ -11,16 +11,16 @@
               <form class="bg-white shadow-md" method="POST" @submit.prevent="submit">
                 <h1>Bienvenue</h1>
                 <div class="mb-3">
-                  <breeze-label class="block" for="name">
+                  <breeze-label class="block" for="lastName">
                     NOM
                   </breeze-label>
-                  <breeze-input v-model="form.name" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="name" type="text" placeholder="Jules" />
+                  <breeze-input v-model="form.lastName" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="lastName" type="text" placeholder="Jules" />
                 </div>
                 <div class="mb-3">
-                  <breeze-label class="block" for="firstname">
+                  <breeze-label class="block" for="firstName">
                     PRENOM
                   </breeze-label>
-                  <breeze-input v-model="form.firstName"  class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="firstname" type="text" placeholder="Thomas Desessarts"/>
+                  <breeze-input v-model="form.firstName"  class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="firstName" type="text" placeholder="Thomas Desessarts"/>
                 </div>
                 <div class="mb-3">
                   <breeze-label class="block" for="email">
@@ -32,7 +32,7 @@
                   <breeze-label class="block" for="siret">
                     N° SIRET
                   </breeze-label>
-                  <breeze-input v-model="siret" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="siret" type="text" placeholder="14567803938454" />
+                  <breeze-input v-model="form.siret" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="siret" type="text" placeholder="14567803938454" />
                 </div>
                 <div class="mb-3">
                   <breeze-label class="block" for="password">
@@ -75,22 +75,21 @@
     data() {
         return {
             form: this.$inertia.form({
-                // lastName: '',
-                // firstName: '',
-                name: '',
+                lastName: '',
+                firstName: '',
                 email: '',
                 password: '',
-                // siret: '',
+                siret: '',
             })
         }
     },
 
     methods: {
-        submit() {
-            this.form.post(this.route('register'), {
-                onFinish: () => this.form.reset('password', 'password_confirmation'),
-            })
-        }
+      submit() {
+        this.form.post(this.route('register'), {
+            onFinish: () => this.form.reset('password', 'password_confirmation'),
+        })
+      }
     }
   }
 </script>

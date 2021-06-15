@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -25,8 +26,6 @@ Route::get('/', function () {
     ]);
 });
 
-// Route::inertia('/signin', 'Signin');
-// Route::inertia('/signup', 'Signup');
 Route::inertia('/register', 'Register');
 Route::inertia('/login', 'Login');
 
@@ -39,6 +38,7 @@ Route::inertia('/services', 'Subscribe');
 Route::post('/services', [CheckoutController::class, 'store']);
 
 Route::inertia('/profile', 'Profile');
+Route::post('/profile', [ProfileController::class, 'update']);
 Route::inertia('/checkout', 'Checkout');
 
 Route::inertia('/admin/newsdashboard', 'Admin/NewsDashboard');

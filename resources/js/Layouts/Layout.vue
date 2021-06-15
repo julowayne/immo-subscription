@@ -1,21 +1,4 @@
 <template>
-    <!-- <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-        <div v-if="canLogin" class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-            <inertia-link v-if="$page.props.auth.user" href="/dashboard" class="text-sm text-gray-700 underline">
-                Dashboard
-            </inertia-link>
-
-            <template v-else>
-                <inertia-link :href="route('login')" class="text-sm text-gray-700 underline">
-                    Log in
-                </inertia-link>
-
-                <inertia-link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 underline">
-                    Register test
-                </inertia-link>
-            </template>
-        </div>
-    </div> -->
     <div class="nav">
       <inertia-link href="/">
         <img src="/image/alfred-logo-teal-nav.png" alt="alfred logo">
@@ -44,7 +27,15 @@
         <inertia-link href="/profile">
           <img src="/image/utilisateur.png" alt="account logo">
         </inertia-link>
-        <div>
+        <div v-if="user">
+          <inertia-link href="/profile">
+            {{ user.firstname }}
+          </inertia-link>
+          <inertia-link method="POST" href="/logout">
+            déconnexion
+          </inertia-link>
+        </div>
+        <div v-else>
           <inertia-link href="/register">
             Inscription
           </inertia-link>
@@ -55,6 +46,17 @@
       </div>
     </div>
 </template>
+<script>
+  import { computed } from 'vue'
+  import { usePage } from '@inertiajs/inertia-vue3'
+
+  export default {
+    setup() {
+      const user = computed(() => usePage().props.value.auth.user)
+      return { user }
+    },
+  }
+</script>
 
 
 <style lang="scss">
