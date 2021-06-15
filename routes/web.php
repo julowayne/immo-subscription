@@ -33,11 +33,13 @@ Route::inertia('/actualites', 'News');
 Route::inertia('/actualites/1', 'SingleNews');
 
 Route::inertia('/contact', 'Contact');
+// Route::post('/contact', 'Contact');
 
 Route::inertia('/services', 'Subscribe');
 Route::post('/services', [CheckoutController::class, 'store']);
 
-Route::inertia('/profile', 'Profile');
+Route::get('/profile', [ProfileController::class, 'index']);
+
 Route::post('/profile', [ProfileController::class, 'update']);
 Route::inertia('/checkout', 'Checkout');
 

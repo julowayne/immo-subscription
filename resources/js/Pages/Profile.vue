@@ -3,7 +3,7 @@
     <layout/>
     <div class="profile p-5 sm:px-10">
       <div id="profilContent">
-        <div id="title" class="sm:text-center">Bonjour Jules, retrouvez ici vos informations</div>
+        <div id="title" class="sm:text-center">Bonjour {{ user.firstname }}, retrouvez ici vos informations</div>
         <div id="account" class="lg:flex lg:flex-row sm:flex sm:flex-col">
           <formule :buttons="buttons" />
           <div class="sm:mx-14">
@@ -12,7 +12,7 @@
                 <label class="block" for="name">
                   Nom
                 </label>
-                <input v-model="form.firstName" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="name" type="text" placeholder="Jules">
+                <input v-model="form.firstName" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="name" type="text">
               </div>
               <div class="mb-3">
                 <label class="block" for="firstname">
@@ -65,6 +65,8 @@
 </template>
 
 <script>
+import { computed } from 'vue'
+import { usePage } from '@inertiajs/inertia-vue3'
 import { useForm } from "@inertiajs/inertia-vue3"
 import Layout from '../Layouts/Layout.vue'
 import BreezeButton from '@/Components/Button'
@@ -74,6 +76,10 @@ import Formule from '../Components/Profile/Formule.vue'
         BreezeButton,
         Layout,
         Formule
+    },
+    setup() {
+      const user = computed(() => usePage().props.value.auth.user)
+      return { user }
     },
     data() {
       return {
@@ -107,6 +113,13 @@ import Formule from '../Components/Profile/Formule.vue'
         })
         form.post('/profile')
       }
+    },
+    mounted(){
+      this.form.firstName = this.user.firstname
+      this.form.lastName = this.user.lastname
+      this.form.email = this.user.email
+      this.form.siret = this.user.siret
+      this.form.password = this.user.password
     }
   }
 </script>

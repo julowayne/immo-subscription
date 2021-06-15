@@ -6,11 +6,16 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Inertia\Inertia;
 
 class ProfileController extends Controller
 {
-    public function update(Request $request){
+    public function index(){
+        $user = User::where('id', Auth::id())->first();
+        return Inertia::render('Profile', $user);
+    }
 
+    public function update(Request $request){
         $user = User::where('id', Auth::id())->first();
         $user->firstname = $request->input('firstName');
         $user->lastname = $request->input('lastName');

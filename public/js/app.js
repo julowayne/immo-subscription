@@ -18544,19 +18544,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
-/* harmony import */ var _Layouts_Layout_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Layouts/Layout.vue */ "./resources/js/Layouts/Layout.vue");
-/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.vue");
-/* harmony import */ var _Components_Profile_Formule_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Components/Profile/Formule.vue */ "./resources/js/Components/Profile/Formule.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var _Layouts_Layout_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Layouts/Layout.vue */ "./resources/js/Layouts/Layout.vue");
+/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.vue");
+/* harmony import */ var _Components_Profile_Formule_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/Profile/Formule.vue */ "./resources/js/Components/Profile/Formule.vue");
+
+
 
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    BreezeButton: _Components_Button__WEBPACK_IMPORTED_MODULE_2__.default,
-    Layout: _Layouts_Layout_vue__WEBPACK_IMPORTED_MODULE_1__.default,
-    Formule: _Components_Profile_Formule_vue__WEBPACK_IMPORTED_MODULE_3__.default
+    BreezeButton: _Components_Button__WEBPACK_IMPORTED_MODULE_3__.default,
+    Layout: _Layouts_Layout_vue__WEBPACK_IMPORTED_MODULE_2__.default,
+    Formule: _Components_Profile_Formule_vue__WEBPACK_IMPORTED_MODULE_4__.default
+  },
+  setup: function setup() {
+    var user = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      return (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.value.auth.user;
+    });
+    return {
+      user: user
+    };
   },
   data: function data() {
     return {
@@ -18579,7 +18590,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     updateUser: function updateUser() {
-      var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm)({
+      var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.useForm)({
         firstName: this.form.firstName,
         lastName: this.form.lastName,
         password: this.form.password,
@@ -18589,6 +18600,13 @@ __webpack_require__.r(__webpack_exports__);
       });
       form.post('/profile');
     }
+  },
+  mounted: function mounted() {
+    this.form.firstName = this.user.firstname;
+    this.form.lastName = this.user.lastname;
+    this.form.email = this.user.email;
+    this.form.siret = this.user.siret;
+    this.form.password = this.user.password;
   }
 });
 
@@ -21003,14 +21021,10 @@ var _hoisted_1 = {
 var _hoisted_2 = {
   id: "profilContent"
 };
-
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_3 = {
   id: "title",
   "class": "sm:text-center"
-}, "Bonjour Jules, retrouvez ici vos informations", -1
-/* HOISTED */
-);
-
+};
 var _hoisted_4 = {
   id: "account",
   "class": "lg:flex lg:flex-row sm:flex sm:flex-col"
@@ -21120,7 +21134,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_breeze_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("breeze-button");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_layout), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_formule, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_layout), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, "Bonjour " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.user.firstname) + ", retrouvez ici vos informations", 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_formule, {
     buttons: $data.buttons
   }, null, 8
   /* PROPS */
@@ -21136,8 +21152,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     "class": "w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent",
     id: "name",
-    type: "text",
-    placeholder: "Jules"
+    type: "text"
   }, null, 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.firstName]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {

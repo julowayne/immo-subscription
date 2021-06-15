@@ -8,34 +8,34 @@
               <form class="bg-white shadow-md">
                 <h1>Contact</h1>
                 <div class="mb-3">
-                  <label class="block" for="name">
+                  <label class="block" for="lastName">
                     NOM
                   </label>
-                  <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="name" type="text" placeholder="Nom">
+                  <input v-model="form.lastName" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="lastName" type="text" placeholder="Nom">
                 </div>
                 <div class="mb-3">
-                  <label class="block" for="firstname">
+                  <label class="block" for="firstName">
                     PRENOM
                   </label>
-                  <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="firstname" type="text" placeholder="Prénom">
+                  <input v-model="form.firstName" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="firstName" type="text" placeholder="Prénom">
                 </div>
                 <div class="mb-3">
                   <label class="block" for="email">
                     EMAIL
                   </label>
-                  <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="email" type="text" placeholder="Email">
+                  <input v-model="form.email" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="email" type="text" placeholder="Email">
                 </div>
                 <div class="mb-3">
-                  <label class="block" for="objet">
+                  <label class="block" for="object">
                     OBJET
                   </label>
-                  <input class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="objet" type="text" placeholder="Objet du message">
+                  <input v-model="form.object" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="object" type="text" placeholder="Objet du message">
                 </div>
                 <div class="mb-3">
-                  <label class="block" for="password">
+                  <label class="block" for="message">
                     MESSAGE
                   </label>
-                  <textarea class="w-full shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" name="message" id="message" cols="35" rows="2"></textarea>
+                  <textarea v-model="message" class="w-full shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" name="message" id="message" cols="35" rows="2"></textarea>
                 </div>
                 <div class="flex items-center" id="send">
                   <button class="shadow text-white font-bold rounded hover:shadow-xl transition-shadow duration-200 ease-in-out" type="button">
@@ -48,6 +48,39 @@
         </div>
     </div>
 </template>
+
+<script>
+import Layout from '../Layouts/Layout.vue'
+    export default {
+        components:{
+            Layout
+        },
+        data(){
+          return {
+              form: this.$inertia.form({
+                lastName: '',
+                firstName: '',
+                email: '',
+                object: '',
+                message: '',
+            })
+          }
+        },
+        methods: {
+        contact(){
+          const form = useForm({
+            firstName: this.form.firstName,
+            lastName: this.form.lastName,
+            email: this.form.email,
+            object: this.form.object,
+            message: this.form.message,
+          })
+          form.post('/contact')
+        }
+      }
+    }
+</script>
+
 
 <style lang="scss">
     body {
@@ -106,12 +139,5 @@
       }
     }
 </style>
-<script>
-import Layout from '../Layouts/Layout.vue'
-    export default {
-        components:{
-            Layout
-        }
-    }
-</script>
+
 
