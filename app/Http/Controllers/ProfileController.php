@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class ProfileController extends Controller
@@ -17,9 +16,15 @@ class ProfileController extends Controller
         $user->lastname = $request->input('lastName');
         $user->siret = $request->input('siret');
         $user->password = $request->input('password');
-        $user->avatar = $request->avatar->storeOnCloudinary();
+        $request->avatar->storeOnCloudinary();
         $user->save();
         $request->session()->flash('message', 'Votre nom a bien été modifié');
-        return Redirect::route('/profile', 'Profile');
+        return Inertia::render('Profile');
+    }
+
+    public function getAllUsers(){
+        
+        $users = User::all();
+        return Inertia::render('Admin/UserDashboard', ["users" => $users]);
     }
 }

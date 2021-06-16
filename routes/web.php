@@ -45,7 +45,9 @@ Route::post('/profile', [ProfileController::class, 'update']);
 Route::inertia('/checkout', 'Checkout');
 
 Route::inertia('/admin/newsdashboard', 'Admin/NewsDashboard');
-Route::inertia('/admin/userdashboard', 'Admin/UserDashboard');
+
+Route::get('/admin/userdashboard', [ProfileController::class, 'getAllUsers']);
+
 Route::inertia('/admin/subscribedashboard', 'Admin/SubscribeDashboard');
 
 Route::get('/dashboard', function () {
