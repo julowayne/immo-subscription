@@ -8,10 +8,10 @@
                     <inertia-link class="mr-16" href="/admin/userdashboard">
                         Utilisateurs
                     </inertia-link >
-                    <inertia-link class="mr-16" href="/admin/newsdashboard">
+                    <inertia-link class="mr-16" href="/admin/subscribedashboard">
                         Abonnements
                     </inertia-link>
-                    <inertia-link href="/admin/subscribedashboard"> 
+                    <inertia-link href="/admin/newsdashboard"> 
                         Actualités
                     </inertia-link>
                 </div>

@@ -8,11 +8,11 @@
                     <inertia-link class="active:bg-red-700" href="/admin/userdashboard">
                         <span class="mr-16">Utilisateurs</span>
                     </inertia-link>
-                    <inertia-link href="/admin/newsdashboard">
-                        <span class="mr-16">Abonnements</span>
+                    <inertia-link class="mr-16" href="/admin/subscribedashboard">
+                        Abonnements
                     </inertia-link>
-                    <inertia-link href="/admin/subscribedashboard"> 
-                        <span>Actualités</span>
+                    <inertia-link href="/admin/newsdashboard"> 
+                        Actualités
                     </inertia-link>
                 </div>
         </div>

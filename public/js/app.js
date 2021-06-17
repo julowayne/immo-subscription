@@ -17920,6 +17920,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Layout: _Layouts_Layout_vue__WEBPACK_IMPORTED_MODULE_0__.default
+  },
+  data: function data() {
+    return {
+      showSubModal: false
+    };
+  },
+  methods: {
+    addNews: function addNews() {
+      this.showSubModal = !this.showSubModal;
+    }
   }
 });
 
@@ -19917,25 +19927,24 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 /* HOISTED */
 );
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
-  "class": "mr-16"
-}, "Abonnements", -1
-/* HOISTED */
-);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Abonnements ");
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "Actualités", -1
-/* HOISTED */
-);
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Actualités ");
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_8 = {
   id: "adminDashboard"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+};
+var _hoisted_9 = {
   "class": "overflow-x-auto"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+};
+var _hoisted_10 = {
   "class": "rounded"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("table", {
+};
+var _hoisted_11 = {
   "class": "min-w-max w-full table-auto"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("tr", {
+};
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("tr", {
   "class": "text-gray-600 bg-green-400 uppercase text-sm leading-normal"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("th", {
   "class": "py-3 px-6 text-left"
@@ -19945,29 +19954,51 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   "class": "py-3 px-6 text-left"
 }, "Publiée"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("th", {
   "class": "py-3 px-6 text-center"
-}, "Actions")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("tbody", {
+}, "Actions")])], -1
+/* HOISTED */
+);
+
+var _hoisted_13 = {
   "class": "text-gray-600 text-sm font-light"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("tr", {
+};
+var _hoisted_14 = {
   "class": "hover:bg-gray-100"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", {
+};
+
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", {
   "class": "py-3 px-6 text-left whitespace-nowrap"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "flex items-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"mr-2\">\r\n                                            <svg xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\"\r\n                                                 width=\"24\" height=\"24\"\r\n                                                 viewBox=\"0 0 48 48\"\r\n                                                 style=\" fill:#000000;\">\r\n                                                <path fill=\"#80deea\" d=\"M24,34C11.1,34,1,29.6,1,24c0-5.6,10.1-10,23-10c12.9,0,23,4.4,23,10C47,29.6,36.9,34,24,34z M24,16\tc-12.6,0-21,4.1-21,8c0,3.9,8.4,8,21,8s21-4.1,21-8C45,20.1,36.6,16,24,16z\"></path><path fill=\"#80deea\" d=\"M15.1,44.6c-1,0-1.8-0.2-2.6-0.7C7.6,41.1,8.9,30.2,15.3,19l0,0c3-5.2,6.7-9.6,10.3-12.4c3.9-3,7.4-3.9,9.8-2.5\tc2.5,1.4,3.4,4.9,2.8,9.8c-0.6,4.6-2.6,10-5.6,15.2c-3,5.2-6.7,9.6-10.3,12.4C19.7,43.5,17.2,44.6,15.1,44.6z M32.9,5.4\tc-1.6,0-3.7,0.9-6,2.7c-3.4,2.7-6.9,6.9-9.8,11.9l0,0c-6.3,10.9-6.9,20.3-3.6,22.2c1.7,1,4.5,0.1,7.6-2.3c3.4-2.7,6.9-6.9,9.8-11.9\tc2.9-5,4.8-10.1,5.4-14.4c0.5-4-0.1-6.8-1.8-7.8C34,5.6,33.5,5.4,32.9,5.4z\"></path><path fill=\"#80deea\" d=\"M33,44.6c-5,0-12.2-6.1-17.6-15.6C8.9,17.8,7.6,6.9,12.5,4.1l0,0C17.4,1.3,26.2,7.8,32.7,19\tc3,5.2,5,10.6,5.6,15.2c0.7,4.9-0.3,8.3-2.8,9.8C34.7,44.4,33.9,44.6,33,44.6z M13.5,5.8c-3.3,1.9-2.7,11.3,3.6,22.2\tc6.3,10.9,14.1,16.1,17.4,14.2c1.7-1,2.3-3.8,1.8-7.8c-0.6-4.3-2.5-9.4-5.4-14.4C24.6,9.1,16.8,3.9,13.5,5.8L13.5,5.8z\"></path><circle cx=\"24\" cy=\"24\" r=\"4\" fill=\"#80deea\"></circle>\r\n                                            </svg>\r\n                                        </div> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "font-medium"
-}, "test")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", {
+}, "test")])], -1
+/* HOISTED */
+);
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", {
   "class": "py-3 px-6 text-left"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "flex items-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"mr-2\">\r\n                                            <img class=\"w-6 h-6 rounded-full\" src=\"https://randomuser.me/api/portraits/men/1.jpg\"/>\r\n                                        </div> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "test")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", {
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "test")])], -1
+/* HOISTED */
+);
+
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", {
   "class": "py-3 px-6 text-left"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "flex items-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"mr-2\">\r\n                                            <img class=\"w-6 h-6 rounded-full\" src=\"https://randomuser.me/api/portraits/men/1.jpg\"/>\r\n                                        </div> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "test")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", {
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "test")])], -1
+/* HOISTED */
+);
+
+var _hoisted_18 = {
   "class": "py-3 px-6 text-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+};
+var _hoisted_19 = {
   "class": "flex item-center justify-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+};
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "w-4 mr-2 transform hover:text-purple-500 hover:scale-110"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
@@ -19984,7 +20015,11 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   "stroke-linejoin": "round",
   "stroke-width": "2",
   d: "M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+})])], -1
+/* HOISTED */
+);
+
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "w-4 mr-2 transform hover:text-purple-500 hover:scale-110"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
@@ -19996,7 +20031,11 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   "stroke-linejoin": "round",
   "stroke-width": "2",
   d: "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+})])], -1
+/* HOISTED */
+);
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "w-4 mr-2 transform hover:text-purple-500 hover:scale-110"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
@@ -20008,10 +20047,52 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   "stroke-linejoin": "round",
   "stroke-width": "2",
   d: "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-})])])])])])])])])])], -1
+})])], -1
 /* HOISTED */
 );
 
+var _hoisted_23 = {
+  key: 0,
+  "class": "overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+};
+var _hoisted_24 = {
+  "class": "relative w-1/2 my-6 mx-auto max-w-3xl"
+};
+var _hoisted_25 = {
+  "class": "border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+};
+var _hoisted_26 = {
+  "class": "flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t"
+};
+
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", {
+  "class": "text-3xl font-semibold"
+}, " Voir l'actualité ", -1
+/* HOISTED */
+);
+
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+  "class": "bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none"
+}, " × ", -1
+/* HOISTED */
+);
+
+var _hoisted_29 = {
+  "class": "relative p-6 flex-auto"
+};
+
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
+  "class": "my-4 text-blueGray-500 text-lg leading-relaxed"
+}, " N'oubliez pas: vous pouvez annuler/changer votre abonnement a tout moment ", -1
+/* HOISTED */
+);
+
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex items-center justify-center mr-4 mb-4\"><input id=\"radio1\" type=\"radio\" name=\"plan\" class=\"hidden\"><label for=\"radio1\" class=\"flex items-center cursor-pointer text-xl font-bold\"><span class=\"w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink\"></span> 1 mois ( 9.90€)</label></div><div class=\"flex items-center justify-center mr-4 mb-4\"><input id=\"radio2\" type=\"radio\" name=\"plan\" class=\"hidden\"><label for=\"radio2\" class=\"flex items-center cursor-pointer text-xl font-bold\"><span class=\"w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink\"></span> 3 mois (27.90€)</label></div><div class=\"flex items-center justify-center mr-4 mb-4\"><input id=\"radio3\" type=\"radio\" name=\"plan\" class=\"hidden\"><label for=\"radio3\" class=\"flex items-center cursor-pointer text-xl font-bold\"><span class=\"w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink\"></span> 6 mois (49.90€)</label></div><div class=\"mb-3\"><label for=\"name\" class=\"block\">Nom</label><input class=\"h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"name\" type=\"text\"></div>", 4);
+
+var _hoisted_35 = {
+  key: 1,
+  "class": "opacity-25 fixed inset-0 z-40 bg-black"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("layout");
 
@@ -20028,7 +20109,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
-    href: "/admin/newsdashboard"
+    "class": "mr-16",
+    href: "/admin/subscribedashboard"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_6];
@@ -20037,7 +20119,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
-    href: "/admin/subscribedashboard"
+    href: "/admin/newsdashboard"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_7];
@@ -20045,7 +20127,24 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })])]), _hoisted_8])]);
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("table", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("tbody", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("tr", _hoisted_14, [_hoisted_15, _hoisted_16, _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[1] || (_cache[1] = function () {
+      return $options.addNews && $options.addNews.apply($options, arguments);
+    })
+  }, [_hoisted_20]), _hoisted_21, _hoisted_22])])])])])])])])]), $data.showSubModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_26, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    "class": "p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none",
+    onClick: _cache[2] || (_cache[2] = function () {
+      return $options.addNews && $options.addNews.apply($options, arguments);
+    })
+  }, [_hoisted_28])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_29, [_hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
+    action: "",
+    method: "post",
+    onSubmit: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return _ctx.submitCheckout && _ctx.submitCheckout.apply(_ctx, arguments);
+    }, ["prevent"]))
+  }, [_hoisted_31], 32
+  /* HYDRATE_EVENTS */
+  )])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.showSubModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_35)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 }
 
 /***/ }),
@@ -20086,15 +20185,9 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 /* HOISTED */
 );
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
-  "class": "mr-16"
-}, "Abonnements", -1
-/* HOISTED */
-);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Abonnements ");
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "Actualités", -1
-/* HOISTED */
-);
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Actualités ");
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   id: "adminDashboard"
@@ -20197,7 +20290,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
-    href: "/admin/newsdashboard"
+    "class": "mr-16",
+    href: "/admin/subscribedashboard"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_6];
@@ -20206,7 +20300,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
-    href: "/admin/subscribedashboard"
+    href: "/admin/newsdashboard"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_7];
@@ -20383,7 +20477,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
     "class": "mr-16",
-    href: "/admin/newsdashboard"
+    href: "/admin/subscribedashboard"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_6];
@@ -20392,7 +20486,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
-    href: "/admin/subscribedashboard"
+    href: "/admin/newsdashboard"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_7];
@@ -21547,29 +21641,50 @@ var _hoisted_1 = {
 var _hoisted_2 = {
   "class": "xl:grid xl:grid-cols-3 xl:gap-6 xl:my-10 xl:px-20 md:grid md:grid-cols-2 md:gap-4 md:my-10 md:px-20 sm:grid sm:grid-cols-2 sm:gap-4 sm:my-10 sm:px-20"
 };
-
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_3 = {
   "class": "news rounded overflow-hidden shadow-lg my-2"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+};
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   src: "https://tailwindcss.com/img/card-top.jpg",
   alt: "Sunset in the mountains"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "px-4 py-2"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "font-bold text-xl mb-2 text-left"
 }, "L'immobilier en 2021"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
   "class": "text-grey-darker text-base text-left"
-}, " Comment vont évoluer les prix de l'immobilier en 2021 en France ? ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "px-4 py-2 text-left"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
-  "class": "bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker"
-}, "5/17/2021"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
-  "class": "bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
-}, "Jules TD")])], -1
+}, " Comment vont évoluer les prix de l'immobilier en 2021 en France ? ")], -1
 /* HOISTED */
 );
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a>", 5);
+var _hoisted_6 = {
+  "class": "px-4 py-2 text-left"
+};
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+  "class": "bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker"
+}, "5/17/2021", -1
+/* HOISTED */
+);
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+  "class": "bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+}, "Jules TD", -1
+/* HOISTED */
+);
+
+var _hoisted_9 = {
+  "class": "ml-20 border-b border-gray-400"
+};
+
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Lire la suite");
+
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a>", 5);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("layout");
@@ -21580,12 +21695,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     href: "/actualites/1"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_3];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [_hoisted_4, _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [_hoisted_7, _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
+        href: "actualites/1"
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_10];
+        }),
+        _: 1
+        /* STABLE */
+
+      })])])])];
     }),
     _: 1
     /* STABLE */
 
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" endforeach for cards "), _hoisted_4])])]);
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" endforeach for cards "), _hoisted_11])])]);
 }
 
 /***/ }),

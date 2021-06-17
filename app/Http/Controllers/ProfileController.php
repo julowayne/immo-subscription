@@ -11,6 +11,7 @@ class ProfileController extends Controller
 {
 
     public function update(Request $request){
+        
         $user = User::where('id', Auth::id())->first();
         $user->firstname = $request->input('firstName');
         $user->lastname = $request->input('lastName');

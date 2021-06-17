@@ -16,6 +16,7 @@
                     <div class="px-4 py-2 text-left">
                         <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
                         <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
+                        <span class="ml-20 border-b border-gray-400"><inertia-link href="actualites/1">Lire la suite</inertia-link></span>
                     </div>
                 </div>
             </inertia-link>
