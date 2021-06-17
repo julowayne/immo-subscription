@@ -30,6 +30,7 @@
     },
     "dependencies": {
         "@inertiajs/inertia": "^0.8.7",
-        "@inertiajs/inertia-vue3": "^0.3.14"
+        "@inertiajs/inertia-vue3": "^0.3.14",
+        "moment": "^2.29.1"
     }
 }

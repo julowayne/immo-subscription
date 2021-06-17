@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class NewsController extends Controller
 {
@@ -13,7 +16,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('admin/newsdashboard');
     }
 
     /**
@@ -21,9 +24,18 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $news = new News;
+        $news->title = $request->input('title');
+        $news->body = $request->get('body');
+        $news->date = $request->get('date');
+        $news->published = $request->get('published');
+        $news->user_id = Auth::id();
+        $request->image->storeOnCloudinary();
+        $news->save();
+
+        return Inertia::render('admin/newsdashboard');
     }
 
     /**
@@ -34,7 +46,8 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Allnews = News::all();
+        return Inertia::render('Admin/NewsDashboard', ["Allnews" => $Allnews]);
     }
 
     /**

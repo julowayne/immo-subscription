@@ -35,7 +35,7 @@
                   <label class="block" for="message">
                     Message
                   </label>
-                  <textarea v-model="form.message" class="w-full shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" name="message" id="message" cols="35" rows="2"></textarea>
+                  <textarea v-model="form.message" class="resize-none w-full shadow rounded outline-none focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" name="title" id="title" cols="35" rows="2"></textarea>
                 </div>
                 <div class="flex items-center" id="send">
                   <button class="shadow text-white font-bold rounded hover:shadow-xl transition-shadow duration-200 ease-in-out" type="submit">

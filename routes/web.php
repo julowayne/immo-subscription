@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -44,7 +45,8 @@ Route::inertia('/profile', 'Profile');
 Route::post('/profile', [ProfileController::class, 'update']);
 Route::inertia('/checkout', 'Checkout');
 
-Route::inertia('/admin/newsdashboard', 'Admin/NewsDashboard');
+Route::get('/admin/newsdashboard', [NewsController::class, 'store']);
+Route::post('/admin/newsdashboard', [NewsController::class, 'create']);
 
 Route::get('/admin/userdashboard', [ProfileController::class, 'getAllUsers']);
 

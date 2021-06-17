@@ -12,31 +12,31 @@
                 <h1>Bienvenue</h1>
                 <div class="mb-3">
                   <breeze-label class="block" for="lastName">
-                    NOM
+                    Nom
                   </breeze-label>
                   <breeze-input v-model="form.lastName" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="lastName" type="text" placeholder="Jules" />
                 </div>
                 <div class="mb-3">
                   <breeze-label class="block" for="firstName">
-                    PRENOM
+                    Prénom
                   </breeze-label>
                   <breeze-input v-model="form.firstName"  class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="firstName" type="text" placeholder="Thomas Desessarts"/>
                 </div>
                 <div class="mb-3">
                   <breeze-label class="block" for="email">
-                    EMAIL
+                    Email
                   </breeze-label>
                   <breeze-input v-model="form.email"  class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="email" type="text" placeholder="thomas.desessarts-jules@hotmail.com"/>
                 </div>
                 <div class="mb-3">
                   <breeze-label class="block" for="siret">
-                    N° SIRET
+                    N° Siret
                   </breeze-label>
                   <breeze-input v-model="form.siret" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="siret" type="text" placeholder="14567803938454" />
                 </div>
                 <div class="mb-3">
                   <breeze-label class="block" for="password">
-                    Password
+                    Mot de passe
                   </breeze-label>
                   <breeze-input v-model="form.password" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="password" type="password" placeholder="***********" />
                 </div>
