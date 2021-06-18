@@ -37,7 +37,7 @@
                                 </td>
                                 <td class="py-3 px-6 text-left">
                                     <div class="flex items-center">
-                                        <span>{{ moment(news.date).format("MM-DD-YYYY") }}</span>
+                                        <span>{{ moment(news.date).format("DD-MM-YYYY") }}</span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-left">
@@ -132,7 +132,7 @@
                         Publier</label>
                     </div>
                     <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                        <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="getNews">
+                        <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="addNews">
                             Annuler
                         </button>
                         <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit">
@@ -151,7 +151,7 @@
             <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
             <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                 <h3 class="text-3xl font-semibold">
-                Titre de l'actualité
+                    Modifier une actualité
                 </h3>
                 <button class="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none" @click="editNews">
                 <span class="bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
@@ -160,9 +160,53 @@
                 </button>
             </div>
             <div class="relative p-6 flex-auto">
-                <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
-                Contenu de l'actualité
-                </p>
+                <form method="POST" @submit.prevent="updateNews">
+                    <div class="mb-3">
+                        <breeze-label class="block mb-2" for="title">
+                            Titre
+                        </breeze-label>
+                        <breeze-input v-model="form.title" class="h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="title" type="text"/>
+                    </div>
+                    <div class="mb-3">
+                        <breeze-label class="block mb-2" for="body">
+                            Contenu
+                        </breeze-label>
+                    <textarea v-model="form.body" class="resize-none w-full shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" name="body" id="body" cols="35" rows="2"></textarea>
+                    </div>
+                    <label class="block mb-2" for="image">
+                        Ajouter une photo
+                    </label>
+                    <div class="flex items-center bg-grey-lighter mb-4">
+                    <label class="flex flex-row items-center px-2 py-3 bg-white rounded-lg shadow-lg tracking-wide uppercase border border-gray-200 cursor-pointer hover:bg-green-500 hover:text-white">
+                        <svg class="w-8 h-8" fill="currentColor"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+                        </svg>
+                        <span class="mt-2 ml-2 text-base leading-normal" v-if="!form.image">Choisir un fichier</span>
+                        <span class="mt-2 ml-2 text-base leading-normal" v-else> {{ form.image.name }}</span>
+                        <input type='file' class="hidden" @input="form.image = $event.target.files[0]" />
+                    </label>
+                    </div>
+                    <div class="mb-3">
+                        <breeze-label class="block mb-2" for="date">
+                            date de publication
+                        </breeze-label>
+                        <breeze-input v-model="form.date" class="h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="date" type="date" :min="minDateForPicker"/>
+                    </div>
+                    <div class="flex items-center justify-start mr-4 mb-4">
+                        <input v-model="form.published" id="published" type="radio" name="published" class="hidden" />
+                        <label for="published" class="flex items-center cursor-pointer text-xl font-bold">
+                        <span class="w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink"></span>
+                        Publier</label>
+                    </div>
+                    <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                        <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="editNews">
+                            Annuler
+                        </button>
+                        <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit">
+                            Ajouter
+                        </button>
+                    </div>                 
+                </form>
             </div>
             </div>
         </div>
@@ -216,7 +260,9 @@ import moment from 'moment';
             BreezeLabel
         },
         props: {
-            Allnews: Array
+            Allnews: Array,
+            singleNews: Object,
+            news: Array
         },
         data(){
             return {
@@ -245,28 +291,53 @@ import moment from 'moment';
             },
             moment() {
                 return moment();
-            },
-            createNews(){
-                this.getNews = !this.getNews;
-                const form = useForm({
-                    title: this.form.title,
-                    body: this.form.body,
-                    date: this.form.date,
-                    image: this.form.image,
-                    published: this.form.published
-            })
-            form.post('/admin/newsdashboard')
             }
+            },
+            computed :{
+                createNews(){
+                    this.getNews = !this.getNews;
+                    const form = useForm({
+                        title: this.form.title,
+                        body: this.form.body,
+                        date: this.form.date,
+                        image: this.form.image,
+                        published: this.form.published
+                })
+                form.post('/admin/newsdashboard')
+            },
+            mounted(){
+                vm.$forceUpdate();
+            }
+            // updateNews(){
+            //     this.editNew = !this.editNew;
+            //     const form = useForm({
+            //         title: this.form.title,
+            //         body: this.form.body,
+            //         date: this.form.date,
+            //         image: this.form.image,
+            //         published: this.form.published
+            // })
+            // form.post('/admin/newsdashboard')
+            // },
+            // getNewsData(){
+            //     this.form.title = this.singleNews.title
+            //     this.form.body = this.singleNews.body
+            //     this.form.date = this.singleNews.date
+            //     this.form.published = this.singleNews.published
+            // },
+            // mounted(){
+            //     this.getNewsData();
+            // }
         }
     }
 </script>
 
 
 <style lang="scss">
-    body {
-        background-color: #e9ecef;
-    }
-    .admin {
+body {
+    background-color: #e9ecef;
+}
+.admin {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -284,8 +355,8 @@ import moment from 'moment';
         box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
         background-color: white;
         text-align: left;
-        }
     }
+}
 input[type="radio"] + label span {
     transition: background .2s,
     transform .2s;
@@ -293,15 +364,15 @@ input[type="radio"] + label span {
 
 input[type="radio"] + label span:hover,
 input[type="radio"] + label:hover span{
-transform: scale(1.2);
+    transform: scale(1.2);
 } 
 
 input[type="radio"]:checked + label span {
-background-color: #20c997; //bg-blue
-box-shadow: 0px 0px 0px 2px white inset;
+    background-color: #20c997;
+    box-shadow: 0px 0px 0px 2px white inset;
 }
 
 input[type="radio"]:checked + label{
-color: #20c997; //text-blue
+    color: #20c997;
 }
 </style>

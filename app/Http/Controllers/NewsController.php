@@ -16,9 +16,16 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return Inertia::render('admin/newsdashboard');
+        $Allnews = News::all();
+        return Inertia::render('News', ["Allnews" => $Allnews]);
     }
 
+    public function lastNews(){
+        
+        $Allnews = News::latest()->take(5)->get();
+
+        return Inertia::render('Welcome', ["Allnews" => $Allnews]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -58,7 +65,8 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        //
+        $singleNews = News::where('id', $id);
+        return Inertia::render('Admin/NewsDashboard', ["singleNews" => $singleNews]);
     }
 
     /**
@@ -67,9 +75,9 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+
     }
 
     /**
@@ -81,7 +89,15 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $news = News::where('id', $id);
+        $news->title = $request->input('title');
+        $news->body = $request->get('body');
+        $news->date = $request->get('date');
+        $news->published = $request->get('published');
+        $news->user_id = Auth::id();
+        $request->image->storeOnCloudinary();
+        $news->save();
+        return Inertia::render('Admin/NewsDashboard', ["news" => $news]);
     }
 
     /**

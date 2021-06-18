@@ -20,74 +20,24 @@
             </div>
             <!-- Foreach for cards -->
             <div class="xl:flex xl:px-20 mt-8 lg:grid lg:grid-cols-3 lg:gap-6 lg:px-44 md:grid md:grid-cols-2 md:gap-6 md:px-24 md:pb-4 sm:gap-6 sm:grid sm:grid-cols-2">
-                <div class="card rounded overflow-hidden shadow-lg xl:my-2 lg:my-2">
-                    <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
-                    <div class="px-4 py-2">
-                        <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
-                        <p class="text-grey-darker text-base text-left">
-                            Comment vont évoluer les prix de l'immobilier en 2021 en France ?
-                        </p>
+                <inertia-link v-for="news in Allnews" :key="news" href="*">
+                    <div class="card rounded overflow-hidden shadow-lg xl:my-2 lg:my-2">
+                        <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
+                        <div class="px-4 py-2">
+                            <div class="font-bold text-xl mb-2 text-left">{{ news.title }}</div>
+                            <p class="text-grey-darker text-base text-left">
+                                {{ news.body }}
+                            </p>
+                        </div>
+                        <div class="px-4 py-2 text-left">
+                            <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">{{ moment(news.date).format("DD-MM-YYYY") }}</span>
+                            <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
+                            <span class="ml-20 border-b border-gray-400"><inertia-link href="actualites/1">Lire la suite</inertia-link></span>
+                        </div>
                     </div>
-                    <div class="px-4 py-2 text-left">
-                        <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
-                        <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
-                    </div>
-                </div>
+                </inertia-link>
                 <!-- endforeach for cards  -->
-                <div class="card rounded overflow-hidden shadow-lg my-2">
-                    <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
-                    <div class="px-4 py-2">
-                        <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
-                        <p class="text-grey-darker text-base text-left">
-                            Comment vont évoluer les prix de l'immobilier en 2021 en France ?
-                        </p>
-                    </div>
-                    <div class="px-4 py-2 text-left">
-                        <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
-                        <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
-                    </div>
-                </div>
-                <div class="card rounded overflow-hidden shadow-lg my-2">
-                    <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
-                    <div class="px-4 py-2">
-                        <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
-                        <p class="text-grey-darker text-base text-left">
-                            Comment vont évoluer les prix de l'immobilier en 2021 en France ?
-                        </p>
-                    </div>
-                    <div class="px-4 py-2 text-left">
-                        <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
-                        <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
-                    </div>
-                </div>
-                <div class="card rounded overflow-hidden shadow-lg my-2">
-                    <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
-                    <div class="px-4 py-2">
-                        <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
-                        <p class="text-grey-darker text-base text-left">
-                            Comment vont évoluer les prix de l'immobilier en 2021 en France ?
-                        </p>
-                    </div>
-                    <div class="px-4 py-2 text-left">
-                        <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
-                        <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
-                    </div>
-                </div>
-                <div class="card rounded overflow-hidden shadow-lg my-2">
-                    <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
-                    <div class="px-4 py-2">
-                        <div class="font-bold text-xl mb-2 text-left">L'immobilier en 2021</div>
-                        <p class="text-grey-darker text-base text-left">
-                            Comment vont évoluer les prix de l'immobilier en 2021 en France ?
-                        </p>
-                    </div>
-                    <div class="px-4 py-2 text-left">
-                        <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
-                        <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
-                    </div>
-                </div>
             </div>
-
         </div>
     </div>
 </template>
@@ -112,7 +62,7 @@
         }
     }
     .card {
-        max-width: 15rem;
+        max-width: 30rem;
         margin: auto;
         }
     }
@@ -127,9 +77,18 @@
 
 <script>
 import Layout from '../Layouts/Layout.vue'
+import moment from 'moment'
     export default {
         components:{
             Layout
+        },
+        props:{
+            Allnews: Array
+        },
+        methods: {
+            moment() {
+                return moment();
+            }
         }
     }
 </script>

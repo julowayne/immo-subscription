@@ -27,11 +27,13 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+Route::get('/', [NewsController::class, 'lastNews']);
 
 Route::inertia('/register', 'Register');
 Route::inertia('/login', 'Login');
 
-Route::inertia('/actualites', 'News');
+// Route::inertia('/actualites', 'News');
+Route::get('/actualites', [NewsController::class, 'index']);
 Route::inertia('/actualites/1', 'SingleNews');
 
 Route::inertia('/contact', 'Contact');
@@ -46,7 +48,10 @@ Route::post('/profile', [ProfileController::class, 'update']);
 Route::inertia('/checkout', 'Checkout');
 
 Route::get('/admin/newsdashboard', [NewsController::class, 'store']);
+Route::get('/admin/newsdashboard/:id', [NewsController::class, 'show']);
 Route::post('/admin/newsdashboard', [NewsController::class, 'create']);
+// Route::post('/admin/newsdashboard', [NewsController::class, 'update']);
+
 
 Route::get('/admin/userdashboard', [ProfileController::class, 'getAllUsers']);
 

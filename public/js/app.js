@@ -17933,7 +17933,9 @@ __webpack_require__.r(__webpack_exports__);
     BreezeLabel: _Components_Label__WEBPACK_IMPORTED_MODULE_3__.default
   },
   props: {
-    Allnews: Array
+    Allnews: Array,
+    singleNews: Object,
+    news: Array
   },
   data: function data() {
     return {
@@ -17962,7 +17964,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     moment: function moment() {
       return moment__WEBPACK_IMPORTED_MODULE_4___default()();
-    },
+    }
+  },
+  computed: {
     createNews: function createNews() {
       this.getNews = !this.getNews;
       var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.useForm)({
@@ -17973,7 +17977,30 @@ __webpack_require__.r(__webpack_exports__);
         published: this.form.published
       });
       form.post('/admin/newsdashboard');
-    }
+    },
+    mounted: function mounted() {
+      vm.$forceUpdate();
+    } // updateNews(){
+    //     this.editNew = !this.editNew;
+    //     const form = useForm({
+    //         title: this.form.title,
+    //         body: this.form.body,
+    //         date: this.form.date,
+    //         image: this.form.image,
+    //         published: this.form.published
+    // })
+    // form.post('/admin/newsdashboard')
+    // },
+    // getNewsData(){
+    //     this.form.title = this.singleNews.title
+    //     this.form.body = this.singleNews.body
+    //     this.form.date = this.singleNews.date
+    //     this.form.published = this.singleNews.published
+    // },
+    // mounted(){
+    //     this.getNewsData();
+    // }
+
   }
 });
 
@@ -18606,10 +18633,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Layouts_Layout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Layouts/Layout.vue */ "./resources/js/Layouts/Layout.vue");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Layout: _Layouts_Layout_vue__WEBPACK_IMPORTED_MODULE_0__.default
+  },
+  props: {
+    Allnews: Array
+  },
+  methods: {
+    moment: function moment() {
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()();
+    }
   }
 });
 
@@ -18811,10 +18849,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Layouts_Layout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Layouts/Layout.vue */ "./resources/js/Layouts/Layout.vue");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Layout: _Layouts_Layout_vue__WEBPACK_IMPORTED_MODULE_0__.default
+  },
+  props: {
+    Allnews: Array
+  },
+  methods: {
+    moment: function moment() {
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()();
+    }
   }
 });
 
@@ -20210,7 +20259,7 @@ var _hoisted_53 = {
 
 var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", {
   "class": "text-3xl font-semibold"
-}, " Titre de l'actualité ", -1
+}, " Modifier une actualité ", -1
 /* HOISTED */
 );
 
@@ -20220,45 +20269,115 @@ var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_56 = {
   "class": "relative p-6 flex-auto"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
-  "class": "my-4 text-blueGray-500 text-lg leading-relaxed"
-}, " Contenu de l'actualité ")], -1
+};
+var _hoisted_57 = {
+  "class": "mb-3"
+};
+
+var _hoisted_58 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Titre ");
+
+var _hoisted_59 = {
+  "class": "mb-3"
+};
+
+var _hoisted_60 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Contenu ");
+
+var _hoisted_61 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "block mb-2",
+  "for": "image"
+}, " Ajouter une photo ", -1
 /* HOISTED */
 );
 
-var _hoisted_57 = {
+var _hoisted_62 = {
+  "class": "flex items-center bg-grey-lighter mb-4"
+};
+var _hoisted_63 = {
+  "class": "flex flex-row items-center px-2 py-3 bg-white rounded-lg shadow-lg tracking-wide uppercase border border-gray-200 cursor-pointer hover:bg-green-500 hover:text-white"
+};
+
+var _hoisted_64 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+  "class": "w-8 h-8",
+  fill: "currentColor",
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 20 20"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_65 = {
+  key: 0,
+  "class": "mt-2 ml-2 text-base leading-normal"
+};
+var _hoisted_66 = {
+  key: 1,
+  "class": "mt-2 ml-2 text-base leading-normal"
+};
+var _hoisted_67 = {
+  "class": "mb-3"
+};
+
+var _hoisted_68 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" date de publication ");
+
+var _hoisted_69 = {
+  "class": "flex items-center justify-start mr-4 mb-4"
+};
+
+var _hoisted_70 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "for": "published",
+  "class": "flex items-center cursor-pointer text-xl font-bold"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+  "class": "w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Publier")], -1
+/* HOISTED */
+);
+
+var _hoisted_71 = {
+  "class": "flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b"
+};
+
+var _hoisted_72 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  "class": "bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
+  type: "submit"
+}, " Ajouter ", -1
+/* HOISTED */
+);
+
+var _hoisted_73 = {
   key: 3,
   "class": "opacity-25 fixed inset-0 z-40 bg-black"
 };
-var _hoisted_58 = {
+var _hoisted_74 = {
   key: 4,
   "class": "overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
 };
-var _hoisted_59 = {
+var _hoisted_75 = {
   "class": "relative w-1/2 my-6 mx-auto max-w-3xl"
 };
-var _hoisted_60 = {
+var _hoisted_76 = {
   "class": "border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
 };
-var _hoisted_61 = {
+var _hoisted_77 = {
   "class": "flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t"
 };
 
-var _hoisted_62 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", {
+var _hoisted_78 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", {
   "class": "text-3xl font-semibold"
 }, " Supprimer une actualité ", -1
 /* HOISTED */
 );
 
-var _hoisted_63 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+var _hoisted_79 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none"
 }, " × ", -1
 /* HOISTED */
 );
 
-var _hoisted_64 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_80 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "relative p-6 flex-auto"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "bg-orange-300 border-l-4 border-orange-500 text-orange-700 p-4",
@@ -20269,10 +20388,10 @@ var _hoisted_64 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_65 = {
+var _hoisted_81 = {
   "class": "flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b"
 };
-var _hoisted_66 = {
+var _hoisted_82 = {
   key: 5,
   "class": "opacity-25 fixed inset-0 z-40 bg-black"
 };
@@ -20320,7 +20439,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "class": "hover:bg-gray-100"
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(news.title), 1
     /* TEXT */
-    )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.moment(news.date).format("MM-DD-YYYY")), 1
+    )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.moment(news.date).format("DD-MM-YYYY")), 1
     /* TEXT */
     )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(news.published), 1
     /* TEXT */
@@ -20438,7 +20557,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
     type: "button",
     onClick: _cache[10] || (_cache[10] = function () {
-      return $data.getNews && $data.getNews.apply($data, arguments);
+      return $options.addNews && $options.addNews.apply($options, arguments);
     })
   }, " Annuler "), _hoisted_48])], 32
   /* HYDRATE_EVENTS */
@@ -20447,24 +20566,119 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[12] || (_cache[12] = function () {
       return $options.editNews && $options.editNews.apply($options, arguments);
     })
-  }, [_hoisted_55])]), _hoisted_56])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.editNew ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_57)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" modal delete news "), $data.deleteNew ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_58, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_59, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_60, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_61, [_hoisted_62, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-    "class": "p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none",
-    onClick: _cache[13] || (_cache[13] = function () {
-      return $options.deleteNews && $options.deleteNews.apply($options, arguments);
+  }, [_hoisted_55])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_56, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
+    method: "POST",
+    onSubmit: _cache[19] || (_cache[19] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return _ctx.updateNews && _ctx.updateNews.apply(_ctx, arguments);
+    }, ["prevent"]))
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_57, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_label, {
+    "class": "block mb-2",
+    "for": "title"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_58];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_input, {
+    modelValue: $data.form.title,
+    "onUpdate:modelValue": _cache[13] || (_cache[13] = function ($event) {
+      return $data.form.title = $event;
+    }),
+    "class": "h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent",
+    id: "title",
+    type: "text"
+  }, null, 8
+  /* PROPS */
+  , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_59, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_label, {
+    "class": "block mb-2",
+    "for": "body"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_60];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
+    "onUpdate:modelValue": _cache[14] || (_cache[14] = function ($event) {
+      return $data.form.body = $event;
+    }),
+    "class": "resize-none w-full shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent",
+    name: "body",
+    id: "body",
+    cols: "35",
+    rows: "2"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.body]])]), _hoisted_61, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_62, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", _hoisted_63, [_hoisted_64, !$data.form.image ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_65, "Choisir un fichier")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_66, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.form.image.name), 1
+  /* TEXT */
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "file",
+    "class": "hidden",
+    onInput: _cache[15] || (_cache[15] = function ($event) {
+      return $data.form.image = $event.target.files[0];
     })
-  }, [_hoisted_63])]), _hoisted_64, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_65, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  }, null, 32
+  /* HYDRATE_EVENTS */
+  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_67, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_label, {
+    "class": "block mb-2",
+    "for": "date"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_68];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_input, {
+    modelValue: $data.form.date,
+    "onUpdate:modelValue": _cache[16] || (_cache[16] = function ($event) {
+      return $data.form.date = $event;
+    }),
+    "class": "h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent",
+    id: "date",
+    type: "date",
+    min: $data.minDateForPicker
+  }, null, 8
+  /* PROPS */
+  , ["modelValue", "min"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_69, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    "onUpdate:modelValue": _cache[17] || (_cache[17] = function ($event) {
+      return $data.form.published = $event;
+    }),
+    id: "published",
+    type: "radio",
+    name: "published",
+    "class": "hidden"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.form.published]]), _hoisted_70]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_71, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     "class": "bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
     type: "button",
-    onClick: _cache[14] || (_cache[14] = function () {
+    onClick: _cache[18] || (_cache[18] = function () {
+      return $options.editNews && $options.editNews.apply($options, arguments);
+    })
+  }, " Annuler "), _hoisted_72])], 32
+  /* HYDRATE_EVENTS */
+  )])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.editNew ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_73)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" modal delete news "), $data.deleteNew ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_74, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_75, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_76, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_77, [_hoisted_78, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    "class": "p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none",
+    onClick: _cache[20] || (_cache[20] = function () {
+      return $options.deleteNews && $options.deleteNews.apply($options, arguments);
+    })
+  }, [_hoisted_79])]), _hoisted_80, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_81, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    "class": "bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
+    type: "button",
+    onClick: _cache[21] || (_cache[21] = function () {
       return $options.deleteNews && $options.deleteNews.apply($options, arguments);
     })
   }, " Annuler "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     "class": "bg-red-500 hover:bg-red-700 bg-transparent border border-solid border-red-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
     type: "button",
-    onClick: _cache[15] || (_cache[15] = function () {
+    onClick: _cache[22] || (_cache[22] = function () {
       return $options.deleteNews && $options.deleteNews.apply($options, arguments);
     })
-  }, " Supprimer ")])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.deleteNew ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_66)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+  }, " Supprimer ")])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.deleteNew ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_82)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 }
 
 /***/ }),
@@ -21972,64 +22186,71 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 /* HOISTED */
 );
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_5 = {
   "class": "px-4 py-2"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "font-bold text-xl mb-2 text-left"
-}, "L'immobilier en 2021"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
-  "class": "text-grey-darker text-base text-left"
-}, " Comment vont évoluer les prix de l'immobilier en 2021 en France ? ")], -1
-/* HOISTED */
-);
-
+};
 var _hoisted_6 = {
+  "class": "font-bold text-xl mb-2 text-left"
+};
+var _hoisted_7 = {
+  "class": "text-grey-darker text-base text-left"
+};
+var _hoisted_8 = {
   "class": "px-4 py-2 text-left"
 };
-
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+var _hoisted_9 = {
   "class": "bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker"
-}, "5/17/2021", -1
-/* HOISTED */
-);
+};
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
 }, "Jules TD", -1
 /* HOISTED */
 );
 
-var _hoisted_9 = {
+var _hoisted_11 = {
   "class": "ml-20 border-b border-gray-400"
 };
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Lire la suite");
-
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a><a href=\"\"><div class=\"news rounded overflow-hidden shadow-lg my-2\"><img src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></a>", 5);
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Lire la suite");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("layout");
 
   var _component_inertia_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("inertia-link");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_layout), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" foreach for cards "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
-    href: "/actualites/1"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [_hoisted_4, _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [_hoisted_7, _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
-        href: "actualites/1"
-      }, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_10];
-        }),
-        _: 1
-        /* STABLE */
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_layout), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" foreach for cards "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.Allnews, function (news) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_inertia_link, {
+      key: news,
+      href: "/actualites/1"
+    }, {
+      "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+        return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(news.title), 1
+        /* TEXT */
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(news.body), 1
+        /* TEXT */
+        )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.moment(news.date).format("DD-MM-YYYY")), 1
+        /* TEXT */
+        ), _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
+          href: "actualites/1"
+        }, {
+          "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+            return [_hoisted_12];
+          }),
+          _: 1
+          /* STABLE */
 
-      })])])])];
-    }),
-    _: 1
-    /* STABLE */
+        })])])])];
+      }),
+      _: 2
+      /* DYNAMIC */
 
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" endforeach for cards "), _hoisted_11])])]);
+    }, 1024
+    /* DYNAMIC_SLOTS */
+    );
+  }), 128
+  /* KEYED_FRAGMENT */
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" endforeach for cards ")])])]);
 }
 
 /***/ }),
@@ -22422,7 +22643,47 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 /* HOISTED */
 );
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"xl:flex xl:px-20 mt-8 lg:grid lg:grid-cols-3 lg:gap-6 lg:px-44 md:grid md:grid-cols-2 md:gap-6 md:px-24 md:pb-4 sm:gap-6 sm:grid sm:grid-cols-2\"><div class=\"card rounded overflow-hidden shadow-lg xl:my-2 lg:my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><!-- endforeach for cards  --><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div><div class=\"card rounded overflow-hidden shadow-lg my-2\"><img class=\"w-full\" src=\"https://tailwindcss.com/img/card-top.jpg\" alt=\"Sunset in the mountains\"><div class=\"px-4 py-2\"><div class=\"font-bold text-xl mb-2 text-left\">L&#39;immobilier en 2021</div><p class=\"text-grey-darker text-base text-left\"> Comment vont évoluer les prix de l&#39;immobilier en 2021 en France ? </p></div><div class=\"px-4 py-2 text-left\"><span class=\"bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker\">5/17/2021</span><span class=\"bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker\">Jules TD</span></div></div></div>", 1);
+var _hoisted_6 = {
+  "class": "xl:flex xl:px-20 mt-8 lg:grid lg:grid-cols-3 lg:gap-6 lg:px-44 md:grid md:grid-cols-2 md:gap-6 md:px-24 md:pb-4 sm:gap-6 sm:grid sm:grid-cols-2"
+};
+var _hoisted_7 = {
+  "class": "card rounded overflow-hidden shadow-lg xl:my-2 lg:my-2"
+};
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+  src: "https://tailwindcss.com/img/card-top.jpg",
+  alt: "Sunset in the mountains"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_9 = {
+  "class": "px-4 py-2"
+};
+var _hoisted_10 = {
+  "class": "font-bold text-xl mb-2 text-left"
+};
+var _hoisted_11 = {
+  "class": "text-grey-darker text-base text-left"
+};
+var _hoisted_12 = {
+  "class": "px-4 py-2 text-left"
+};
+var _hoisted_13 = {
+  "class": "bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker"
+};
+
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+  "class": "bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+}, "Jules TD", -1
+/* HOISTED */
+);
+
+var _hoisted_15 = {
+  "class": "ml-20 border-b border-gray-400"
+};
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Lire la suite");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("layout");
@@ -22438,7 +22699,38 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Foreach for cards "), _hoisted_6])]);
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Foreach for cards "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.Allnews, function (news) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_inertia_link, {
+      key: news,
+      href: "*"
+    }, {
+      "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+        return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(news.title), 1
+        /* TEXT */
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(news.body), 1
+        /* TEXT */
+        )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.moment(news.date).format("DD-MM-YYYY")), 1
+        /* TEXT */
+        ), _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
+          href: "actualites/1"
+        }, {
+          "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+            return [_hoisted_16];
+          }),
+          _: 1
+          /* STABLE */
+
+        })])])])];
+      }),
+      _: 2
+      /* DYNAMIC */
+
+    }, 1024
+    /* DYNAMIC_SLOTS */
+    );
+  }), 128
+  /* KEYED_FRAGMENT */
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" endforeach for cards  ")])])]);
 }
 
 /***/ }),
@@ -22998,7 +23290,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.content {\n  height: 90vh;\n}\n.content .title h2 {\n  font-size: 2rem;\n  font-style: italic;\n  font-weight: lighter;\n  color: grey;\n}\n.content #service div {\n  font-size: 1.5rem;\n}\n.content .card {\n  max-width: 15rem;\n  margin: auto;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #e9ecef;\n}\n.content {\n  height: 90vh;\n}\n.content .title h2 {\n  font-size: 2rem;\n  font-style: italic;\n  font-weight: lighter;\n  color: grey;\n}\n.content #service div {\n  font-size: 1.5rem;\n}\n.content .card {\n  max-width: 30rem;\n  margin: auto;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
