@@ -28,11 +28,11 @@
                             <p class="text-grey-darker text-base text-left">
                                 {{ news.body }}
                             </p>
+                            <span class="flex justify-start border-gray-400"><inertia-link href="actualites/1"> <strong>Lire la suite</strong></inertia-link></span>
                         </div>
-                        <div class="px-4 py-2 text-left">
+                        <div class="px-4 py-2 flex justify-between">
                             <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">{{ moment(news.date).format("DD-MM-YYYY") }}</span>
-                            <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
-                            <span class="ml-20 border-b border-gray-400"><inertia-link href="actualites/1">Lire la suite</inertia-link></span>
+                            <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">Jules TD</span>
                         </div>
                     </div>
                 </inertia-link>

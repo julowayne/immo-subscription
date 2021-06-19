@@ -54,6 +54,8 @@ Route::post('/admin/newsdashboard', [NewsController::class, 'create']);
 
 
 Route::get('/admin/userdashboard', [ProfileController::class, 'getAllUsers']);
+Route::post('/admin/userdashboard', [ProfileController::class, 'create']);
+
 
 Route::inertia('/admin/subscribedashboard', 'Admin/SubscribeDashboard');
 
