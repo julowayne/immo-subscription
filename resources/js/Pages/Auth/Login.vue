@@ -1,7 +1,5 @@
 <template>
 <layout />
-    <breeze-validation-errors class="mb-4" />
-
     <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
         {{ status }}
     </div>
@@ -19,15 +17,17 @@
                 EMAIL
               </label>
               <input v-model="form.email" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="email" type="text" placeholder="Email">
+              <div class="text-red-700 font-bold" v-if="errors.email">{{ errors.email }}</div>
             </div>
             <div class="mb-3">
               <label class="block" for="password">
                 Password
               </label>
               <input v-model="form.password" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="password" type="password" placeholder="***********">
+              <div class="text-red-700 font-bold" v-if="errors.password">{{ errors.password }}</div>
             </div>
             <div class="flex items-center" id="login">
-              <breeze-button class="bg-blue-500 hover:bg-blue-700 shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out" type="submit">
+              <breeze-button class="bg-blue-500 hover:bg-blue-700 focus:outline-none shadow text-white font-bold rounded hover:shadow-lg transition-shadow duration-200 ease-in-out" type="submit">
                 Connexion
               </breeze-button>
             </div>
@@ -36,35 +36,6 @@
       </div>
     </div>
   </div>
-
-    <!-- <form @submit.prevent="submit">
-        <div>
-            <breeze-label for="email" value="Email" />
-            <breeze-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus autocomplete="username" />
-        </div>
-
-        <div class="mt-4">
-            <breeze-label for="password" value="Password" />
-            <breeze-input id="password" type="password" class="mt-1 block w-full" v-model="form.password" required autocomplete="current-password" />
-        </div>
-
-        <div class="block mt-4">
-            <label class="flex items-center">
-                <breeze-checkbox name="remember" v-model:checked="form.remember" />
-                <span class="ml-2 text-sm text-gray-600">Remember me</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <inertia-link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
-                Forgot your password?
-            </inertia-link>
-
-            <breeze-button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                Log in
-            </breeze-button>
-        </div>
-    </form> -->
 </template>
 
 <script>
@@ -111,8 +82,13 @@
               onFinish: () => this.form.reset('password'),
           })
         }
-      }
+      },
+      computed:{
+        errors() {
+            return this.$page.props.errors
+        }
     }
+  }
 </script>
 <style lang="scss">
     body {

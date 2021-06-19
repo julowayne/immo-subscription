@@ -305,9 +305,6 @@ import moment from 'moment';
                 })
                 form.post('/admin/newsdashboard')
             },
-            mounted(){
-                vm.$forceUpdate();
-            }
             // updateNews(){
             //     this.editNew = !this.editNew;
             //     const form = useForm({

@@ -1,6 +1,5 @@
 <template>
     <layout/>
-    <breeze-validation-errors class="mb-4" />
     <div>
         <div class="signin flex grid-cols-2 text-center m-0 md:px-10">
           <div id="signinContent">
@@ -9,36 +8,42 @@
             </div>
             <div>
               <form class="bg-white shadow-md" method="POST" @submit.prevent="submit">
+                <!-- <breeze-validation-errors class="mb-4" /> -->
                 <h1>Bienvenue</h1>
                 <div class="mb-3">
                   <breeze-label class="block" for="lastName">
                     Nom
                   </breeze-label>
                   <breeze-input v-model="form.lastName" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="lastName" type="text" placeholder="Jules" />
+                  <div class="text-red-700 font-bold" v-if="errors.lastName">{{ errors.lastName }}</div>
                 </div>
                 <div class="mb-3">
                   <breeze-label class="block" for="firstName">
                     Prénom
                   </breeze-label>
                   <breeze-input v-model="form.firstName"  class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="firstName" type="text" placeholder="Thomas Desessarts"/>
+                  <div class="text-red-700 font-bold" v-if="errors.firstName">{{ errors.firstName }}</div>
                 </div>
                 <div class="mb-3">
                   <breeze-label class="block" for="email">
                     Email
                   </breeze-label>
                   <breeze-input v-model="form.email"  class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="email" type="text" placeholder="thomas.desessarts-jules@hotmail.com"/>
+                  <div class="text-red-700 font-bold" v-if="errors.email">{{ errors.email }}</div>
                 </div>
                 <div class="mb-3">
                   <breeze-label class="block" for="siret">
                     N° Siret
                   </breeze-label>
                   <breeze-input v-model="form.siret" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="siret" type="text" placeholder="14567803938454" />
+                  <div class="text-red-700 font-bold" v-if="errors.siret">{{ errors.siret }}</div>
                 </div>
                 <div class="mb-3">
                   <breeze-label class="block" for="password">
                     Mot de passe
                   </breeze-label>
                   <breeze-input v-model="form.password" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="password" type="password" placeholder="***********" />
+                  <div class="text-red-700 font-bold" v-if="errors.password">{{ errors.password }}</div>
                 </div>
                 <div class="flex items-center" id="send">
                   <breeze-button class="w-full bg-blue-500 hover:bg-blue-700 shadow text-white font-bold hover:shadow-lg transition-shadow duration-200 ease-in-out" type="submit">
@@ -90,6 +95,11 @@
             onFinish: () => this.form.reset('password', 'password_confirmation'),
         })
       }
+    },
+    computed:{
+      errors() {
+          return this.$page.props.errors
+      }
     }
   }
 </script>
@@ -99,7 +109,7 @@
   }
   .signin {
     display: flex;
-    height: 85vh;
+    margin-top: 3em;
     width: 100%;
     justify-content: center;
     align-items: center;

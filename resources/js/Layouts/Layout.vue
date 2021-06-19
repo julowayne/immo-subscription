@@ -31,7 +31,7 @@
           <inertia-link href="/profile">
             {{ user.firstname }}
           </inertia-link>
-          <inertia-link method="POST" href="/logout">
+          <inertia-link href="/logout">
             déconnexion
           </inertia-link>
         </div>
