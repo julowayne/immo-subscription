@@ -25,30 +25,55 @@ class ProfileController extends Controller
         $createUser->email = $request->input('email');
         $createUser->siret = $request->input('siret');
         $createUser->password = $request->input('password');
-        $request->avatar->storeOnCloudinary();
+        $createUser->isAdmin = $request->input('isAdmin');
+        if($createUser->avatar != $request->avatar){
+            if(!empty($createUser->avatar_id)){
+                cloudinary()->uploadApi()->destroy($createUser->avatar_id);
+            }
+            $avatar = $request->avatar->storeOnCloudinary();
+            $createUser->avatar = $avatar->getPath();
+            $createUser->avatar_id = $avatar->getPublicId();
+        }
+        // $request->avatar->storeOnCloudinary();
         $createUser->save();
         $request->session()->flash('message', 'Votre nom a bien été modifié');
 
-        return Inertia::render('admin/userdashboard');
+        return redirect()->back();
     }
 
     public function update(Request $request){
         
-        $user = User::where('id', Auth::id())->first();
-        $user->firstname = $request->input('firstName');
-        $user->lastname = $request->input('lastName');
+        $user = User::where('id', $request->id )->first();
+        $user->firstname = $request->input('firstname');
+        $user->lastname = $request->input('lastname');
         $user->email = $request->input('email');
         $user->siret = $request->input('siret');
-        $user->password = $request->input('password');
-        $request->avatar->storeOnCloudinary();
+        $user->isAdmin = $request->input('isAdmin');
+        if($user->password != $request->password && !empty($request->password)){
+            $user->password = $request->input('password');
+        }
+        if($request->avatar){
+
+            $avatar = $request->avatar->storeOnCloudinary();
+            $user->avatar = $avatar->getPath();
+            $user->avatar_id = $avatar->getPublicId();
+        }
         $user->save();
-        $request->session()->flash('message', 'Votre nom a bien été modifié');
-        return Inertia::render('Profile');
+        return redirect()->back();
     }
 
     public function getAllUsers(){
         
         $users = User::all();
         return Inertia::render('Admin/UserDashboard', ["users" => $users]);
+    }
+
+    public function destroy(Request $request)
+    {
+        // dd($request);
+        $user = User::where('id', $request->id )->first();
+        cloudinary()->uploadApi()->destroy($user->avatar_id);
+        $user->delete();
+        return redirect()->back();
     }
 }

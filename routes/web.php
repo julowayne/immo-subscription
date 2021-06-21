@@ -56,6 +56,10 @@ Route::delete('/admin/newsdashboard/delete', [NewsController::class, 'destroy'])
 
 Route::get('/admin/userdashboard', [ProfileController::class, 'getAllUsers']);
 Route::post('/admin/userdashboard', [ProfileController::class, 'create']);
+Route::post('/admin/userdashboard/edit', [ProfileController::class, 'update']);
+Route::delete('/admin/userdashboard/delete', [ProfileController::class, 'destroy']);
+
+
 
 
 Route::inertia('/admin/subscribedashboard', 'Admin/SubscribeDashboard');

@@ -52,7 +52,7 @@ class NewsController extends Controller
         $news->image_id = $avatar->getPublicId();
         $news->save();
 
-        return Inertia::render('admin/newsdashboard');
+        return redirect()->back();
     }
 
     /**
@@ -135,6 +135,6 @@ class NewsController extends Controller
         $news = News::where('id', $request->id )->first();
         cloudinary()->uploadApi()->destroy($news->image_id);
         $news->delete();
-        return Inertia::render('Admin/NewsDashboard');
+        return redirect()->back();
     }
 }

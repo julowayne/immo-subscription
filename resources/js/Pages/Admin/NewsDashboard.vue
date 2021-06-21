@@ -24,9 +24,11 @@
       <div id="adminDashboard">
             <div class="overflow-x-auto">
                 <div class="rounded">
+                <div v-if="Allnews.length">
                     <table class="min-w-max w-full table-auto">
                         <thead>
                             <tr class="text-gray-600 bg-green-400 uppercase text-sm leading-normal">
+                                <th class="py-3 px-6 text-left">Image</th>
                                 <th class="py-3 px-6 text-left">Titre</th>
                                 <th class="py-3 px-6 text-left">Date de publication</th>
                                 <th class="py-3 px-6 text-left">Publiée</th>
@@ -34,44 +36,53 @@
                             </tr>
                         </thead>
                         <tbody class="text-gray-600 text-sm font-light">
-                            <tr v-for="news in Allnews" :key="news" class="hover:bg-gray-100">
-                                <td class="py-3 px-6 text-left whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <span class="font-medium">{{ news.title }}</span>
-                                    </div>
-                                </td>
-                                <td class="py-3 px-6 text-left">
-                                    <div class="flex items-center">
-                                        <span>{{ moment(news.date).format("DD-MM-YYYY") }}</span>
-                                    </div>
-                                </td>
-                                <td class="py-3 px-6 text-left">
-                                    <div class="flex items-center">
-                                        <span v-if="news.published" class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Oui</span>
-                                        <span v-else class="bg-red-200 text-purple-red py-1 px-3 rounded-full text-xs">Non</span>
-                                    </div>
-                                </td>
-                                <td class="py-3 px-6 text-center">
-                                    <div class="flex item-center justify-center">
-                                        <button class="focus:outline-none " @click.prevent="editNews(news)">
-                                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                            </svg>
+                                <tr v-for="news in Allnews" :key="news" class="hover:bg-gray-100">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <span><img :src="news.image" class="rounded-full" alt="profile picture"></span>
                                         </div>
-                                        </button>
-                                        <button class="focus:outline-none" @click.prevent="destroyNews(news)">
-                                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                            </svg>
+                                    </td>
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <span class="font-medium">{{ news.title }}</span>
                                         </div>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
+                                    </td>
+                                    <td class="py-3 px-6 text-left">
+                                        <div class="flex items-center">
+                                            <span>{{ moment(news.date).format("DD-MM-YYYY") }}</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-3 px-6 text-left">
+                                        <div class="flex items-center">
+                                            <span v-if="news.published" class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Oui</span>
+                                            <span v-else class="bg-red-200 text-purple-red py-1 px-3 rounded-full text-xs">Non</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-3 px-6 text-center">
+                                        <div class="flex item-center justify-center">
+                                            <button class="focus:outline-none " @click.prevent="editNews(news)">
+                                            <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                </svg>
+                                            </div>
+                                            </button>
+                                            <button class="focus:outline-none" @click.prevent="destroyNews(news)">
+                                            <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                </svg>
+                                            </div>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
                         </tbody>
                     </table>
+                    </div>
+                    <div v-else class="mx-auto p-3 font-bold flex justify-center">
+                        Vous n'avez pas encore ajouté d'actualités pour le moment, <br> cliquez sur ajouter en haut a droite pour écrire la première.
+                    </div>
                 </div>
             </div>
         </div>
@@ -385,7 +396,12 @@ body {
         box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
         background-color: white;
         text-align: left;
-    }
+        }
+        img {
+            margin: auto;
+            max-width: 40px;
+            box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+        }
 }
 input[type="radio"] + label span {
     transition: background .2s,

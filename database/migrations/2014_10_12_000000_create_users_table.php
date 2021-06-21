@@ -15,6 +15,9 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->boolean('isAdmin')->default(false);
+            $table->string('avatar')->default('https://res.cloudinary.com/dgcdoxa67/image/upload/v1624271163/utilisateur_bqsfxo.png');
+            $table->string('avatar_id')->default('');
             $table->string('firstname');
             $table->string('lastname');
             $table->integer('siret');

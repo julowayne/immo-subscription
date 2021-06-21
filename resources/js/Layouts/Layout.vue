@@ -26,7 +26,7 @@
       <div id="userAccount">
         <div v-if="user">
           <inertia-link href="/profile">
-            <img src="/image/utilisateur.png" alt="account logo">
+            <img :src="user.avatar" alt="account logo">
           </inertia-link>
           <inertia-link href="/profile">
             {{ user.firstname }}
