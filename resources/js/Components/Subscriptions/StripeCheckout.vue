@@ -19,19 +19,19 @@
         </p>
         <form action="POST" method="post" @submit.prevent="submitCheckout">
           <div class="flex items-center justify-center mr-4 mb-4">
-            <input id="radio1" type="radio" name="plan" class="hidden" />
+            <input id="radio1" type="radio" name="plans" class="hidden" />
             <label for="radio1" class="flex items-center cursor-pointer text-xl font-bold">
             <span class="w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink"></span>
             1 mois ( 9.90€)</label>
           </div>
           <div class="flex items-center justify-center mr-4 mb-4">
-            <input id="radio2" type="radio" name="plan" class="hidden" />
+            <input id="radio2" type="radio" name="plans" class="hidden" />
             <label for="radio2" class="flex items-center cursor-pointer text-xl font-bold">
             <span class="w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink"></span>
             3 mois (27.90€)</label>
           </div>
           <div class="flex items-center justify-center mr-4 mb-4">
-            <input id="radio3" type="radio" name="plan" class="hidden" />
+            <input id="radio3" type="radio" name="plans" class="hidden" />
             <label for="radio3" class="flex items-center cursor-pointer text-xl font-bold">
             <span class="w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink"></span>
             6 mois (49.90€)</label>
@@ -47,7 +47,7 @@
         <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="chooseSub()">
           Annuler
         </button>
-        <inertia-link>
+        <inertia-link href="*">
           <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
             Payer
           </button>

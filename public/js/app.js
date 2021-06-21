@@ -19467,7 +19467,7 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 /* HOISTED */
 );
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex items-center justify-center mr-4 mb-4\" data-v-c80bc652><input id=\"radio1\" type=\"radio\" name=\"plan\" class=\"hidden\" data-v-c80bc652><label for=\"radio1\" class=\"flex items-center cursor-pointer text-xl font-bold\" data-v-c80bc652><span class=\"w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink\" data-v-c80bc652></span> 1 mois ( 9.90€)</label></div><div class=\"flex items-center justify-center mr-4 mb-4\" data-v-c80bc652><input id=\"radio2\" type=\"radio\" name=\"plan\" class=\"hidden\" data-v-c80bc652><label for=\"radio2\" class=\"flex items-center cursor-pointer text-xl font-bold\" data-v-c80bc652><span class=\"w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink\" data-v-c80bc652></span> 3 mois (27.90€)</label></div><div class=\"flex items-center justify-center mr-4 mb-4\" data-v-c80bc652><input id=\"radio3\" type=\"radio\" name=\"plan\" class=\"hidden\" data-v-c80bc652><label for=\"radio3\" class=\"flex items-center cursor-pointer text-xl font-bold\" data-v-c80bc652><span class=\"w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink\" data-v-c80bc652></span> 6 mois (49.90€)</label></div><div class=\"mb-3\" data-v-c80bc652><label for=\"name\" class=\"block\" data-v-c80bc652>Nom</label><input class=\"h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"name\" type=\"text\" data-v-c80bc652></div>", 4);
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex items-center justify-center mr-4 mb-4\" data-v-c80bc652><input id=\"radio1\" type=\"radio\" name=\"plans\" class=\"hidden\" data-v-c80bc652><label for=\"radio1\" class=\"flex items-center cursor-pointer text-xl font-bold\" data-v-c80bc652><span class=\"w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink\" data-v-c80bc652></span> 1 mois ( 9.90€)</label></div><div class=\"flex items-center justify-center mr-4 mb-4\" data-v-c80bc652><input id=\"radio2\" type=\"radio\" name=\"plans\" class=\"hidden\" data-v-c80bc652><label for=\"radio2\" class=\"flex items-center cursor-pointer text-xl font-bold\" data-v-c80bc652><span class=\"w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink\" data-v-c80bc652></span> 3 mois (27.90€)</label></div><div class=\"flex items-center justify-center mr-4 mb-4\" data-v-c80bc652><input id=\"radio3\" type=\"radio\" name=\"plans\" class=\"hidden\" data-v-c80bc652><label for=\"radio3\" class=\"flex items-center cursor-pointer text-xl font-bold\" data-v-c80bc652><span class=\"w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink\" data-v-c80bc652></span> 6 mois (49.90€)</label></div><div class=\"mb-3\" data-v-c80bc652><label for=\"name\" class=\"block\" data-v-c80bc652>Nom</label><input class=\"h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent\" id=\"name\" type=\"text\" data-v-c80bc652></div>", 4);
 
 var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   id: "card-element",
@@ -19511,7 +19511,9 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     onClick: _cache[3] || (_cache[3] = function ($event) {
       return $options.chooseSub();
     })
-  }, " Annuler "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, null, {
+  }, " Annuler "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
+    href: "*"
+  }, {
     "default": _withId(function () {
       return [_hoisted_15];
     }),
