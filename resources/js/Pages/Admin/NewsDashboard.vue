@@ -144,7 +144,7 @@
                         <input
                             class="shadow appearance-none border rounded text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             name="active"
-                            v-model="editForm.published"
+                            v-model="form.published"
                             type="checkbox"
                         />
                     </div>
@@ -218,10 +218,13 @@
                         </label>
                         <input
                             class="shadow appearance-none border rounded text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            name="active"
+                            name="active"                
                             v-model="editForm.published"
                             type="checkbox"
                         />
+                                                <span>{{editForm.published}}</span>
+
+                        <!-- <span>{{editform.published}}</span> -->
                     </div>
                     <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
                         <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="editNews(news)">
@@ -302,7 +305,7 @@ import moment from 'moment';
                     body: '',
                     date: '',
                     image: '',
-                    published: false
+                    published: false,
                 },
                 editForm: {
                     title: '',
