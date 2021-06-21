@@ -11,6 +11,14 @@ class ProfileController extends Controller
 {
     public function create(Request $request)
     {
+        $request->validate([
+            'firstName' => 'required',
+            'lastName' => 'required',
+            'email' => 'required',
+            'siret' => 'required',
+            'password' => 'required'
+        ]);
+        
         $createUser = new User;
         $createUser->firstname = $request->input('firstName');
         $createUser->lastname = $request->input('lastName');

@@ -33,13 +33,23 @@ class NewsController extends Controller
      */
     public function create(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'date' => 'required',
+            'image' => 'required'
+        ]);
+
         $news = new News;
+        // dd($request);
         $news->title = $request->input('title');
         $news->body = $request->get('body');
         $news->date = $request->get('date');
         $news->published = $request->get('published');
         $news->user_id = Auth::id();
-        $request->image->storeOnCloudinary();
+        $avatar = $request->image->storeOnCloudinary();
+        $news->image = $avatar->getPath();
+        $news->image_id = $avatar->getPublicId();
         $news->save();
 
         return Inertia::render('admin/newsdashboard');
@@ -87,15 +97,28 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $news = News::where('id', $id);
+
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'date' => 'required',
+            'published' => 'required',
+            'image' => 'required'
+        ]);
+        
+        $news = News::where('id', $request->id )->first();
         $news->title = $request->input('title');
         $news->body = $request->get('body');
         $news->date = $request->get('date');
         $news->published = $request->get('published');
-        $news->user_id = Auth::id();
-        $request->image->storeOnCloudinary();
+        if($news->image != $request->image){
+            cloudinary()->uploadApi()->destroy($news->image_id);
+            $avatar = $request->image->storeOnCloudinary();
+            $news->image = $avatar->getPath();
+            $news->image_id = $avatar->getPublicId();
+        }
         $news->save();
         return Inertia::render('Admin/NewsDashboard', ["news" => $news]);
     }
@@ -106,8 +129,12 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        // dd($request);
+        $news = News::where('id', $request->id )->first();
+        cloudinary()->uploadApi()->destroy($news->image_id);
+        $news->delete();
+        return Inertia::render('Admin/NewsDashboard');
     }
 }

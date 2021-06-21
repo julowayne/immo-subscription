@@ -48,9 +48,10 @@ Route::post('/profile', [ProfileController::class, 'update']);
 Route::inertia('/checkout', 'Checkout');
 
 Route::get('/admin/newsdashboard', [NewsController::class, 'store']);
-Route::get('/admin/newsdashboard/:id', [NewsController::class, 'show']);
 Route::post('/admin/newsdashboard', [NewsController::class, 'create']);
-// Route::post('/admin/newsdashboard', [NewsController::class, 'update']);
+Route::post('/admin/newsdashboard/edit', [NewsController::class, 'update']);
+Route::delete('/admin/newsdashboard/delete', [NewsController::class, 'destroy']);
+
 
 
 Route::get('/admin/userdashboard', [ProfileController::class, 'getAllUsers']);
