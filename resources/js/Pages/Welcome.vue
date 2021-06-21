@@ -22,7 +22,7 @@
             <div class="xl:flex xl:px-20 mt-8 lg:grid lg:grid-cols-3 lg:gap-6 lg:px-44 md:grid md:grid-cols-2 md:gap-6 md:px-24 md:pb-4 sm:gap-6 sm:grid sm:grid-cols-2">
                 <inertia-link v-for="news in Allnews" :key="news" href="*">
                     <div class="card rounded overflow-hidden shadow-lg xl:my-2 lg:my-2">
-                        <img src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
+                        <img :src="news.image" class="w-48 mx-auto" alt="Sunset in the mountains">
                         <div class="px-4 py-2">
                             <div class="font-bold text-xl mb-2 text-left">{{ news.title }}</div>
                             <p class="text-grey-darker text-base text-left">
