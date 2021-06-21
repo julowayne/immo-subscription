@@ -27,7 +27,7 @@ class ApiAuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        $token = $user->createToken($request->fisrtname)->plainTextToken;
+        $token = $user->createToken($user->firstname)->plainTextToken;
 
         return response()->json([
             'token' => $token,
@@ -54,7 +54,7 @@ class ApiAuthController extends Controller
 
         $user->tokens()->where('tokenable_id', $user->id)->delete();
 
-        $token = $user->createToken( $request->email)->plainTextToken;
+        $token = $user->createToken($request->email)->plainTextToken;
 
         return response()->json([
             'token' => $token,
