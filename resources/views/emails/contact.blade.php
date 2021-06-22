@@ -3,11 +3,11 @@
 
     ## Prenom
 
-    {{ $information['first_name'] }}
+    {{ $information['firstname'] }}
 
     ## Nom
 
-    {{ $information['last_name'] }}
+    {{ $information['lastname'] }}
 
     ## email
 
