@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\contact;
+// use App\Mail\Contact;
 
 class ApiContactController extends Controller
 {
@@ -30,7 +30,7 @@ class ApiContactController extends Controller
         //     $m->to($information['email'])->subject($information['subject']);
         // });
 
-        Mail::to(request('email'))->send(new \App\Mail\contact($information));
+        Mail::to(request('email'))->send(new \App\Mail\Contact($information));
         return response()->json([
             'success' => "L'email a bien été envoyé",
         ]);
