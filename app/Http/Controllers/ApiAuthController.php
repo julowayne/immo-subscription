@@ -12,9 +12,9 @@ class ApiAuthController extends Controller
     public function register(Request $request)
     {
         $request->validate([
-            'email' => 'required|email|unique:users',
-            'firstname' => 'required',
             'lastname' => 'required',
+            'firstname' => 'required',
+            'email' => 'required|email|unique:users',
             'siret' => 'required',
             'password' => 'required',
         ]);
@@ -41,6 +41,7 @@ class ApiAuthController extends Controller
     }
 
     public function login(Request $request){
+
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
