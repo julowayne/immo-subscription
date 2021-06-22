@@ -137,4 +137,20 @@ class NewsController extends Controller
         $news->delete();
         return redirect()->back();
     }
+    public function search(Request $request){
+        // Get the search value from the request
+        $search = $request->input('search');
+        // dd($search);
+        // Search in the title and body columns from the posts table
+        $newsFromQuery = News::query()
+            ->where('title', 'like', "%{$search}%")
+            ->orWhere('body', 'like', "%{$search}%")
+            ->get();
+
+        // dd($newsFromQuery);
+        // Return the search view with the resluts compacted
+        return Inertia::render('NewsFromQuery', ["newsFromQuery" => $newsFromQuery]);
+
+        // return view('search', compact('posts'));
+    }
 }

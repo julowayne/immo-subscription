@@ -49,6 +49,9 @@ Route::inertia('/checkout', 'Checkout');
 
 Route::post('/stripe/intent', [CheckoutController::class, 'newIntent']);
 
+Route::get('/search', [NewsController::class, 'search'])->name('search');
+
+
 Route::get('/admin/newsdashboard', [NewsController::class, 'store']);
 Route::post('/admin/newsdashboard', [NewsController::class, 'create']);
 Route::post('/admin/newsdashboard/edit', [NewsController::class, 'update']);

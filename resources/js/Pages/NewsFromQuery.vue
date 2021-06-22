@@ -4,7 +4,7 @@
         <div class="content flex text-center m-2 flex-col">
           <div class="xl:grid xl:grid-cols-3 xl:gap-6 xl:my-10 xl:px-20 md:grid md:grid-cols-2 md:gap-4 md:my-10 md:px-20 sm:grid sm:grid-cols-2 sm:gap-4 sm:my-10 sm:px-20">
               <!-- foreach for cards -->
-            <inertia-link v-for="news in Allnews" :key="news" href="/actualites/1">
+            <inertia-link v-for="news in newsFromQuery" :key="news" href="*">
                 <div class="news rounded overflow-hidden shadow-lg my-2">
                     <img :src="news.image" class="w-48 mx-auto" alt="Sunset in the mountains">
                     <div class="px-4 py-2">
@@ -16,7 +16,7 @@
                     <div class="px-4 py-2 text-left">
                         <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">{{ moment(news.date).format("DD-MM-YYYY") }}</span>
                         <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
-                        <span class="ml-16 border-gray-400"><inertia-link href="*"><strong>Lire la suite</strong></inertia-link></span>
+                        <span class="ml-16 border-gray-400"><inertia-link href="actualites/1"><strong>Lire la suite</strong></inertia-link></span>
                     </div>
                 </div>
             </inertia-link>
@@ -36,6 +36,7 @@
     background-color: #f8f9fa;
 
   }
+
 </style>
 
 <script>
@@ -45,13 +46,16 @@ import moment from 'moment'
         components:{
             Layout
         },
-        props:{
-            Allnews: Array
+        props: {
+          newsFromQuery: []
         },
         methods: {
             moment() {
                 return moment();
-            }
+            },
+        },
+        mounted(){
+          console.log(this.newsFromQuery)
         }
     }
 </script>

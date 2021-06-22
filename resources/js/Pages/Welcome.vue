@@ -64,6 +64,7 @@
     .card {
         max-width: 30rem;
         margin: auto;
+        background-color: #f8f9fa;
         }
     }
     //mediaqueries :

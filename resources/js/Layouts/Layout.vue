@@ -21,7 +21,10 @@
         </span>
       </div>
       <div id="search">
-        <input type="text" placeholder="Rechercher ...">
+        <form :action="route('search')" method="GET" @keyup.enter="newsFromQuery">
+            <input type="text" name="search" placeholder="Rechercher ...">
+            <!-- <button class type="submit">Search</button> -->
+        </form>
       </div>
       <div id="userAccount">
         <div v-if="user">
@@ -54,6 +57,27 @@
   import { usePage } from '@inertiajs/inertia-vue3'
 
   export default {
+    data(){
+      return {
+        allNewsFromQuery: []
+      }
+    },
+    methods: {
+      newsFromQuery(){
+        console.log('ok')
+        // this.$router.push({ path: "/search" });
+        // axios.get("https://whoisalfred.herokuapp.com/search")
+        axios.get("http://127.0.0.1:8000/search")
+          .then((response)=> {
+            this.newsFromQuery = response.data.allNewsFromQuery
+            console.log(response)
+          })
+          .catch(error => {
+            console.log(error);
+        });
+        this.errors = []
+      }
+    },
     setup() {
       const user = computed(() => usePage().props.value.auth.user)
       return { user }
