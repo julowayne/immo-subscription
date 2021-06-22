@@ -36,6 +36,6 @@ class Contact extends Mailable
             'object' => $request->get('object'),
             'message' => $request->get('message'),
         ];
-        return $this->view('emails.contact', compact('$user'));     
+        return $this->view('emails.contact', compact('user'));     
     }
 }
