@@ -26,7 +26,7 @@ class ApiContactController extends Controller
 
         Mail::to(request('email'))->send(new \App\Mail\contact($information));
         return response()->json([
-            'success' => 'mail Send',
+            'success' => "L'email a bien été envoyé",
         ]);
     }
 }

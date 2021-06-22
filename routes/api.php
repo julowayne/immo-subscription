@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiAuthController;
+use App\Http\Controllers\ApiContactController;
 use App\Http\Controllers\ApiNewsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('auth/register', [ApiAuthController::class , 'register']);
 Route::post('auth/login', [ApiAuthController::class , 'login']);
-Route::post('contact', [ApiAuthController::class , 'sendMail']);
+Route::post('contact', [ApiContactController::class , 'sendMail']);
 
 Route::get('news', [ApiNewsController::class , 'showNews']);
 
