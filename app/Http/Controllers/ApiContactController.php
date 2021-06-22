@@ -24,14 +24,15 @@ class ApiContactController extends Controller
             'object' => $request->object,
             'message' => $request->message,
         ];
-        Mail::send('emails.contact', $information, function ($m) use($information){
-            $m->from($_ENV['MAIL_FROM_ADDRESS'], $_ENV['MAIL_FROM_NAME']);
-            $m->to($information['email'])->subject($information['subject']);
-        });
+        // dd($information);
+        // Mail::send('emails.contact', $information, function ($m) use($information){
+        //     $m->from($_ENV['MAIL_FROM_ADDRESS'], $_ENV['MAIL_FROM_NAME']);
+        //     $m->to($information['email'])->subject($information['subject']);
+        // });
 
-        // Mail::to(request('email'))->send(new \App\Mail\contact($information));
-        // return response()->json([
-        //     'success' => "L'email a bien été envoyé",
-        // ]);
+        Mail::to(request('email'))->send(new \App\Mail\contact($information));
+        return response()->json([
+            'success' => "L'email a bien été envoyé",
+        ]);
     }
 }
