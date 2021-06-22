@@ -30,12 +30,12 @@ class Contact extends Mailable
     public function build(Request $request)
     {
         $user = [
-            'firstname' => $request->get('firstName'),
-            'lastname' => $request->get('firstName'),
-            'email' => $request->get('email'),
-            'object' => $request->get('object'),
-            'message' => $request->get('message'),
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'email' => $request->email,
+            'object' => $request->object,
+            'message' => $request->message,
         ];
-        return $this->view('emails.contact', compact('user'));     
+        return $this->view('emails.contact', compact('user'));  
     }
 }
