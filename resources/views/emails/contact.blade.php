@@ -7,7 +7,7 @@
   <title>Document</title>
 </head>
 <body>
-  <h3>Bonjour {{ $user->firstname }}</h3>
+  <h3>Bonjour {{ $user['firstname'] }}</h3>
 
 </body>
 </html>
