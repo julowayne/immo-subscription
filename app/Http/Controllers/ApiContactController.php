@@ -18,8 +18,8 @@ class ApiContactController extends Controller
         ]);
 
         $information = [
-            'lastname' => $request->last_name,
-            'firstname' => $request->first_name,
+            'lastname' => $request->lastname,
+            'firstname' => $request->firstname,
             'email' => $request->email,
             'object' => $request->object,
             'message' => $request->message,
