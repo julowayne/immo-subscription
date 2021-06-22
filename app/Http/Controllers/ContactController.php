@@ -12,11 +12,11 @@ class ContactController extends Controller
 {
     public function sendmail(Request $request){
         // $user = Auth::user();
-        Mail::to($request->email)->send(new Contact);
+        // Mail::to($request->email)->send(new Contact);
         // return redirect()->home();
-        return Inertia::render('contact');
+        // return Inertia::render('contact');
 
-     }
+    //  }
     // public function contact(Request $request){
     //     $params = [
     //         'firstName' => $request->get('firstname'),
@@ -30,5 +30,5 @@ class ContactController extends Controller
     //         $m->to($params['email'])->subject('Contact');
     //     });
     //     return Inertia::render('Contact');
-    // }
+     }
 }

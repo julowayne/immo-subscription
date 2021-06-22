@@ -5,40 +5,46 @@
           <div id="contactContent">
             <iframe class="hidden md:block" width="400px" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJg1hVUAlu5kcR7NlQ2Wbq5iU&key=AIzaSyDRkKQuLaaLbmCSl-gqmo0tqC8T0capNjs"></iframe>
             <div>
-              <form class="bg-white shadow-md" method="POST" @submit.prevent="contactForm">
+              <form class="bg-white shadow-md" method="POST" @submit.prevent="contact">
                 <h1>Contact</h1>
+                <div v-if="emailSend">{{ emailSend }}</div>
                 <div class="mb-3">
-                  <label class="block" for="lastName">
+                  <label class="block" for="lastname">
                     Nom
                   </label>
-                  <input v-model="form.lastName" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="lastName" type="text" placeholder="Nom">
+                  <div class="errors" v-if="errors">{{errors[0]}}</div>
+                  <input v-model="form.lastname" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="lastname" type="text" placeholder="Nom">
                 </div>
                 <div class="mb-3">
-                  <label class="block" for="firstName">
+                  <label class="block" for="firstname">
                     Prénom
                   </label>
-                  <input v-model="form.firstName" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="firstName" type="text" placeholder="Prénom">
+                  <div class="errors" v-if="errors">{{errors[1]}}</div>
+                  <input v-model="form.firstname" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="firstname" type="text" placeholder="Prénom">
                 </div>
                 <div class="mb-3">
                   <label class="block" for="email">
                     Email
                   </label>
+                  <div class="errors" v-if="errors">{{errors[2]}}</div>
                   <input v-model="form.email" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="email" type="text" placeholder="Email">
                 </div>
                 <div class="mb-3">
                   <label class="block" for="object">
                     Objet
                   </label>
+                  <div class="errors" v-if="errors">{{errors[3]}}</div>
                   <input v-model="form.object" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="object" type="text" placeholder="Objet du message">
                 </div>
                 <div class="mb-3">
                   <label class="block" for="message">
                     Message
                   </label>
+                  <div class="errors" v-if="errors">{{errors[4]}}</div>
                   <textarea v-model="form.message" class="resize-none w-full shadow rounded outline-none focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" name="title" id="title" cols="35" rows="2"></textarea>
                 </div>
                 <div class="flex items-center" id="send">
-                  <button class="shadow text-white font-bold rounded hover:shadow-xl transition-shadow duration-200 ease-in-out" type="submit">
+                  <button class="shadow text-white font-bold focus:outline-none rounded hover:shadow-xl transition-shadow duration-200 ease-in-out" type="submit">
                     Envoyer
                   </button>
                 </div>
@@ -51,33 +57,53 @@
 
 <script>
 import Layout from '../Layouts/Layout.vue'
-import { useForm } from "@inertiajs/inertia-vue3"
+
 export default {
     components:{
         Layout
     },
     data(){
       return {
-          form: this.$inertia.form({
-            lastName: '',
-            firstName: '',
-            email: '',
-            object: '',
-            message: '',
-        })
+        form: {
+          lastname: '',
+          firstname: '',
+          email: '',
+          object: '',
+          message: '',
+        },
+        emailSend: '',
+        errors : []
       }
     },
     methods: {
-    contactForm(){
-      const form = useForm({
-        firstName: this.form.firstName,
-        lastName: this.form.lastName,
-        email: this.form.email,
-        object: this.form.object,
-        message: this.form.message,
-      })
-      form.post('/contact')
-    }
+      contact(){
+        axios(`http://127.0.0.1:8000/api/contact`, {
+            method: 'POST',
+          data: {
+            lastname: this.form.lastname,
+            firstname: this.form.firstname,
+            email: this.form.email,
+            object: this.form.object,
+            message: this.form.message,
+          } 
+        })
+        .then((response)=> {
+          this.emailSend = response.data.success
+          // this.$router.push({ path: "/" });
+          console.log(response)
+        })
+        .catch(error => {
+          if(error.response.status === 400 || error.response.status ===  422){
+            return this.errors.push(error.response.data.errors.lastname[0],
+                                    error.response.data.errors.firstname[0],
+                                    error.response.data.errors.email[0],
+                                    error.response.data.errors.object[0],
+                                    error.response.data.errors.message[0],)
+          }
+      });
+      this.contactForm = {}
+      this.errors = []
+      },
   }
 }
 </script>
@@ -91,9 +117,13 @@ export default {
       height: 400px;
       width: 100%;
     }
+    .errors {
+      margin: 2px 0;
+      color:red;
+    }
     .contact {
       display: flex;
-      height: 85vh;
+      margin-top: 3em;
       width: 100%;
       justify-content: center;
       align-items: center;

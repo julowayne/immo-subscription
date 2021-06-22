@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiContactController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NewsController;
@@ -37,7 +38,7 @@ Route::get('/actualites', [NewsController::class, 'index']);
 Route::inertia('/actualites/1', 'SingleNews');
 
 Route::inertia('/contact', 'Contact');
-Route::post('/contact', [ContactController::class, 'sendmail']);
+Route::post('/contact', [ApiContactController::class, 'sendDesktopMail']);
 
 Route::inertia('/services', 'Subscribe');
 Route::post('/services', [CheckoutController::class, 'store']);
