@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Plan;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -34,19 +35,21 @@ class CheckoutController extends Controller
             'coupon' => 'nullable'
         ]);
         
+        $admin = User::query()->where('isAdmin', "TRUE")->first();
+        $emails = [$admin->email, Auth::user()->email];
+
         try {
             $subscription = $request->user()
                 ->newSubscription('default', $request->plan)
                 ->withCoupon($request->coupon)
                 ->create($request->payment_method);
 
-            Mail::to(Auth::user()->email)->send(new \App\Mail\Subscription($subscription));
+            Mail::to($emails)->send(new \App\Mail\Subscription($subscription));
     
             return response()->json($subscription);
-        // return Inertia::render('SubscribeConfirmation', ["subscription" => $subscription]); 
+
         } catch (\Laravel\Cashier\Exceptions\IncompletePayment $e) {
             return response()->json($e->payment);
         }
-        // return Redirect::route('/services/abonnement/confirmation');
     }
 }
