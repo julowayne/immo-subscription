@@ -290,6 +290,8 @@ import BreezeLabel from '@/Components/Label'
 import moment from 'moment';
 import { QuillEditor } from '@vueup/vue-quill'
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
+import { computed } from 'vue'
+import { usePage } from '@inertiajs/inertia-vue3'
 
     export default {
         components:{
@@ -329,6 +331,10 @@ import '@vueup/vue-quill/dist/vue-quill.snow.css';
                     id: ''
                 }
             }
+        },
+        setup() {
+            const user = computed(() => usePage().props.value.auth.user)
+            return { user }
         },
         methods: {
             onFileChange(e) {

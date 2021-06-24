@@ -23,7 +23,6 @@
       <div id="search">
         <form :action="route('search')" method="GET" @keyup.enter="newsFromQuery">
             <input type="text" name="search" placeholder="Rechercher ...">
-            <!-- <button class type="submit">Search</button> -->
         </form>
       </div>
       <div id="userAccount">
