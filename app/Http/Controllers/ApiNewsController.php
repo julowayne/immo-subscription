@@ -9,8 +9,6 @@ class ApiNewsController extends Controller
 {
     public function showNews(){
         $allNews = News::all();
-
-
         return response()->json([
             'allNews' => $allNews,
         ]);

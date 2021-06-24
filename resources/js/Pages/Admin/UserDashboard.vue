@@ -95,7 +95,7 @@
                 <h3 class="text-3xl font-semibold">
                 Ajouter un utilisateur
                 </h3>
-                <button class="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none" @click="newUser">
+                <button class="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none" @click="addUser">
                 <span class="bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
                     ×
                 </span>
@@ -162,7 +162,7 @@
                     </div>
      
                     <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                        <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="newUser">
+                        <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="addUser">
                             Annuler
                         </button>
                         <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit">

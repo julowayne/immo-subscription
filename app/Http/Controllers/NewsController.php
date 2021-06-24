@@ -139,7 +139,7 @@ class NewsController extends Controller
     public function destroy(Request $request)
     {
         $news = News::where('id', $request->id )->first();
-        cloudinary()->uploadApi()->destroy($news->image_id);
+        cloudinary()->uploadApi()->destroy($news->image);
         $news->delete();
         return redirect()->back();
     }

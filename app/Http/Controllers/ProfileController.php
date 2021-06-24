@@ -74,7 +74,7 @@ class ProfileController extends Controller
     public function destroy(Request $request)
     {
         $user = User::where('id', $request->id )->first();
-        cloudinary()->uploadApi()->destroy($user->avatar_id);
+        cloudinary()->uploadApi()->destroy($user->avatar);
         $user->delete();
         return redirect()->back();
     }
