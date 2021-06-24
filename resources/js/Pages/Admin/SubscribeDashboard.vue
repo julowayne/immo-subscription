@@ -22,26 +22,20 @@
                     <table class="min-w-max w-full table-auto">
                         <thead>
                             <tr class="text-gray-600 bg-green-400 uppercase text-sm leading-normal">
-                                <th class="py-3 px-6 text-left">Formule</th>
-                                <th class="py-3 px-6 text-left">Utilisateur</th>
-                                <th class="py-3 px-6 text-left">Nom</th>
+                                <th class="py-3 px-6 text-left">Prix</th>
+                                <th class="py-3 px-6 text-left">Durée de l'abonnement</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-600 text-sm font-light">
-                            <tr class="hover:bg-gray-100">
+                            <tr v-for="plan in plans" :key="plan" class="hover:bg-gray-100">
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium">test</span>
+                                        <span class="font-medium"><strong>{{ plan.price/100}} €</strong></span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-left">
                                     <div class="flex items-center">
-                                        <span>test</span>
-                                    </div>
-                                </td>
-                                <td class="py-3 px-6 text-left">
-                                    <div class="flex items-center">
-                                        <span>test</span>
+                                        <span>{{ plan.name }}</span>
                                     </div>
                                 </td>
                             </tr>
@@ -59,6 +53,9 @@ import Layout from '../../Layouts/Layout.vue'
     export default {
         components:{
             Layout
+        },
+        props: {
+            plans: Array
         }
     }
 </script>
@@ -78,10 +75,10 @@ import Layout from '../../Layouts/Layout.vue'
         color: #20c997;
         justify-content: start;
         margin-top: 1rem;
-        width: 1000px;
+        width: 800px;
     }
     #adminDashboard {
-        width: 1000px;
+        width: 800px;
         border-radius: 4px;
         box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
         background-color: white;

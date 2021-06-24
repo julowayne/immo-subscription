@@ -13,15 +13,14 @@ use Inertia\Inertia;
 class CheckoutController extends Controller
 {
     public function index(){
-        $plans = Plan::get();
-        return Inertia::render('Subscribe', $plans);
-        dd($plans);
+        // $plans = Plan::get();
+        // return Inertia::render('Admin/SubscribeDashboard', ['plans' => $plans]);
     }
 
     public function store(){
 
-        return Redirect::route('/services', 'Subscribe');
-
+        $plans = Plan::get();
+        return Inertia::render('Admin/SubscribeDashboard', ['plans' => $plans]);
     }
     public function newIntent(){
         return Auth::user()->createSetupIntent();

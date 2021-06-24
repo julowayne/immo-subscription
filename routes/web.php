@@ -64,6 +64,7 @@ Route::post('/admin/newsdashboard', [NewsController::class, 'create']);
 Route::post('/admin/newsdashboard/edit', [NewsController::class, 'update']);
 Route::delete('/admin/newsdashboard/delete', [NewsController::class, 'destroy']);
 
+Route::get('/admin/subscribedashboard', [CheckoutController::class, 'store']);
 
 
 Route::get('/admin/userdashboard', [ProfileController::class, 'getAllUsers']);
@@ -74,7 +75,7 @@ Route::delete('/admin/userdashboard/delete', [ProfileController::class, 'destroy
 
 
 
-Route::inertia('/admin/subscribedashboard', 'Admin/SubscribeDashboard');
+// Route::inertia('/admin/subscribedashboard', 'Admin/SubscribeDashboard');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
