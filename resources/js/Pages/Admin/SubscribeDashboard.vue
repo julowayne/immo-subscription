@@ -75,10 +75,10 @@ import Layout from '../../Layouts/Layout.vue'
         color: #20c997;
         justify-content: start;
         margin-top: 1rem;
-        width: 800px;
+        width: 1000px;
     }
     #adminDashboard {
-        width: 800px;
+        width: 1000px;
         border-radius: 4px;
         box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
         background-color: white;

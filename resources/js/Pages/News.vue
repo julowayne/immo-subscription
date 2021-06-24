@@ -4,9 +4,9 @@
         <div class="content flex text-center m-2 flex-col">
             <div v-if="Allnews.length > 0">
                 <div class="xl:grid xl:grid-cols-3 xl:gap-6 xl:my-10 xl:px-20 md:grid md:grid-cols-2 md:gap-4 md:my-10 md:px-20 sm:grid sm:grid-cols-2 sm:gap-4 sm:my-10 sm:px-20">
-                    <inertia-link v-for="news in Allnews" :key="news" href="/actualites/1">
-                        <div class="news rounded overflow-hidden shadow-lg my-2">
-                            <img :src="news.image" class="mx-auto" alt="Sunset in the mountains">
+                    <inertia-link v-for="news in Allnews" :key="news" :href="`/actualites/${news.id}`">
+                        <div class="news rounded shadow-lg my-2">
+                            <img :src="news.image" class="mx-auto object-contain max-w-full" alt="Sunset in the mountains">
                             <div class="px-4 py-2">
                                 <div class="font-bold text-xl mb-2 text-left">{{ news.title }}</div>
                                 <p v-html="news.body" class="text-grey-darker text-base text-left">
@@ -15,7 +15,7 @@
                             <div class="px-4 py-2 text-left">
                                 <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">{{ moment(news.date).format("DD-MM-YYYY") }}</span>
                                 <span class="bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">Jules TD</span>
-                                <span class="ml-16 border-gray-400"><inertia-link href="*"><strong>Lire la suite</strong></inertia-link></span>
+                                <span class="ml-16 border-gray-400"><inertia-link :href="`/actualites/${news.id}`"><strong>Lire la suite</strong></inertia-link></span>
                             </div>
                         </div>
                     </inertia-link>
@@ -36,6 +36,9 @@
     max-width: 22rem;
     margin: auto;
     background-color: #f8f9fa;
+    img {
+        border-radius: 4px 4px 0px 0px;
+    }
   }
   #contact {
       color: #20c997;

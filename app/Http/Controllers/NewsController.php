@@ -50,9 +50,9 @@ class NewsController extends Controller
             if(!empty($news->image_id)){
                 cloudinary()->uploadApi()->destroy($news->image_id);
             }
-            $news = $request->image->storeOnCloudinary();
-            $news->image = $news->getPath();
-            $news->image_id = $news->getPublicId();
+            $image = $request->image->storeOnCloudinary();
+            $news->image = $image->getPath();
+            $news->image_id = $image->getPublicId();
         }
 
         $news->save();
@@ -80,8 +80,8 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        $singleNews = News::where('id', $id);
-        return Inertia::render('Admin/NewsDashboard', ["singleNews" => $singleNews]);
+        $singleNews = News::query()->where('id', $id)->first();
+        return Inertia::render('SingleNews', ["singleNews" => $singleNews]);
     }
 
     /**
@@ -122,9 +122,9 @@ class NewsController extends Controller
             if(!empty($news->image_id)){
                 cloudinary()->uploadApi()->destroy($news->image_id);
             }
-            $news = $request->image->storeOnCloudinary();
-            $news->image = $news->getPath();
-            $news->image_id = $news->getPublicId();
+            $image = $request->image->storeOnCloudinary();
+            $news->image = $image->getPath();
+            $news->image_id = $image->getPublicId();
         }
         $news->save();
         return redirect()->back();

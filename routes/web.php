@@ -35,7 +35,7 @@ Route::inertia('/login', 'Login');
 
 // Route::inertia('/actualites', 'News');
 Route::get('/actualites', [NewsController::class, 'index']);
-Route::inertia('/actualites/1', 'SingleNews');
+Route::get('/actualites/{id}', [NewsController::class, 'show']);
 
 Route::inertia('/contact', 'Contact');
 Route::post('/contact', [ApiContactController::class, 'sendDesktopMail']);

@@ -372,7 +372,8 @@ import '@vueup/vue-quill/dist/vue-quill.snow.css';
                         image: this.form.image,
                         published: this.form.published
                 })
-                // this.form = {};
+                this.form = [];
+                this.url = null
                 form.post('/admin/newsdashboard')
                 },
                 updateNews(){
@@ -385,6 +386,8 @@ import '@vueup/vue-quill/dist/vue-quill.snow.css';
                         published: this.editForm.published,
                         id: this.editForm.id
                 })
+                this.form = [];
+                this.url = null
                 form.post('/admin/newsdashboard/edit')
                 }
         }

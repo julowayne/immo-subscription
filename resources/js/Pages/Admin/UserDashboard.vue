@@ -39,7 +39,9 @@
                             <tr v-for="user in users" :key="user" class="hover:bg-gray-100">
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span><img :src="user.avatar" class="rounded-full" alt="profile picture"></span>
+                                        <span>
+                                            <img v-if="user.avatar" :src="user.avatar" class="rounded-full" alt="Photo de profil">
+                                        </span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
@@ -325,7 +327,7 @@ export default {
                 avatar: '',
                 siret: '',
                 password: '',
-                isAdmin: '',
+                isAdmin: false,
             },
             editForm: {
                 firstname: '',
