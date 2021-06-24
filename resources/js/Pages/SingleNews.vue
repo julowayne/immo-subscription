@@ -3,11 +3,11 @@
         <layout/>
         <div class="newsContent flex text-center justify-center m-0 flex-col">
           <div class="my-10 px-20">
-            <div class="font-bold text-2xl mb-2 text-center">{{ singleNews.title }}</div>
             <div class="news rounded overflow-hidden shadow-lg my-2 p-5">
+              <div class="font-bold text-2xl mb-2 text-left">{{ singleNews.title }}</div>
                 <div class="px-4 py-2">
-                    <p v-html="singleNews.body" class="text-grey-darker text-base text-left">
-                    </p>
+                  <p v-html="singleNews.body" class="text-grey-darker text-base text-left">
+                  </p>
                 </div>
                 <div class="px-4 py-2 text-left">
                     <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">5/17/2021</span>
