@@ -45,7 +45,10 @@ class CheckoutController extends Controller
 
             Mail::to($emails)->send(new \App\Mail\Subscription($subscription));
     
-            return response()->json($subscription);
+
+            // return Inertia::render('SubscribeConfirmation');
+            return redirect('/');
+            // return response()->json($subscription);
 
         } catch (\Laravel\Cashier\Exceptions\IncompletePayment $e) {
             return response()->json($e->payment);

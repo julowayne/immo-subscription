@@ -6,7 +6,7 @@
         <div v-if="user" id="title" class="sm:text-center flex justify-between">
           Bonjour {{ user.firstname }}, retrouvez ici vos informations
           <span>
-             <inertia-link href="/admin/userdashboard">
+             <inertia-link v-if="user.isAdmin" href="/admin/userdashboard">
                <breeze-button class="hover:bg-gray-700">Admin Dashboard</breeze-button>
               </inertia-link>
             </span>

@@ -45,7 +45,7 @@
           <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="chooseSub()">
             Annuler
           </button>
-          <!-- <inertia-link href="*"> -->
+          <!-- <inertia-link href="/services/abonnement/confirmation"> -->
             <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit">
               Payer
             </button>
@@ -66,7 +66,8 @@
       "card",
       "stripe",
       "secret",
-      "token"
+      "token",
+      "showSubModal"
     ],
     data(){
       return {
@@ -121,12 +122,10 @@
                             response.data.status &&
                             response.data.status == "requires_action"
                         ) {
-                            // Confirmation
                             this.requiresAction = true;
                         } else {
                             this.paymentProcessed = true;
-                            // this.messageProcessed =
-                            //     "Merci de votre abonnement ! 🤑";
+
                         }
                     })
                     .catch((error) => {
