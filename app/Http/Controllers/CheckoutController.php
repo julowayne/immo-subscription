@@ -13,8 +13,7 @@ use Inertia\Inertia;
 class CheckoutController extends Controller
 {
     public function index(){
-        // $plans = Plan::get();
-        // return Inertia::render('Admin/SubscribeDashboard', ['plans' => $plans]);
+
     }
 
     public function store(){
@@ -45,10 +44,7 @@ class CheckoutController extends Controller
 
             Mail::to($emails)->send(new \App\Mail\Subscription($subscription));
     
-
-            // return Inertia::render('SubscribeConfirmation');
-            return redirect('/');
-            // return response()->json($subscription);
+            return response()->json($subscription);
 
         } catch (\Laravel\Cashier\Exceptions\IncompletePayment $e) {
             return response()->json($e->payment);

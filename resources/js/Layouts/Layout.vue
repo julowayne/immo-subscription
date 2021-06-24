@@ -64,12 +64,9 @@
     },
     methods: {
       newsFromQuery(){
-        // this.$router.push({ path: "/search" });
-        // axios.get("https://whoisalfred.herokuapp.com/search")
-        axios.get("http://127.0.0.1:8000/search")
+        axios.get("https://whoisalfred.herokuapp.com/search")
           .then((response)=> {
             this.newsFromQuery = response.data.allNewsFromQuery
-            console.log(response)
           })
           .catch(error => {
             console.log(error);

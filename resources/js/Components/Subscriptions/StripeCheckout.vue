@@ -99,7 +99,6 @@
             if (error) {
                 console.log(error);
             } else {
-                console.log(setupIntent);
                 this.payment_method = setupIntent.payment_method;
                 await axios
                     .post(
@@ -117,7 +116,6 @@
                         }
                     )
                     .then((response) => {
-                        console.log(response.data);
                         if (
                             response.data.status &&
                             response.data.status == "requires_action"

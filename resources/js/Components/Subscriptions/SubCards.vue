@@ -79,14 +79,12 @@ import { usePage } from '@inertiajs/inertia-vue3'
       submitCheckout(){
         this.$inertia.post('/services', {
           name: this.name,
-          // email: this.email,
           _token: this.$page.props.csrf_token,
         })
       },
       displayStripeModal() {
         this.showSubModal = true;
         this.$nextTick(function () {
-            console.log(this.stripeKey);
             this.stripe = window.Stripe(this.stripeKey);
             const elements = this.stripe.elements();
             this.card = elements.create("card");
@@ -94,7 +92,6 @@ import { usePage } from '@inertiajs/inertia-vue3'
             axios
                 .post("/stripe/intent")
                 .then((response) => {
-                    console.log(response.data);
                     this.secret = response.data.client_secret;
                 })
                 .catch((error) => {

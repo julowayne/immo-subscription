@@ -33,7 +33,6 @@ Route::get('/', [NewsController::class, 'lastNews']);
 Route::inertia('/register', 'Register');
 Route::inertia('/login', 'Login');
 
-// Route::inertia('/actualites', 'News');
 Route::get('/actualites', [NewsController::class, 'index']);
 Route::get('/actualites/{id}', [NewsController::class, 'show']);
 
@@ -44,7 +43,6 @@ Route::inertia('/services', 'Subscribe')->middleware('auth');
 
 Route::post('/services', [CheckoutController::class, 'store']);
 Route::post('/services/abonnement', [CheckoutController::class, 'subscribe']);
-// Route::get('/services/abonnement/confirmation', [CheckoutController::class, 'subscribe']);
 
 
 
@@ -75,7 +73,6 @@ Route::delete('/admin/userdashboard/delete', [ProfileController::class, 'destroy
 
 
 
-// Route::inertia('/admin/subscribedashboard', 'Admin/SubscribeDashboard');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

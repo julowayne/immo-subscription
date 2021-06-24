@@ -35,7 +35,6 @@ class ProfileController extends Controller
             $createUser->avatar = $avatar->getPath();
             $createUser->avatar_id = $avatar->getPublicId();
         }
-        // $request->avatar->storeOnCloudinary();
         $createUser->save();
         $request->session()->flash('message', 'Votre nom a bien été modifié');
 
@@ -49,7 +48,6 @@ class ProfileController extends Controller
         $user->lastname = $request->input('lastname');
         $user->email = $request->input('email');
         $user->siret = $request->input('siret');
-        // $user->password = Hash::make($request->input('password'));
         $user->isAdmin = $request->input('isAdmin');
         if($user->password != $request->password && !empty($request->password)){
             $user->password = $request->input('password');
@@ -75,7 +73,6 @@ class ProfileController extends Controller
 
     public function destroy(Request $request)
     {
-        // dd($request);
         $user = User::where('id', $request->id )->first();
         cloudinary()->uploadApi()->destroy($user->avatar_id);
         $user->delete();

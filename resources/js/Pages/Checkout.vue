@@ -32,7 +32,6 @@ import Layout from '../Layouts/Layout.vue'
         displayStripeModal() {
             this.show = true;
             this.$nextTick(function () {
-                // console.log(this.stripeKey);
                 this.stripe = window.Stripe(this.stripeKey);
                 const elements = this.stripe.elements();
                 this.card = elements.create("card");
@@ -40,7 +39,6 @@ import Layout from '../Layouts/Layout.vue'
                 axios
                     .post("/stripe/intent")
                     .then((response) => {
-                        console.log(response.data);
                         this.secret = response.data.client_secret;
                     })
                     .catch((error) => {

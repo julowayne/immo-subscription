@@ -76,7 +76,6 @@
         auth: Object,
         errors: Object,
     },
-// don't forget to change validation
     data() {
       return {
         form: this.$inertia.form({

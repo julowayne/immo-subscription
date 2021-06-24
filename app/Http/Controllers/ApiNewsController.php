@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 class ApiNewsController extends Controller
 {
     public function showNews(){
-        // $allNews = News::all()->where('published', true)->paginate(2);
         $allNews = News::all();
 
 

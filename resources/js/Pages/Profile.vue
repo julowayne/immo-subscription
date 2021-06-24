@@ -146,7 +146,6 @@ body {
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
     background-color: white;
     padding: 1em;
-    // overflow: hidden;
     text-align: left;
     #title {
       letter-spacing: 0.5px;

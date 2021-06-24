@@ -77,7 +77,7 @@ export default {
     },
     methods: {
       contact(){
-        axios(`http://127.0.0.1:8000/api/contact`, {
+        axios(`https://whoisalfred.herokuapp.com/api/contact`, {
             method: 'POST',
           data: {
             lastname: this.form.lastname,
@@ -89,8 +89,6 @@ export default {
         })
         .then((response)=> {
           this.emailSend = response.data.success
-          // this.$router.push({ path: "/" });
-          console.log(response)
         })
         .catch(error => {
           if(error.response.status === 400 || error.response.status ===  422){

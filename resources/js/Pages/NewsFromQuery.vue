@@ -63,9 +63,6 @@ import moment from 'moment'
             moment() {
                 return moment();
             },
-        },
-        mounted(){
-          console.log(this.newsFromQuery)
         }
     }
 </script>

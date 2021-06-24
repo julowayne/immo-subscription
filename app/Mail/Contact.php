@@ -31,14 +31,6 @@ class Contact extends Mailable
      */
     public function build()
     {
-        // $user = [
-        //     'firstname' => $request->get('firstName'),
-        //     'lastname' => $request->get('firstName'),
-        //     'email' => $request->get('email'),
-        //     'object' => $request->get('object'),
-        //     'message' => $request->get('message'),
-        // ];
-        // return $this->view('emails.contact', $user); 
         return $this->markdown('emails.contact');   
     }
 }
