@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
@@ -26,16 +27,26 @@ class CheckoutController extends Controller
     }
 
     public function subscribe(Request $request){
-        $plan = Plan::find($request->plan);
 
+        $request->validate([
+            'name' => 'required',
+            'payment_method' => 'required',
+            'coupon' => 'nullable'
+        ]);
+        
         try {
             $subscription = $request->user()
-                ->newSubscription('default', $plan->stripe_id)
+                ->newSubscription('default', $request->plan)
                 ->withCoupon($request->coupon)
                 ->create($request->payment_method);
+
+            Mail::to(Auth::user()->email)->send(new \App\Mail\Subscription($subscription));
+    
             return response()->json($subscription);
+        // return Inertia::render('SubscribeConfirmation', ["subscription" => $subscription]); 
         } catch (\Laravel\Cashier\Exceptions\IncompletePayment $e) {
             return response()->json($e->payment);
         }
+        // return Redirect::route('/services/abonnement/confirmation');
     }
 }
