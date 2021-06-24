@@ -20,8 +20,8 @@ class CreateNewsTable extends Migration
             $table->string('body');
             $table->timestamp('date');
             $table->boolean('published');
-            $table->string('image');
-            $table->string('image_id');
+            $table->string('image')->default('https://i.picsum.photos/id/213/4928/3264.jpg?hmac=OC0yPL-iiM1YgVjpAjbMf51MjnR6cycgmn1TSLJhDZ0');
+            $table->string('image_id')->default('');
             $table->foreignId('user_id')
             ->constrained()
             ->onDelete('cascade')

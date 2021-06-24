@@ -113,7 +113,8 @@
                         <breeze-label class="block mb-2" for="body">
                             Contenu
                         </breeze-label>
-                    <textarea v-model="form.body" class="resize-none w-full shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" name="body" id="body" cols="35" rows="2"></textarea>
+                    <!-- <textarea v-model="form.body" class="resize-none w-full shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" name="body" id="body" cols="35" rows="2"></textarea> -->
+                    <QuillEditor contentType="html" v-model:content="form.body" placeholder="Ecrivez le contenu de votre actualité ..." theme="snow" />
                     </div>
                     <label class="block mb-2" for="image">
                         Ajouter une photo
@@ -188,7 +189,7 @@
                         <breeze-label class="block mb-2" for="body">
                             Contenu
                         </breeze-label>
-                    <textarea v-model="editForm.body" class="resize-none w-full shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" name="body" id="body" cols="35" rows="2"></textarea>
+                    <QuillEditor contentType="html" v-model:content="form.body" placeholder="Ecrivez le contenu de votre actualité ..." theme="snow" />
                     </div>
                     <label class="block mb-2" for="image">
                         Ajouter une photo
@@ -222,9 +223,6 @@
                             v-model="editForm.published"
                             type="checkbox"
                         />
-                                                <span>{{editForm.published}}</span>
-
-                        <!-- <span>{{editform.published}}</span> -->
                     </div>
                     <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
                         <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="editNews(news)">
@@ -283,11 +281,15 @@ import { useForm } from "@inertiajs/inertia-vue3"
 import BreezeInput from '@/Components/Input'
 import BreezeLabel from '@/Components/Label'
 import moment from 'moment';
+import { QuillEditor } from '@vueup/vue-quill'
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
+
     export default {
         components:{
             Layout,
             BreezeInput,
-            BreezeLabel
+            BreezeLabel,
+            QuillEditor
         },
         props: {
             Allnews: Array,
@@ -358,6 +360,7 @@ import moment from 'moment';
                         image: this.form.image,
                         published: this.form.published
                 })
+                // this.form = {};
                 form.post('/admin/newsdashboard')
                 },
                 updateNews(){

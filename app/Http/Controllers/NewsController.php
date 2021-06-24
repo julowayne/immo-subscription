@@ -37,7 +37,6 @@ class NewsController extends Controller
             'title' => 'required',
             'body' => 'required',
             'date' => 'required',
-            'image' => 'required'
         ]);
 
         $news = new News;
@@ -47,9 +46,17 @@ class NewsController extends Controller
         $news->date = $request->get('date');
         $news->published = $request->get('published');
         $news->user_id = Auth::id();
-        $avatar = $request->image->storeOnCloudinary();
-        $news->image = $avatar->getPath();
-        $news->image_id = $avatar->getPublicId();
+        // $avatar = $request->image->storeOnCloudinary();
+        if($news->image != $request->image){
+            if(!empty($news->image_id)){
+                cloudinary()->uploadApi()->destroy($news->image_id);
+            }
+            $news = $request->image->storeOnCloudinary();
+            $news->image = $news->getPath();
+            $news->image_id = $news->getPublicId();
+        }
+        // $news->image = $avatar->getPath();
+        // $news->image_id = $avatar->getPublicId();
         $news->save();
 
         return redirect()->back();
@@ -131,26 +138,19 @@ class NewsController extends Controller
      */
     public function destroy(Request $request)
     {
-        // dd($request);
         $news = News::where('id', $request->id )->first();
         cloudinary()->uploadApi()->destroy($news->image_id);
         $news->delete();
         return redirect()->back();
     }
     public function search(Request $request){
-        // Get the search value from the request
         $search = $request->input('search');
-        // dd($search);
-        // Search in the title and body columns from the posts table
+
         $newsFromQuery = News::query()
             ->where('title', 'like', "%{$search}%")
             ->orWhere('body', 'like', "%{$search}%")
             ->get();
-
-        // dd($newsFromQuery);
-        // Return the search view with the resluts compacted
         return Inertia::render('NewsFromQuery', ["newsFromQuery" => $newsFromQuery]);
 
-        // return view('search', compact('posts'));
     }
 }

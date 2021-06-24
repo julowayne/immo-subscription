@@ -25,8 +25,7 @@
                         <img :src="news.image" class="w-48 mx-auto" alt="Sunset in the mountains">
                         <div class="px-4 py-2">
                             <div class="font-bold text-xl mb-2 text-left">{{ news.title }}</div>
-                            <p class="text-grey-darker text-base text-left">
-                                {{ news.body }}
+                            <p v-html="news.body" class="text-grey-darker text-base text-left">
                             </p>
                             <span class="flex justify-start border-gray-400"><inertia-link href="actualites/1"> <strong>Lire la suite</strong></inertia-link></span>
                         </div>
