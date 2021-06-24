@@ -314,6 +314,7 @@ export default {
     },
     data(){
         return {
+            url: null,
             newUser: false,
             editUser: false,
             deleteUsers: false,
@@ -342,6 +343,10 @@ export default {
         }
     },
     methods:{
+        onFileChange(e) {
+            const file = e.target.files[0];
+            this.url = URL.createObjectURL(file);
+        },
         addUser(){
             this.newUser = !this.newUser;
         },

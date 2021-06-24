@@ -16,13 +16,13 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $Allnews = News::all();
+        $Allnews = News::all()->where('published', 'TRUE');
         return Inertia::render('News', ["Allnews" => $Allnews]);
     }
 
     public function lastNews(){
         
-        $Allnews = News::latest()->take(5)->get();
+        $Allnews = News::latest()->take(5)->where('published', 'TRUE')->get();
 
         return Inertia::render('Welcome', ["Allnews" => $Allnews]);
     }
@@ -40,13 +40,12 @@ class NewsController extends Controller
         ]);
 
         $news = new News;
-        // dd($request);
         $news->title = $request->input('title');
         $news->body = $request->get('body');
         $news->date = $request->get('date');
         $news->published = $request->get('published');
         $news->user_id = Auth::id();
-        // $avatar = $request->image->storeOnCloudinary();
+
         if($news->image != $request->image){
             if(!empty($news->image_id)){
                 cloudinary()->uploadApi()->destroy($news->image_id);
@@ -55,8 +54,7 @@ class NewsController extends Controller
             $news->image = $news->getPath();
             $news->image_id = $news->getPublicId();
         }
-        // $news->image = $avatar->getPath();
-        // $news->image_id = $avatar->getPublicId();
+
         $news->save();
 
         return redirect()->back();
@@ -121,13 +119,15 @@ class NewsController extends Controller
         $news->date = $request->get('date');
         $news->published = $request->get('published');
         if($news->image != $request->image){
-            cloudinary()->uploadApi()->destroy($news->image_id);
-            $avatar = $request->image->storeOnCloudinary();
-            $news->image = $avatar->getPath();
-            $news->image_id = $avatar->getPublicId();
+            if(!empty($news->image_id)){
+                cloudinary()->uploadApi()->destroy($news->image_id);
+            }
+            $news = $request->image->storeOnCloudinary();
+            $news->image = $news->getPath();
+            $news->image_id = $news->getPublicId();
         }
         $news->save();
-        return Inertia::render('Admin/NewsDashboard', ["news" => $news]);
+        return redirect()->back();
     }
 
     /**

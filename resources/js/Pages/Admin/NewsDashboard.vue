@@ -126,8 +126,11 @@
                         </svg>
                         <span class="mt-2 ml-2 text-base leading-normal" v-if="!form.image">Choisir un fichier</span>
                         <span class="mt-2 ml-2 text-base leading-normal" v-else> {{ form.image.name }}</span>
-                        <input type='file' class="hidden" @input="form.image = $event.target.files[0]" />
+                        <input type='file' class="hidden" @change="onFileChange" @input="editForm.image = $event.target.files[0]" />
                     </label>
+                    <div class="preview">
+                        <img v-if="url" :src="url" />
+                    </div>
                     </div>
                     <div class="mb-3">
                         <breeze-label class="block mb-2" for="date">
@@ -140,7 +143,7 @@
                             class="block text-gray-700 text-sm font-normal mb-2"
                             for="active"
                         >
-                            Publié
+                            Publier
                         </label>
                         <input
                             class="shadow appearance-none border rounded text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -189,7 +192,7 @@
                         <breeze-label class="block mb-2" for="body">
                             Contenu
                         </breeze-label>
-                    <QuillEditor contentType="html" v-model:content="form.body" placeholder="Ecrivez le contenu de votre actualité ..." theme="snow" />
+                    <QuillEditor contentType="html" v-model:content="editForm.body" placeholder="Ecrivez le contenu de votre actualité ..." theme="snow" />
                     </div>
                     <label class="block mb-2" for="image">
                         Ajouter une photo
@@ -201,8 +204,12 @@
                         </svg>
                         <span class="mt-2 ml-2 text-base leading-normal" v-if="!editForm.image">Choisir un fichier</span>
                         <span class="mt-2 ml-2 text-base leading-normal" v-else> {{ editForm.image.name }}</span>
-                        <input type='file' class="hidden" @input="editForm.image = $event.target.files[0]" />
+                        <!-- <input type='file' class="hidden" @input="editForm.image = $event.target.files[0]" /> -->
+                        <input type='file' class="hidden" @change="onFileChange" @input="editForm.image = $event.target.files[0]" />
                     </label>
+                    <div class="preview">
+                        <img v-if="url" :src="url" />
+                    </div>
                     </div>
                     <div class="mb-3">
                         <breeze-label class="block mb-2" for="date">
@@ -215,7 +222,7 @@
                             class="block text-gray-700 text-sm font-normal mb-2"
                             for="active"
                         >
-                            Publié
+                            Publier
                         </label>
                         <input
                             class="shadow appearance-none border rounded text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -229,7 +236,7 @@
                             Annuler
                         </button>
                         <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit">
-                            Ajouter
+                            Modifier
                         </button>
                     </div>                 
                 </form>
@@ -298,6 +305,7 @@ import '@vueup/vue-quill/dist/vue-quill.snow.css';
         },
         data(){
             return {
+                url: null,
                 getNews: false,
                 editNew: false,
                 deleteNew: false,
@@ -323,6 +331,10 @@ import '@vueup/vue-quill/dist/vue-quill.snow.css';
             }
         },
         methods: {
+            onFileChange(e) {
+                const file = e.target.files[0];
+                this.url = URL.createObjectURL(file);
+            },
             addNews(){
                 this.getNews = !this.getNews;
             },
@@ -426,5 +438,15 @@ input[type="radio"]:checked + label span {
 
 input[type="radio"]:checked + label{
     color: #20c997;
+}
+.preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview img {
+  max-width: 50%;
+  max-height: 250px;
 }
 </style>

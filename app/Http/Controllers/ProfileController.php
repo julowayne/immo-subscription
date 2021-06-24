@@ -52,8 +52,11 @@ class ProfileController extends Controller
         if($user->password != $request->password && !empty($request->password)){
             $user->password = $request->input('password');
         }
-        if($request->avatar){
 
+        if($user->avatar != $request->avatar){
+            if(!empty($user->avatar_id)){
+                cloudinary()->uploadApi()->destroy($user->avatar_id);
+            }
             $avatar = $request->avatar->storeOnCloudinary();
             $user->avatar = $avatar->getPath();
             $user->avatar_id = $avatar->getPublicId();
