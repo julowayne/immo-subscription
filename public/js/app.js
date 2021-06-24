@@ -18417,9 +18417,8 @@ __webpack_require__.r(__webpack_exports__);
     newsFromQuery: function newsFromQuery() {
       var _this = this;
 
-      console.log('ok'); // this.$router.push({ path: "/search" });
+      // this.$router.push({ path: "/search" });
       // axios.get("https://whoisalfred.herokuapp.com/search")
-
       axios.get("http://127.0.0.1:8000/search").then(function (response) {
         _this.newsFromQuery = response.data.allNewsFromQuery;
         console.log(response);

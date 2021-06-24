@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Inertia\Inertia;
 
 class ProfileController extends Controller
@@ -24,7 +25,7 @@ class ProfileController extends Controller
         $createUser->lastname = $request->input('lastName');
         $createUser->email = $request->input('email');
         $createUser->siret = $request->input('siret');
-        $createUser->password = $request->input('password');
+        $createUser->password = Hash::make($request->input('password'));
         $createUser->isAdmin = $request->input('isAdmin');
         if($createUser->avatar != $request->avatar){
             if(!empty($createUser->avatar_id)){
@@ -48,6 +49,7 @@ class ProfileController extends Controller
         $user->lastname = $request->input('lastname');
         $user->email = $request->input('email');
         $user->siret = $request->input('siret');
+        // $user->password = Hash::make($request->input('password'));
         $user->isAdmin = $request->input('isAdmin');
         if($user->password != $request->password && !empty($request->password)){
             $user->password = $request->input('password');
