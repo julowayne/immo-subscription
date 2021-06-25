@@ -107,13 +107,14 @@
                         <breeze-label class="block mb-2" for="title">
                             Titre
                         </breeze-label>
+                        <div class="text-red-700 font-bold" v-if="errors.title">{{ errors.title }}</div>
                         <breeze-input v-model="form.title" class="h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="title" type="text"/>
                     </div>
                     <div class="mb-3">
                         <breeze-label class="block mb-2" for="body">
                             Contenu
                         </breeze-label>
-                    <!-- <textarea v-model="form.body" class="resize-none w-full shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" name="body" id="body" cols="35" rows="2"></textarea> -->
+                        <div class="text-red-700 font-bold" v-if="errors.body">{{ errors.body }}</div>
                     <QuillEditor contentType="html" v-model:content="form.body" placeholder="Ecrivez le contenu de votre actualité ..." theme="snow" />
                     </div>
                     <label class="block mb-2" for="image">
@@ -136,6 +137,7 @@
                         <breeze-label class="block mb-2" for="date">
                             date de publication
                         </breeze-label>
+                        <div class="text-red-700 font-bold" v-if="errors.date">{{ errors.date }}</div>
                         <breeze-input v-model="form.date" class="h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="date" type="date" :min="minDateForPicker"/>
                     </div>
                     <div class="mb-3">
@@ -204,7 +206,6 @@
                         </svg>
                         <span class="mt-2 ml-2 text-base leading-normal" v-if="!editForm.image">Choisir un fichier</span>
                         <span class="mt-2 ml-2 text-base leading-normal" v-else> {{ editForm.image.name }}</span>
-                        <!-- <input type='file' class="hidden" @input="editForm.image = $event.target.files[0]" /> -->
                         <input type='file' class="hidden" @change="onFileChange" @input="editForm.image = $event.target.files[0]" />
                     </label>
                     <div class="preview">
@@ -303,7 +304,8 @@ import { usePage } from '@inertiajs/inertia-vue3'
         props: {
             Allnews: Array,
             singleNews: Object,
-            news: Array
+            news: Array,
+            errors: Object,
         },
         data(){
             return {
@@ -335,6 +337,11 @@ import { usePage } from '@inertiajs/inertia-vue3'
         setup() {
             const user = computed(() => usePage().props.value.auth.user)
             return { user }
+        },
+        computed:{
+            errors() {
+                return this.$page.props.errors
+            }
         },
         methods: {
             onFileChange(e) {

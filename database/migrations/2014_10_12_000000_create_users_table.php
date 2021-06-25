@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('avatar_id')->default('');
             $table->string('firstname');
             $table->string('lastname');
-            $table->integer('siret');
+            $table->bigInteger('siret');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

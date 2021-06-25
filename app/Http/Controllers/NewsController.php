@@ -110,7 +110,6 @@ class NewsController extends Controller
             'body' => 'required',
             'date' => 'required',
             'published' => 'required',
-            'image' => 'required'
         ]);
         
         $news = News::where('id', $request->id )->first();

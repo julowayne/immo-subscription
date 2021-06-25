@@ -1,26 +1,26 @@
 <template>
     <div class="nav">
-      <inertia-link href="/">
+      <inertia-link href="/" >
         <img src="/image/alfred-logo-teal-nav.png" alt="alfred logo">
       </inertia-link>
       <div id="categories">
         <span>        
-          <inertia-link href="/services">
+          <inertia-link href="/services" class="hidden lg:block">
             Services
           </inertia-link>
         </span>
         <span>        
-          <inertia-link href="/actualites">
+          <inertia-link href="/actualites" class="hidden lg:block">
             Actualités
           </inertia-link>
         </span>
         <span>        
-          <inertia-link href="/contact">
+          <inertia-link href="/contact" class="hidden lg:block">
             Contact
           </inertia-link>
         </span>
       </div>
-      <div id="search">
+      <div id="search" class="hidden lg:block">
         <form :action="route('search')" method="GET" @keyup.enter="newsFromQuery">
             <input type="text" name="search" placeholder="Rechercher ...">
         </form>
@@ -30,10 +30,10 @@
           <inertia-link href="/profile">
             <img :src="user.avatar" alt="account logo">
           </inertia-link>
-          <inertia-link href="/profile">
+          <inertia-link href="/profile" class="hidden lg:flex">
             {{ user.firstname }}
           </inertia-link>
-          <inertia-link :href="route('logout')" method="post">
+          <inertia-link :href="route('logout')" method="post" class="hidden lg:flex">
             déconnexion
           </inertia-link>
         </div>
@@ -41,10 +41,10 @@
           <inertia-link href="/register">
             <img src="/image/utilisateur.png" alt="account logo">
           </inertia-link>
-          <inertia-link href="/register">
+          <inertia-link href="/register" class="hidden lg:inline-block lg:mr-4">
             Inscription
           </inertia-link>
-          <inertia-link href="/login">
+          <inertia-link href="/login" class="hidden lg:inline-block">
             Connexion
           </inertia-link>
         </div>
@@ -133,7 +133,7 @@
     }
     img {
       margin: auto;
-      width: 40px;
+      width: 40%;
       box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
     }
   }

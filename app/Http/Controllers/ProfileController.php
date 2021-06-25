@@ -16,8 +16,8 @@ class ProfileController extends Controller
             'firstName' => 'required',
             'lastName' => 'required',
             'email' => 'required',
-            'siret' => 'required',
-            'password' => 'required'
+            'siret' => 'required|max:14|unique',
+            'password' => 'required|max:10|unique'
         ]);
         
         $createUser = new User;
