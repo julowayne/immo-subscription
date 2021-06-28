@@ -1,8 +1,10 @@
 <template>
 <div class="justify-center">
-  <button class="w-1/4 bg-blue-500 hover:bg-blue-700 bg-transparent border shadow border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="displayStripeModal()">
-    Choisir
-</button>
+  <inertia-link href="/checkout">
+    <button  class="w-1/4 bg-blue-500 hover:bg-blue-700 bg-transparent border shadow border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+      Choisir
+    </button>
+  </inertia-link>
 </div>
 <div class="xl:grid xl:grid-cols-3 xl:my-20 xl:px-32 lg:grid lg:grid-cols-3 lg:my-10 lg:px-20 sm:grid sm:grid-cols-1 sm:my-10 sm:gap-6 sm:px-20">
   <div v-for="sub in subscriptions" :key="sub">

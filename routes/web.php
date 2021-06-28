@@ -42,17 +42,17 @@ Route::post('/contact', [ApiContactController::class, 'sendDesktopMail']);
 Route::inertia('/services', 'Subscribe')->middleware('auth');
 
 Route::post('/services', [CheckoutController::class, 'store']);
-Route::post('/services/abonnement', [CheckoutController::class, 'subscribe']);
+// Route::post('/services/abonnement', [CheckoutController::class, 'subscribe']);
+Route::inertia('/checkout', 'CheckoutConfirmation');
+
+Route::post('/checkout', [CheckoutController::class, 'subscribe']);
+Route::post('/stripe/intent', [CheckoutController::class, 'newIntent']);
 
 
 
 Route::inertia('/profile', 'Profile');
 
-Route::post('/profile', [ProfileController::class, 'update']);
-
-Route::inertia('/checkout', 'Checkout');
-
-Route::post('/stripe/intent', [CheckoutController::class, 'newIntent']);
+Route::post('/profile', [ProfileController::class, 'updateProfile']);
 
 Route::get('/search', [NewsController::class, 'search'])->name('search');
 

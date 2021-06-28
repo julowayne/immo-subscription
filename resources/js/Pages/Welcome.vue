@@ -31,7 +31,6 @@
                             </div>
                             <div class="px-4 py-2 flex justify-between">
                                 <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">{{ moment(news.date).format("DD-MM-YYYY") }}</span>
-                                <span class="bg-grey-lighter rounded-full text-sm font-semibold text-grey-darker">Jules TD</span>
                             </div>
                         </div>
                     </inertia-link>
@@ -87,7 +86,7 @@ import moment from 'moment'
         methods: {
             moment() {
                 return moment();
-            }
+            },
         }
     }
 </script>

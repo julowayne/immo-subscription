@@ -44,7 +44,7 @@
                                     </td>
                                     <td class="py-3 px-6 text-left whitespace-nowrap">
                                         <div class="flex items-center">
-                                            <span class="font-medium">{{ news.title }}</span>
+                                            <span class="font-medium">{{ news.title.substring(0,25)+"..." }}</span>
                                         </div>
                                     </td>
                                     <td class="py-3 px-6 text-left">

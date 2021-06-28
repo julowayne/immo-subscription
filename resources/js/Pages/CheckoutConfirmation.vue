@@ -1,5 +1,6 @@
 <template>
   <div>
+  <layout/>
   <div class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
   <div class="relative w-1/2 my-6 mx-auto max-w-3xl">
     <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
@@ -7,11 +8,6 @@
         <h3 class="text-3xl font-semibold">
           Choisir mon abonnement
         </h3>
-        <button class="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none" @click="chooseSub()">
-          <span class="bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
-            ×
-          </span>
-        </button>
       </div>
       <div class="relative p-6 flex-auto">
         <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
@@ -40,12 +36,15 @@
           <label for="name" class="block">Nom</label>
           <input v-model="name" class="h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="name" type="text">
         </div>
-      <div id="card-element" class="p-2"></div>
+        <div class="pb-2"><strong>Données bancaires:</strong></div>
+      <div id="card-element" class="m-2"></div>
         <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-          <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" @click="chooseSub()">
-            Annuler
-          </button>
-          <!-- <inertia-link href="/services/abonnement/confirmation"> -->
+          <inertia-link href="/services">
+            <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+              Annuler
+            </button>
+          </inertia-link>
+          <!-- <inertia-link href="/"> -->
             <button class="bg-blue-500 hover:bg-blue-700 bg-transparent border border-solid border-blue-300 text-white font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit">
               Payer
             </button>
@@ -60,17 +59,26 @@
 </template>
 
 <script>
+import Layout from '../Layouts/Layout.vue'
+import axios from 'axios'
+import { computed } from 'vue'
+import { usePage } from '@inertiajs/inertia-vue3'
   export default {
-    props:
-    [ 
-      "card",
-      "stripe",
-      "secret",
-      "token",
-      "showSubModal"
-    ],
+    name:'ConfirmationCheckout',
+    components:{
+      Layout
+    },
     data(){
       return {
+        token: process.env.VUE_APP_AUTH_TOKEN,
+        secret: null,
+        stripe: null,
+        payment_method: null,
+        requires_action: null,
+        payment_intent: null,
+        card: null,
+        payment_processed: false,
+        message_processed: "",
         modal: false,
         name: '',
         choice: [],
@@ -81,9 +89,25 @@
         }
       }
     },
+    mounted(){
+      this.displayStripeModal();
+    },
     methods: {
-      chooseSub(){
-        this.modal = !this.modal;
+
+      displayStripeModal() {
+
+            this.stripe = window.Stripe(this.stripeKey);
+            const elements = this.stripe.elements();
+            this.card = elements.create("card");
+            this.card.mount("#card-element");
+            axios
+                .post("/stripe/intent")
+                .then((response) => {
+                    this.secret = response.data.client_secret;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
       },
       async submit() {
             this.payment_processing = true;
@@ -102,7 +126,7 @@
                 this.payment_method = setupIntent.payment_method;
                 await axios
                     .post(
-                        "/services/abonnement",
+                        "/checkout",
                         {
                             plan: this.choice,
                             name: this.name,
@@ -131,10 +155,17 @@
                     });
             }
         },
-    }
+    },
+    setup() {
+      const stripeKey = computed(() => usePage().props.value.STRIPE_KEY);
+      return { stripeKey };
+    },
     }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+#card-element {
+  width: 100%;
+  margin: O auto;
+}
 </style>

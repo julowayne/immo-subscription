@@ -19,13 +19,13 @@
                 <label class="block" for="name">
                   Nom
                 </label>
-                <input v-model="form.firstName" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="name" type="text">
+                <input v-model="form.firstname" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="name" type="text">
               </div>
               <div class="mb-3">
                 <label class="block" for="firstname">
                   Prénom
                 </label>
-                <input v-model="form.lastName" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="firstname" type="text" placeholder="Thomas Desessarts">
+                <input v-model="form.lastname" class="w-full h-8 shadow border rounded focus:outline-none focus:ring-1 focus:border-transparent" id="firstname" type="text" placeholder="Thomas Desessarts">
               </div>
               <div class="mb-3">
                 <label class="block" for="email">
@@ -99,8 +99,8 @@ import Formule from '../Components/Profile/Formule.vue'
           content: 'Vous désirez annuler ou changer votre formule'
         }],
         form: {
-          firstName: '',
-          lastName: '',
+          firstname: '',
+          lastname: '',
           password: '',
           email: '',
           siret: '',
@@ -111,8 +111,8 @@ import Formule from '../Components/Profile/Formule.vue'
     methods: {
       updateUser(){
         const form = useForm({
-          firstName: this.form.firstName,
-          lastName: this.form.lastName,
+          firstname: this.form.firstname,
+          lastname: this.form.lastname,
           password: this.form.password,
           email: this.form.email,
           siret: this.form.siret,
@@ -122,8 +122,8 @@ import Formule from '../Components/Profile/Formule.vue'
       }
     },
     mounted(){
-      this.form.firstName = this.user.firstname
-      this.form.lastName = this.user.lastname
+      this.form.firstname = this.user.firstname
+      this.form.lastname = this.user.lastname
       this.form.email = this.user.email
       this.form.siret = this.user.siret
       this.form.password = this.user.password

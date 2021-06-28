@@ -107,6 +107,7 @@
                         <breeze-label class="block mb-2" for="lastname">
                             Nom
                         </breeze-label>
+                        <!-- <div class="text-red-700 font-bold" v-if="errors.lastName">{{ errors.lastName }}</div> -->
                         <breeze-input v-model="form.lastName" class="h-8 shadow border rounded focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent" id="lastname" type="text"/>
                     </div>
                     <div class="mb-3">
@@ -312,7 +313,9 @@ export default {
         BreezeLabel
     },
     props: {
-        users: Array
+        users: Array,
+        errors: Object,
+
     },
     data(){
         return {
@@ -374,6 +377,9 @@ export default {
         },
     },
     computed:{
+        errors() {
+            return this.$page.props.errors
+        },
         createUser(){
             this.newUser = !this.newUser;
             const form = useForm({

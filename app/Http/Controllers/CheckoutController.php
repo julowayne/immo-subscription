@@ -41,11 +41,9 @@ class CheckoutController extends Controller
                 ->newSubscription('default', $request->plan)
                 ->withCoupon($request->coupon)
                 ->create($request->payment_method);
-
             Mail::to($emails)->send(new \App\Mail\Subscription($subscription));
-    
             return response()->json($subscription);
-
+            
         } catch (\Laravel\Cashier\Exceptions\IncompletePayment $e) {
             return response()->json($e->payment);
         }

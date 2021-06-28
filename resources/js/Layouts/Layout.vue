@@ -5,17 +5,17 @@
       </inertia-link>
       <div id="categories">
         <span>        
-          <inertia-link href="/services" class="hidden lg:block">
+          <inertia-link href="/services" >
             Services
           </inertia-link>
         </span>
         <span>        
-          <inertia-link href="/actualites" class="hidden lg:block">
+          <inertia-link href="/actualites">
             Actualités
           </inertia-link>
         </span>
         <span>        
-          <inertia-link href="/contact" class="hidden lg:block">
+          <inertia-link href="/contact">
             Contact
           </inertia-link>
         </span>
@@ -30,10 +30,10 @@
           <inertia-link href="/profile">
             <img :src="user.avatar" alt="account logo">
           </inertia-link>
-          <inertia-link href="/profile" class="hidden lg:flex">
+          <inertia-link href="/profile">
             {{ user.firstname }}
           </inertia-link>
-          <inertia-link :href="route('logout')" method="post" class="hidden lg:flex">
+          <inertia-link :href="route('logout')" method="post">
             déconnexion
           </inertia-link>
         </div>
@@ -133,7 +133,7 @@
     }
     img {
       margin: auto;
-      width: 40%;
+      width: 40px;
       box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
     }
   }

@@ -13,11 +13,11 @@ class ProfileController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'firstName' => 'required',
-            'lastName' => 'required',
-            'email' => 'required',
-            'siret' => 'required|max:14|unique',
-            'password' => 'required|max:10|unique'
+            'firstName' => 'required|string|max:255',
+            'lastName' => 'required|string|max:255',
+            'siret' => 'required|integer|unique:users',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8',
         ]);
         
         $createUser = new User;
@@ -40,8 +40,46 @@ class ProfileController extends Controller
 
         return redirect()->back();
     }
+    public function updateProfile(Request $request){
+
+        $request->validate([
+            'firstName' => 'required|string|max:255',
+            'lastName' => 'required|string|max:255',
+            'siret' => 'required|integer|unique:users',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8',
+        ]);
+        
+        $user = User::where('id', Auth::user()->id )->first();
+        $user->firstname = $request->input('firstname');
+        $user->lastname = $request->input('lastname');
+        $user->email = $request->input('email');
+        $user->siret = $request->input('siret');
+        if($user->password != $request->password && !empty($request->password)){
+            $user->password = Hash::make($request->input('password'));
+        }
+
+        if($user->avatar){
+            if(!empty($user->avatar_id)){
+                cloudinary()->uploadApi()->destroy($user->avatar_id);
+            }
+            $avatar = $request->avatar->storeOnCloudinary();
+            $user->avatar = $avatar->getPath();
+            $user->avatar_id = $avatar->getPublicId();
+        }
+        $user->save();
+        return redirect()->back();
+    }
 
     public function update(Request $request){
+        
+        $request->validate([
+            'firstName' => 'required|string|max:255',
+            'lastName' => 'required|string|max:255',
+            'siret' => 'required|integer|unique:users',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8',
+        ]);
         
         $user = User::where('id', $request->id )->first();
         $user->firstname = $request->input('firstname');
